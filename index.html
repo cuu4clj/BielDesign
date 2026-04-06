@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BielDesign — Design Interior Premium</title>
+  <meta name="description" content="Site premium cu poze și texte controlate simplu." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home">
+        <img id="brand-logo" class="brand-logo" src="assets/logo.jpg" alt="Logo">
+        <span>
+          <strong id="brand-name">BielDesign</strong>
+          <small id="brand-tagline">Interior Design & Premium Fit-Out</small>
+        </span>
+      </a>
+      <nav class="nav">
+        <a href="#services">Servicii</a>
+        <a href="#portfolio">Portofoliu</a>
+        <a href="#about">Despre</a>
+        <a href="#reviews">Recenzii</a>
+        <a href="#contact" class="btn btn-gold">Consultanță</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow" id="hero-kicker">Luxury Interior Design</p>
+          <h1 id="hero-title">Design interior premium pentru spații care impun respect.</h1>
+          <p id="hero-text">Creăm interioare sofisticate pentru rezidențial, HoReCa și birouri premium — cu un echilibru atent între atmosferă, funcționalitate și lux discret.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-gold" id="hero-primary">Programează o discuție</a>
+            <a href="#portfolio" class="btn btn-ghost" id="hero-secondary">Vezi proiecte</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img id="hero-image" src="assets/hero.jpg" alt="Hero">
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Servicii</p>
+          <h2>Soluții complete, de la concept la implementare.</h2>
+        </div>
+        <div class="cards-grid" id="services-grid"></div>
+      </div>
+    </section>
+
+    <section class="section alt-section" id="portfolio">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Portofoliu</p>
+          <h2>Proiecte cu prezență vizuală puternică.</h2>
+        </div>
+        <div class="portfolio-grid" id="portfolio-grid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div>
+          <p class="eyebrow">Despre</p>
+          <h2 id="about-title">Construim interioare premium cu personalitate.</h2>
+          <p id="about-text1"></p>
+          <p id="about-text2"></p>
+        </div>
+        <div class="about-panel">
+          <h3>Imagine premium, structură clară</h3>
+          <p>Site-ul este pregătit pentru actualizare simplă din admin.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt-section" id="reviews">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Recenzii</p>
+          <h2>Feedback autentic de la clienți.</h2>
+        </div>
+        <div class="reviews-grid" id="reviews-grid"></div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title">Hai să transformăm spațiul tău într-o semnătură vizuală.</h2>
+          <p id="contact-text"></p>
+          <div class="contact-cards">
+            <div class="contact-card" id="contact-phone"></div>
+            <div class="contact-card" id="contact-email"></div>
+            <div class="contact-card" id="contact-location"></div>
+          </div>
+        </div>
+        <form class="contact-form" name="contact" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact" />
+          <label>Nume<input type="text" name="name" placeholder="Numele tău" required></label>
+          <label>Email<input type="email" name="email" placeholder="email@exemplu.ro" required></label>
+          <label>Detalii<textarea name="message" rows="5" placeholder="Spune-ne pe scurt ce ai nevoie"></textarea></label>
+          <button type="submit" class="btn btn-gold btn-full">Trimite cererea</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-wrap">
+      <div>
+        <strong id="footer-brand">BielDesign</strong>
+        <p id="footer-text">Design interior premium. Prezență vizuală impecabilă. Execuție clară.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#services">Servicii</a>
+        <a href="#portfolio">Portofoliu</a>
+        <a href="/admin/">Admin</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    async function loadSite(){
+      const data = await fetch('content/site.json').then(r=>r.json());
+      document.documentElement.style.setProperty('--body-font', data.theme.bodyFont);
+      document.documentElement.style.setProperty('--heading-font', data.theme.headingFont);
+      document.documentElement.style.setProperty('--body-size', data.theme.bodySize);
+      document.documentElement.style.setProperty('--h1-size', data.theme.h1Size);
+      document.documentElement.style.setProperty('--h2-size', data.theme.h2Size);
+      document.documentElement.style.setProperty('--h3-size', data.theme.h3Size);
+
+      document.getElementById('brand-name').textContent = data.brand.name;
+      document.getElementById('brand-tagline').textContent = data.brand.tagline;
+      document.getElementById('footer-brand').textContent = data.brand.name;
+      document.getElementById('footer-text').textContent = data.footer.text;
+
+      document.getElementById('hero-kicker').textContent = data.hero.kicker;
+      document.getElementById('hero-title').textContent = data.hero.title;
+      document.getElementById('hero-text').textContent = data.hero.text;
+      document.getElementById('hero-primary').textContent = data.hero.primaryButton;
+      document.getElementById('hero-secondary').textContent = data.hero.secondaryButton;
+
+      document.getElementById('about-title').textContent = data.about.title;
+      document.getElementById('about-text1').textContent = data.about.text1;
+      document.getElementById('about-text2').textContent = data.about.text2;
+
+      document.getElementById('contact-title').textContent = data.contact.title;
+      document.getElementById('contact-text').textContent = data.contact.text;
+      document.getElementById('contact-phone').textContent = data.contact.phone;
+      document.getElementById('contact-email').textContent = data.contact.email;
+      document.getElementById('contact-location').textContent = data.contact.location;
+
+      document.getElementById('services-grid').innerHTML = data.services.map(item => `
+        <article class="card"><h3>${item.title}</h3><p>${item.text}</p></article>
+      `).join('');
+      document.getElementById('portfolio-grid').innerHTML = data.portfolio.map((item, index) => `
+        <article class="portfolio-card">
+          <img src="assets/portfolio-${index+1}.jpg" alt="${item.title}">
+          <div class="portfolio-copy"><h3>${item.title}</h3><p>${item.text}</p></div>
+        </article>
+      `).join('');
+      document.getElementById('reviews-grid').innerHTML = data.reviews.map(item => `
+        <article class="review-card"><div class="stars">${item.stars}</div><p>${item.text}</p><strong>${item.name}</strong></article>
+      `).join('');
+    }
+    loadSite();
+  </script>
+</body>
+</html>
