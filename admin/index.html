@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin builder</title>
+  <style>
+    :root{--bg:#0d0d0d;--panel:#151515;--text:#f5f1e8;--muted:#b7b1a5;--gold:#d4af37;--radius:18px}
+    *{box-sizing:border-box} body{margin:0;background:#0d0d0d;color:var(--text);font-family:Arial,sans-serif}
+    .wrap{width:min(1120px,calc(100% - 28px));margin:28px auto 60px}
+    .card{background:#151515;border:1px solid rgba(212,175,55,.18);border-radius:var(--radius);padding:18px;margin-bottom:18px}
+    h1,h2{margin:0 0 14px} h1{font-size:32px} h2{font-size:24px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    label{display:grid;gap:7px;margin-bottom:12px}
+    input,textarea,select{width:100%;padding:12px;border-radius:12px;border:1px solid rgba(212,175,55,.22);background:#0d0d0d;color:#fff}
+    textarea{min-height:100px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    button{padding:12px 16px;border:none;border-radius:999px;font-weight:700;cursor:pointer}
+    .gold{background:var(--gold);color:#111}.ghost{background:#1d1d1d;color:#fff;border:1px solid rgba(212,175,55,.18)}
+    .hint{color:var(--muted)}
+    .preview-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+    .preview-grid img{width:100%;height:120px;object-fit:cover;border-radius:14px;border:1px solid rgba(212,175,55,.16);background:#0a0a0a}
+    @media (max-width:900px){.grid,.preview-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+    <h1>Admin real pentru poze și texte</h1>
+    <p class="hint">Schimbi informațiile aici, apoi apeși <strong>Export ZIP</strong> și urci noul zip pe Netlify.</p>
+    <div class="actions">
+      <button class="gold" id="loadBtn">Încarcă datele</button>
+      <button class="gold" id="exportBtn">Export ZIP</button>
+      <button class="ghost" id="resetBtn">Reset</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Brand și fonturi</h2>
+    <div class="grid">
+      <div>
+        <label>Nume brand <input id="brandName"></label>
+        <label>Tagline <input id="brandTagline"></label>
+        <label>Font text
+          <select id="bodyFont">
+            <option>Inter, Arial, sans-serif</option>
+            <option>Poppins, Arial, sans-serif</option>
+            <option>Montserrat, Arial, sans-serif</option>
+            <option>Arial, sans-serif</option>
+          </select>
+        </label>
+        <label>Font titluri
+          <select id="headingFont">
+            <option>"Cormorant Garamond", Georgia, serif</option>
+            <option>"Playfair Display", Georgia, serif</option>
+            <option>Georgia, serif</option>
+          </select>
+        </label>
+      </div>
+      <div>
+        <label>Mărime text bază <input id="bodySize"></label>
+        <label>Mărime H1 <input id="h1Size"></label>
+        <label>Mărime H2 <input id="h2Size"></label>
+        <label>Mărime H3 <input id="h3Size"></label>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Texte principale</h2>
+    <label>Kicker hero <input id="heroKicker"></label>
+    <label>Titlu hero <textarea id="heroTitle"></textarea></label>
+    <label>Text hero <textarea id="heroText"></textarea></label>
+    <div class="grid">
+      <label>Buton principal <input id="heroPrimary"></label>
+      <label>Buton secundar <input id="heroSecondary"></label>
+    </div>
+    <label>Titlu despre <textarea id="aboutTitle"></textarea></label>
+    <label>Text despre 1 <textarea id="aboutText1"></textarea></label>
+    <label>Text despre 2 <textarea id="aboutText2"></textarea></label>
+    <label>Titlu contact <textarea id="contactTitle"></textarea></label>
+    <label>Text contact <textarea id="contactText"></textarea></label>
+    <div class="grid">
+      <label>Telefon <input id="contactPhone"></label>
+      <label>Email <input id="contactEmail"></label>
+    </div>
+    <label>Locație <input id="contactLocation"></label>
+  </div>
+
+  <div class="card">
+    <h2>Poze</h2>
+    <div class="grid">
+      <label>Logo <input id="logoFile" type="file" accept="image/*"></label>
+      <label>Hero <input id="heroFile" type="file" accept="image/*"></label>
+      <label>Portofoliu 1 <input id="p1File" type="file" accept="image/*"></label>
+      <label>Portofoliu 2 <input id="p2File" type="file" accept="image/*"></label>
+      <label>Portofoliu 3 <input id="p3File" type="file" accept="image/*"></label>
+    </div>
+    <div class="preview-grid">
+      <img id="logoPreview" alt="">
+      <img id="heroPreview" alt="">
+      <img id="p1Preview" alt="">
+      <img id="p2Preview" alt="">
+      <img id="p3Preview" alt="">
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Portofoliu</h2>
+    <div class="grid">
+      <div>
+        <label>Titlu 1 <input id="p1Title"></label>
+        <label>Text 1 <textarea id="p1Text"></textarea></label>
+      </div>
+      <div>
+        <label>Titlu 2 <input id="p2Title"></label>
+        <label>Text 2 <textarea id="p2Text"></textarea></label>
+      </div>
+      <div>
+        <label>Titlu 3 <input id="p3Title"></label>
+        <label>Text 3 <textarea id="p3Text"></textarea></label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script>
+  let currentData = null;
+  let images = { logo:null, hero:null, p1:null, p2:null, p3:null };
+
+  async function fetchText(path){ return await fetch(path).then(r => r.text()); }
+  async function fetchJSON(path){ return await fetch(path).then(r => r.json()); }
+  async function toDataURL(path){
+    const blob = await fetch(path).then(r => r.blob());
+    return await new Promise(resolve => {
+      const fr = new FileReader();
+      fr.onload = () => resolve(fr.result);
+      fr.readAsDataURL(blob);
+    });
+  }
+  function fileToDataURL(file){
+    return new Promise(resolve => {
+      const fr = new FileReader();
+      fr.onload = () => resolve(fr.result);
+      fr.readAsDataURL(file);
+    });
+  }
+
+  function setPreview(id, val){ document.getElementById(id).src = val; }
+
+  async function loadCurrent(){
+    currentData = await fetchJSON('../content/site.json');
+    document.getElementById('brandName').value = currentData.brand.name;
+    document.getElementById('brandTagline').value = currentData.brand.tagline;
+    document.getElementById('bodyFont').value = currentData.theme.bodyFont;
+    document.getElementById('headingFont').value = currentData.theme.headingFont;
+    document.getElementById('bodySize').value = currentData.theme.bodySize;
+    document.getElementById('h1Size').value = currentData.theme.h1Size;
+    document.getElementById('h2Size').value = currentData.theme.h2Size;
+    document.getElementById('h3Size').value = currentData.theme.h3Size;
+    document.getElementById('heroKicker').value = currentData.hero.kicker;
+    document.getElementById('heroTitle').value = currentData.hero.title;
+    document.getElementById('heroText').value = currentData.hero.text;
+    document.getElementById('heroPrimary').value = currentData.hero.primaryButton;
+    document.getElementById('heroSecondary').value = currentData.hero.secondaryButton;
+    document.getElementById('aboutTitle').value = currentData.about.title;
+    document.getElementById('aboutText1').value = currentData.about.text1;
+    document.getElementById('aboutText2').value = currentData.about.text2;
+    document.getElementById('contactTitle').value = currentData.contact.title;
+    document.getElementById('contactText').value = currentData.contact.text;
+    document.getElementById('contactPhone').value = currentData.contact.phone;
+    document.getElementById('contactEmail').value = currentData.contact.email;
+    document.getElementById('contactLocation').value = currentData.contact.location;
+    document.getElementById('p1Title').value = currentData.portfolio[0].title;
+    document.getElementById('p1Text').value = currentData.portfolio[0].text;
+    document.getElementById('p2Title').value = currentData.portfolio[1].title;
+    document.getElementById('p2Text').value = currentData.portfolio[1].text;
+    document.getElementById('p3Title').value = currentData.portfolio[2].title;
+    document.getElementById('p3Text').value = currentData.portfolio[2].text;
+
+    images.logo = await toDataURL('../assets/logo.jpg');
+    images.hero = await toDataURL('../assets/hero.jpg');
+    images.p1 = await toDataURL('../assets/portfolio-1.jpg');
+    images.p2 = await toDataURL('../assets/portfolio-2.jpg');
+    images.p3 = await toDataURL('../assets/portfolio-3.jpg');
+
+    setPreview('logoPreview', images.logo);
+    setPreview('heroPreview', images.hero);
+    setPreview('p1Preview', images.p1);
+    setPreview('p2Preview', images.p2);
+    setPreview('p3Preview', images.p3);
+  }
+
+  function collectData(){
+    return {
+      ...currentData,
+      brand: {
+        name: document.getElementById('brandName').value,
+        tagline: document.getElementById('brandTagline').value
+      },
+      theme: {
+        bodyFont: document.getElementById('bodyFont').value,
+        headingFont: document.getElementById('headingFont').value,
+        bodySize: document.getElementById('bodySize').value,
+        h1Size: document.getElementById('h1Size').value,
+        h2Size: document.getElementById('h2Size').value,
+        h3Size: document.getElementById('h3Size').value
+      },
+      hero: {
+        kicker: document.getElementById('heroKicker').value,
+        title: document.getElementById('heroTitle').value,
+        text: document.getElementById('heroText').value,
+        primaryButton: document.getElementById('heroPrimary').value,
+        secondaryButton: document.getElementById('heroSecondary').value
+      },
+      services: currentData.services,
+      portfolio: [
+        { title: document.getElementById('p1Title').value, text: document.getElementById('p1Text').value },
+        { title: document.getElementById('p2Title').value, text: document.getElementById('p2Text').value },
+        { title: document.getElementById('p3Title').value, text: document.getElementById('p3Text').value }
+      ],
+      reviews: currentData.reviews,
+      about: {
+        title: document.getElementById('aboutTitle').value,
+        text1: document.getElementById('aboutText1').value,
+        text2: document.getElementById('aboutText2').value
+      },
+      contact: {
+        title: document.getElementById('contactTitle').value,
+        text: document.getElementById('contactText').value,
+        phone: document.getElementById('contactPhone').value,
+        email: document.getElementById('contactEmail').value,
+        location: document.getElementById('contactLocation').value
+      },
+      footer: currentData.footer
+    };
+  }
+
+  document.getElementById('logoFile').addEventListener('change', async e => { if(e.target.files[0]){ images.logo = await fileToDataURL(e.target.files[0]); setPreview('logoPreview', images.logo);} });
+  document.getElementById('heroFile').addEventListener('change', async e => { if(e.target.files[0]){ images.hero = await fileToDataURL(e.target.files[0]); setPreview('heroPreview', images.hero);} });
+  document.getElementById('p1File').addEventListener('change', async e => { if(e.target.files[0]){ images.p1 = await fileToDataURL(e.target.files[0]); setPreview('p1Preview', images.p1);} });
+  document.getElementById('p2File').addEventListener('change', async e => { if(e.target.files[0]){ images.p2 = await fileToDataURL(e.target.files[0]); setPreview('p2Preview', images.p2);} });
+  document.getElementById('p3File').addEventListener('change', async e => { if(e.target.files[0]){ images.p3 = await fileToDataURL(e.target.files[0]); setPreview('p3Preview', images.p3);} });
+
+  async function addDataUrlFile(zip, path, dataUrl){
+    const base64 = dataUrl.split(',')[1];
+    zip.file(path, base64, {base64:true});
+  }
+
+  async function exportZip(){
+    const zip = new JSZip();
+    const files = ['../index.html','../assets/styles.css','../admin/index.html','../_redirects','../netlify.toml'];
+    for (const path of files){
+      zip.file(path.replace('../',''), await fetchText(path));
+    }
+    zip.file('content/site.json', JSON.stringify(collectData(), null, 2));
+    await addDataUrlFile(zip, 'assets/logo.jpg', images.logo);
+    await addDataUrlFile(zip, 'assets/hero.jpg', images.hero);
+    await addDataUrlFile(zip, 'assets/portfolio-1.jpg', images.p1);
+    await addDataUrlFile(zip, 'assets/portfolio-2.jpg', images.p2);
+    await addDataUrlFile(zip, 'assets/portfolio-3.jpg', images.p3);
+
+    const blob = await zip.generateAsync({type:'blob'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'site-updated-netlify.zip';
+    a.click();
+  }
+
+  document.getElementById('loadBtn').addEventListener('click', loadCurrent);
+  document.getElementById('exportBtn').addEventListener('click', exportZip);
+  document.getElementById('resetBtn').addEventListener('click', () => location.reload());
+  loadCurrent();
+</script>
+</body>
+</html>
