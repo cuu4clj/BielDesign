@@ -310,4 +310,53 @@ select {
   .brand-logo {
     height: 95px;
   }
+  @media (max-width: 900px) {
+  .nav-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 12px 0;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .brand-logo {
+    height: 64px;
+    width: auto;
+    flex-shrink: 0;
+  }
+
+  .brand strong {
+    font-size: 1.1rem;
+    line-height: 1.1;
+  }
+
+  .brand small {
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+
+  .nav {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 16px;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .nav a {
+    font-size: 0.95rem;
+  }
+
+  .btn-gold {
+    padding: 10px 16px;
+  }
+}
 }
