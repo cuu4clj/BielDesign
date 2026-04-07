@@ -375,12 +375,12 @@ select {
 .project-gallery {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 18px;
   margin-top: 30px;
 }
 
 .project-photo {
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 }
 
 .project-photo:last-child {
