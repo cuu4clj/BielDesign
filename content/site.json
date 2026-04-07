@@ -32,20 +32,23 @@
       "text": "Suport în execuție și urmărirea detaliilor."
     }
   ],
-  "portfolio": [
-    {
-      "title": "Apartament premium",
-      "text": "Compoziție calmă, materiale luxoase."
-    },
-    {
-      "title": "Office statement",
-      "text": "Imagine premium și funcționalitate."
-    },
-    {
-      "title": "Restaurant elegant",
-      "text": "Atmosferă memorabilă și brand presence."
-    }
-  ],
+"portfolio": [
+  {
+    "title": "Apartament premium",
+    "text": "Compoziție calmă, materiale luxoase.",
+    "link": "portfolio-1.html"
+  },
+  {
+    "title": "Office statement",
+    "text": "Imagine premium și funcționalitate.",
+    "link": "portfolio-2.html"
+  },
+  {
+    "title": "Restaurant elegant",
+    "text": "Atmosferă memorabilă și brand presence.",
+    "link": "portfolio-3.html"
+  }
+],
   "reviews": [
     {
       "name": "Client 1",
