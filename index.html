@@ -206,7 +206,7 @@
         <article class="card"><h3>${item.title}</h3><p>${item.text}</p></article>
       `).join('');
 document.getElementById('portfolio-grid').innerHTML = data.portfolio.map((item, index) => `
-  <a class="portfolio-card" href="${item.link}">
+  <a class="portfolio-card" href="projects/portfolio-${index+1}.html">
     <img src="assets/portfolio-${index+1}.jpg" alt="${item.title}">
     <div class="portfolio-copy">
       <h3>${item.title}</h3>
