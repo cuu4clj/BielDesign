@@ -393,6 +393,7 @@ select {
   display: block;
   border-radius: 20px;
 }
+/* Add the scroling distance once you access the meniu*/
 html {
   scroll-padding-top: 140px;
 }
