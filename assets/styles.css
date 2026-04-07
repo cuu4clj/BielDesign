@@ -393,3 +393,6 @@ select {
   display: block;
   border-radius: 20px;
 }
+html {
+  scroll-padding-top: 140px;
+}
