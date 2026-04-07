@@ -111,7 +111,7 @@ a {
 }
 
 .btn-ghost {
-  border: 1px solid rgba(212, 175, 55, 0.35);
+  border: 1px solid #6b7075;
   color: var(--text);
 }
 
