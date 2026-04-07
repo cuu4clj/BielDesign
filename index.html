@@ -106,13 +106,27 @@
             <div class="contact-card" id="contact-location"></div>
           </div>
         </div>
-        <form class="contact-form" name="contact" method="POST" data-netlify="true">
-          <input type="hidden" name="form-name" value="contact" />
-          <label>Nume<input type="text" name="name" placeholder="Numele tău" required></label>
-          <label>Email<input type="email" name="email" placeholder="email@exemplu.ro" required></label>
-          <label>Detalii<textarea name="message" rows="5" placeholder="Spune-ne pe scurt ce ai nevoie"></textarea></label>
-          <button type="submit" class="btn btn-gold btn-full">Trimite cererea</button>
-        </form>
+<form class="contact-form" name="contact" method="POST" data-netlify="true">
+  <input type="hidden" name="form-name" value="contact" />
+
+  <label>Nume
+    <input type="text" name="name" placeholder="Numele tău" required>
+  </label>
+
+  <label>Email
+    <input type="email" name="email" placeholder="email@exemplu.ro" required>
+  </label>
+
+  <label>Telefon
+    <input type="tel" name="phone" placeholder="+40 7xx xxx xxx" required>
+  </label>
+
+  <label>Detalii
+    <textarea name="message" rows="5" placeholder="Spune-ne pe scurt ce ai nevoie"></textarea>
+  </label>
+
+  <button type="submit" class="btn btn-gold btn-full">Trimite cererea</button>
+</form>
       </div>
     </section>
   </main>
