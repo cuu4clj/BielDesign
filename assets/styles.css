@@ -311,10 +311,6 @@ select {
     max-width: none;
   }
 
-  .brand-logo {
-    height: 95px;
-  }
-  @media (max-width: 900px) {
   .nav-wrap {
     display: flex;
     flex-direction: column;
@@ -363,6 +359,7 @@ select {
     padding: 10px 16px;
   }
 }
+
 .reviews-grid {
   margin-bottom: 50px;
 }
@@ -370,14 +367,24 @@ select {
 .review-form {
   margin-top: 0 !important;
 }
+
 .reviews-spacer {
   height: 80px;
 }
+
 .project-gallery {
   display: grid;
   grid-template-columns: 1fr;
   gap: 60px;
   margin-top: 30px;
+}
+
+.project-photo {
+  margin-bottom: 60px;
+}
+
+.project-photo:last-child {
+  margin-bottom: 0;
 }
 
 .project-photo img {
