@@ -362,8 +362,9 @@ select {
   .btn-gold {
     padding: 10px 16px;
   }
-}
-
-.review-form {
+  .review-form {
   margin-top: 120px !important;
 }
+}
+
+
