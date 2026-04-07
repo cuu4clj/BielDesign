@@ -396,3 +396,6 @@ select {
 html {
   scroll-padding-top: 140px;
 }
+#contact {
+  scroll-margin-top: 140px;
+}
