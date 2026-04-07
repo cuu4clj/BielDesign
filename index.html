@@ -84,15 +84,41 @@
       </div>
     </section>
 
-    <section class="section alt-section" id="reviews">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Recenzii</p>
-          <h2>Feedback autentic de la clienți.</h2>
-        </div>
-        <div class="reviews-grid" id="reviews-grid"></div>
-      </div>
-    </section>
+<section class="section alt-section" id="reviews">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Recenzii</p>
+      <h2>Feedback autentic de la clienți.</h2>
+    </div>
+
+    <div class="reviews-grid" id="reviews-grid"></div>
+
+    <form class="contact-form" name="review" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="review">
+
+      <label>Nume
+        <input type="text" name="name" placeholder="Numele tău" required>
+      </label>
+
+      <label>Rating
+        <select name="rating" required>
+          <option value="">Alege rating</option>
+          <option value="5">5 stele</option>
+          <option value="4">4 stele</option>
+          <option value="3">3 stele</option>
+          <option value="2">2 stele</option>
+          <option value="1">1 stea</option>
+        </select>
+      </label>
+
+      <label>Recenzie
+        <textarea name="message" rows="5" placeholder="Scrie feedback-ul tău" required></textarea>
+      </label>
+
+      <button type="submit" class="btn btn-gold btn-full">Trimite recenzia</button>
+    </form>
+  </div>
+</section>
 
     <section class="section contact-section" id="contact">
       <div class="container contact-grid">
