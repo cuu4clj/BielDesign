@@ -1,26 +1,52 @@
+/* =========================================================
+   1. THEME / VARIABILE GLOBALE
+   ========================================================= */
 :root {
+  /* Culori principale */
   --bg: #0d0d0d;
   --panel: #151515;
   --text: #f5f1e8;
   --muted: #b7b1a5;
-  --gold: #585d63;
-  --radius: 22px;
+  --accent: #585d63;
 
+  /* Accente speciale */
+  --star-gold: #c9a227;
+
+  /* Borduri și transparențe */
+  --line-soft: rgba(212, 175, 55, 0.14);
+  --line-card: rgba(212, 175, 55, 0.16);
+  --line-input: rgba(212, 175, 55, 0.22);
+
+  /* Forme */
+  --radius: 22px;
+  --radius-sm: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  /* Fonturi */
   --body-font: Inter, Arial, sans-serif;
   --heading-font: "Cormorant Garamond", Georgia, serif;
 
+  /* Dimensiuni text */
   --body-size: 17px;
-  --h1-size: clamp(0.75rem, 1.2vw, 1.1rem);
+  --h1-size: 1.8rem;
   --h2-size: clamp(1.3rem, 2.4vw, 2rem);
   --h3-size: 1.2rem;
+
+  /* Umbre */
+  --shadow-card: 0 18px 60px rgba(0, 0, 0, 0.22);
 }
 
+/* =========================================================
+   2. RESET / BAZĂ
+   ========================================================= */
 * {
   box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 140px;
 }
 
 body {
@@ -48,13 +74,53 @@ a {
   margin: 0 auto;
 }
 
+/* =========================================================
+   3. TIPOGRAFIE
+   ========================================================= */
+h1,
+h2,
+h3 {
+  margin: 0.2em 0 0.45em;
+  line-height: 1.08;
+  font-family: var(--heading-font);
+}
+
+h1 {
+  font-size: var(--h1-size) !important;
+  max-width: 28ch;
+}
+
+h2 {
+  font-size: var(--h2-size);
+}
+
+h3 {
+  font-size: var(--h3-size);
+}
+
+p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.eyebrow {
+  color: #d8d2c7;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+/* =========================================================
+   4. HEADER / NAVIGAȚIE
+   ========================================================= */
 .topbar {
   position: sticky;
   top: 0;
   z-index: 20;
   background: rgba(9, 9, 9, 0.3);
+  border-bottom: 1px solid var(--line-soft);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
 }
 
 .nav-wrap {
@@ -80,8 +146,8 @@ a {
 
 .brand strong {
   display: block;
-  font-family: var(--heading-font);
   font-size: 1.55rem;
+  font-family: var(--heading-font);
 }
 
 .brand small {
@@ -91,28 +157,48 @@ a {
 
 .nav {
   display: flex;
-  gap: 20px;
   align-items: center;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
+/* =========================================================
+   5. BUTOANE
+   ========================================================= */
 .btn {
-  padding: 12px 18px;
-  border-radius: 999px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  padding: 12px 18px;
+  border-radius: var(--radius-pill);
   font-weight: 700;
 }
 
+.btn-accent,
 .btn-gold {
-  background: var(--gold);
+  background: var(--accent);
   color: #121212;
 }
 
 .btn-ghost {
   border: 1px solid #3f4448;
   color: var(--text);
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* =========================================================
+   6. LAYOUT GENERAL
+   ========================================================= */
+.section {
+  padding: 58px 0;
+}
+
+.alt-section {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(2px);
 }
 
 .hero {
@@ -128,47 +214,22 @@ a {
   align-items: center;
 }
 
-.eyebrow {
-  color: #d8d2c7;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-size: 0.82rem;
-  font-weight: 700;
+.cards-grid,
+.portfolio-grid,
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
 }
 
-h1,
-h2,
-h3 {
-  font-family: var(--heading-font);
-  line-height: 1.08;
-  margin: 0.2em 0 0.45em;
+/* Scroll offset pentru contact */
+#contact {
+  scroll-margin-top: 140px;
 }
 
-h1 {
-  font-size: 1.8rem !important;
-  max-width: 28ch;
-}
-
-h2 {
-  font-size: var(--h2-size);
-}
-
-h3 {
-  font-size: var(--h3-size);
-}
-
-p {
-  line-height: 1.7;
-  color: var(--muted);
-}
-
-.hero-actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 24px;
-}
-
+/* =========================================================
+   7. SUPRAFEȚE / CARDURI / PANOURI
+   ========================================================= */
 .hero-image,
 .card,
 .portfolio-card,
@@ -177,10 +238,30 @@ p {
 .contact-form,
 .contact-card {
   background: rgba(12, 12, 12, 0.82);
-  border: 1px solid rgba(212, 175, 55, 0.16);
+  border: 1px solid var(--line-card);
   border-radius: var(--radius);
-  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.22);
+  box-shadow: var(--shadow-card);
   backdrop-filter: blur(6px);
+}
+
+.card,
+.review-card,
+.about-panel {
+  padding: 24px;
+}
+
+.contact-card {
+  padding: 16px 18px;
+}
+
+/* =========================================================
+   8. HERO
+   ========================================================= */
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 24px;
 }
 
 .hero-image {
@@ -194,29 +275,9 @@ p {
   object-fit: cover;
 }
 
-.section {
-  padding: 58px 0;
-}
-
-.alt-section {
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(2px);
-}
-
-.cards-grid,
-.portfolio-grid,
-.reviews-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-
-.card,
-.review-card,
-.about-panel {
-  padding: 24px;
-}
-
+/* =========================================================
+   9. PORTOFOLIU HOME
+   ========================================================= */
 .portfolio-card {
   overflow: hidden;
 }
@@ -231,11 +292,54 @@ p {
   padding: 18px;
 }
 
+/* =========================================================
+   10. PAGINI PROIECT / GALERIE
+   ========================================================= */
+.project-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.project-photo {
+  margin-bottom: 18px;
+}
+
+.project-photo:last-child {
+  margin-bottom: 0;
+}
+
+.project-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-lg);
+}
+
+/* =========================================================
+   11. RECENZII
+   ========================================================= */
+.reviews-grid {
+  margin-bottom: 50px;
+}
+
+.reviews-spacer {
+  height: 80px;
+}
+
+.review-form {
+  margin-top: 0 !important;
+}
+
 .stars {
-  color: #c9a227;
+  color: var(--star-gold);
   margin-bottom: 10px;
 }
 
+/* =========================================================
+   12. CONTACT / FORMULARE
+   ========================================================= */
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -248,14 +352,10 @@ p {
   margin-top: 16px;
 }
 
-.contact-card {
-  padding: 16px 18px;
-}
-
 .contact-form {
-  padding: 22px;
   display: grid;
   gap: 14px;
+  padding: 22px;
 }
 
 .contact-form label {
@@ -267,20 +367,19 @@ input,
 textarea,
 select {
   width: 100%;
+  padding: 14px;
+  border: 1px solid var(--line-input);
+  border-radius: var(--radius-sm);
   background: #0d0d0d;
   color: var(--text);
-  border: 1px solid rgba(212, 175, 55, 0.22);
-  border-radius: 14px;
-  padding: 14px;
 }
 
-.btn-full {
-  width: 100%;
-}
-
+/* =========================================================
+   13. FOOTER
+   ========================================================= */
 .footer {
   padding: 28px 0 44px;
-  border-top: 1px solid rgba(212, 175, 55, 0.14);
+  border-top: 1px solid var(--line-soft);
 }
 
 .footer-wrap {
@@ -297,6 +396,9 @@ select {
   flex-wrap: wrap;
 }
 
+/* =========================================================
+   14. RESPONSIVE / MOBILE
+   ========================================================= */
 @media (max-width: 900px) {
   .hero-grid,
   .about-grid,
@@ -312,7 +414,6 @@ select {
   }
 
   .nav-wrap {
-    display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
@@ -320,10 +421,8 @@ select {
   }
 
   .brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
     width: 100%;
+    gap: 12px;
   }
 
   .brand-logo {
@@ -344,59 +443,16 @@ select {
 
   .nav {
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px 16px;
     justify-content: flex-start;
-    align-items: center;
+    gap: 12px 16px;
   }
 
   .nav a {
     font-size: 0.95rem;
   }
 
+  .btn-accent,
   .btn-gold {
     padding: 10px 16px;
   }
-}
-
-.reviews-grid {
-  margin-bottom: 50px;
-}
-
-.review-form {
-  margin-top: 0 !important;
-}
-
-.reviews-spacer {
-  height: 80px;
-}
-
-.project-gallery {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 18px;
-  margin-top: 30px;
-}
-
-.project-photo {
-  margin-bottom: 18px;
-}
-
-.project-photo:last-child {
-  margin-bottom: 0;
-}
-
-.project-photo img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 20px;
-}
-/* Add the scroling distance once you access the meniu*/
-html {
-  scroll-padding-top: 140px;
-}
-#contact {
-  scroll-margin-top: 140px;
 }
