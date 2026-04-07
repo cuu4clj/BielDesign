@@ -374,17 +374,10 @@ select {
   height: 80px;
 }
 .project-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
   margin-top: 30px;
-}
-
-.project-photo {
-  margin-bottom: 60px;
-  overflow: hidden;
-  border-radius: 20px;
-}
-
-.project-photo:last-child {
-  margin-bottom: 0;
 }
 
 .project-photo img {
