@@ -205,12 +205,15 @@
       document.getElementById('services-grid').innerHTML = data.services.map(item => `
         <article class="card"><h3>${item.title}</h3><p>${item.text}</p></article>
       `).join('');
-      document.getElementById('portfolio-grid').innerHTML = data.portfolio.map((item, index) => `
-        <article class="portfolio-card">
-          <img src="assets/portfolio-${index+1}.jpg" alt="${item.title}">
-          <div class="portfolio-copy"><h3>${item.title}</h3><p>${item.text}</p></div>
-        </article>
-      `).join('');
+document.getElementById('portfolio-grid').innerHTML = data.portfolio.map((item, index) => `
+  <a class="portfolio-card" href="${item.link}">
+    <img src="assets/portfolio-${index+1}.jpg" alt="${item.title}">
+    <div class="portfolio-copy">
+      <h3>${item.title}</h3>
+      <p>${item.text}</p>
+    </div>
+  </a>
+`).join('');
       document.getElementById('reviews-grid').innerHTML = data.reviews.map(item => `
         <article class="review-card"><div class="stars">${item.stars}</div><p>${item.text}</p><strong>${item.name}</strong></article>
       `).join('');
