@@ -363,8 +363,11 @@ select {
     padding: 10px 16px;
   }
 }
-  .review-form {
-  margin-top: 120px !important;
+.reviews-grid {
+  margin-bottom: 50px;
 }
 
+.review-form {
+  margin-top: 0 !important;
+}
 
