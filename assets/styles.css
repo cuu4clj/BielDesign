@@ -370,4 +370,7 @@ select {
 .review-form {
   margin-top: 0 !important;
 }
+.reviews-spacer {
+  height: 80px;
+}
 
