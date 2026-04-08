@@ -479,3 +479,6 @@ select {
   transform: scale(1.08) !important;
   filter: brightness(1.06) !important;
 }
+body {
+  outline: 8px solid red !important;
+}
