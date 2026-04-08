@@ -454,8 +454,8 @@ select {
     padding: 10px 16px;
   }
 /* =========================================================
-15. Social Media
-========================================================= */ 
+   15. Social Media
+   ========================================================= */
 .footer-socials {
   display: flex;
   gap: 14px;
@@ -464,33 +464,32 @@ select {
 }
 
 .social-icon {
-  width: 46px;
-  height: 46px;
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: rgba(20, 20, 20, 0.8);
+  background: rgba(20, 20, 20, 0.9);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  color: #eae6dc;
   transition: all 0.3s ease;
 }
 
+.social-icon:nth-child(1) {
+  color: #E1306C;
+}
+
+.social-icon:nth-child(2) {
+  color: #25D366;
+}
+
 .social-icon svg {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
 }
 
 .social-icon:hover {
   transform: translateY(-4px) scale(1.05);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-}
-
-.social-icon:nth-child(1):hover {
-  color: #E1306C;
-}
-
-.social-icon:nth-child(2):hover {
-  color: #25D366;
 }
 }
