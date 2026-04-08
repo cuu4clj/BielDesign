@@ -51,9 +51,7 @@ html {
 
 body {
   margin: 0;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.82)),
-    url("assets/bg.jpg") center center / cover no-repeat fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.82));
   color: var(--text);
   font-family: var(--body-font);
   font-size: var(--body-size);
