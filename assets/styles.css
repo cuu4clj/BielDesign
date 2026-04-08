@@ -464,38 +464,22 @@ select {
 }
 
 .social-icon {
-  width: 56px;
-  height: 56px;
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   background: rgba(20, 20, 20, 0.9);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.3s ease;
+  overflow: hidden;
   flex-shrink: 0;
 }
 
 .social-icon img {
-  width: 26px;
-  height: 26px;
-  display: block;
+  width: 24px;
+  height: 24px;
   object-fit: contain;
+  display: block;
 }
-
-.social-icon:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-}
-
-@media (max-width: 900px) {
-  .social-icon {
-    width: 48px;
-    height: 48px;
-  }
-
-  .social-icon img {
-    width: 22px;
-    height: 22px;
-  }
 }
