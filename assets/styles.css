@@ -277,6 +277,7 @@ p {
    9. PORTOFOLIU HOME
    ========================================================= */
 .portfolio-card {
+  display: block;
   overflow: hidden;
 }
 
@@ -453,32 +454,27 @@ select {
   .btn-gold {
     padding: 10px 16px;
   }
+}
+
 /* =========================================================
-   15. Hover
+   15. HOVER PORTOFOLIU
    ========================================================= */
 .portfolio-card {
-  display: block !important;
-  overflow: hidden !important;
-  cursor: pointer !important;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .portfolio-card img {
-  display: block !important;
-  width: 100% !important;
-  transition: transform 0.25s ease, filter 0.25s ease !important;
+  transition: transform 0.25s ease, filter 0.25s ease;
 }
 
 .portfolio-card:hover {
-  transform: translateY(-10px) !important;
-  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.45) !important;
-  border-color: #8a8f96 !important;
+  transform: translateY(-10px);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.45);
+  border-color: #8a8f96;
 }
 
 .portfolio-card:hover img {
-  transform: scale(1.08) !important;
-  filter: brightness(1.06) !important;
-}
-body {
-  outline: 8px solid red !important;
+  transform: scale(1.08);
+  filter: brightness(1.06);
 }
