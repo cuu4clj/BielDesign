@@ -495,7 +495,6 @@ select {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* desktop */
 @media (min-width: 901px) {
   .footer-socials {
     min-width: 180px;
@@ -511,5 +510,4 @@ select {
     width: 28px;
     height: 28px;
   }
-}
 }
