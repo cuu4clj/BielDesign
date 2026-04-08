@@ -469,12 +469,11 @@ select {
 }
 
 .portfolio-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.45);
-  border-color: #8a8f96;
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
 }
 
 .portfolio-card:hover img {
-  transform: scale(1.08);
-  filter: brightness(1.06);
+  transform: scale(1.04);
+  filter: brightness(1.03);
 }
