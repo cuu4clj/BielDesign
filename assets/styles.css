@@ -457,22 +457,25 @@ select {
    15. Hover
    ========================================================= */
 .portfolio-card {
-  display: block;
-  overflow: hidden;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  will-change: transform;
+  display: block !important;
+  overflow: hidden !important;
+  cursor: pointer !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
 }
 
 .portfolio-card img {
-  transition: transform 0.45s ease;
-  will-change: transform;
+  display: block !important;
+  width: 100% !important;
+  transition: transform 0.25s ease, filter 0.25s ease !important;
 }
 
 .portfolio-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  transform: translateY(-10px) !important;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.45) !important;
+  border-color: #8a8f96 !important;
 }
 
 .portfolio-card:hover img {
-  transform: scale(1.06);
+  transform: scale(1.08) !important;
+  filter: brightness(1.06) !important;
 }
