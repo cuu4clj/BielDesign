@@ -454,44 +454,7 @@ select {
     padding: 10px 16px;
   }
 /* =========================================================
-   15. Social Media
-   ========================================================= */
-.footer-socials {
-  display: flex;
-  gap: 14px;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.social-icon {
-  width: 48px !important;
-  height: 48px !important;
-  min-width: 48px !important;
-  min-height: 48px !important;
-  max-width: 48px !important;
-  max-height: 48px !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  overflow: hidden !important;
-  border-radius: 50% !important;
-  background: rgba(20, 20, 20, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  flex-shrink: 0 !important;
-}
-
-.social-img {
-  width: 24px !important;
-  height: 24px !important;
-  max-width: 24px !important;
-  max-height: 24px !important;
-  min-width: 24px !important;
-  min-height: 24px !important;
-  object-fit: contain !important;
-  display: block !important;
-}
-/* =========================================================
-   17. Hover
+   15. Hover
    ========================================================= */
 .portfolio-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
