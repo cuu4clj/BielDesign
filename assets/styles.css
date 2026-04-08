@@ -473,6 +473,7 @@ select {
   background: rgba(20, 20, 20, 0.9);
   border: 1px solid rgba(255, 255, 255, 0.08);
   transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
 .social-icon:nth-child(1) {
@@ -486,10 +487,29 @@ select {
 .social-icon svg {
   width: 24px;
   height: 24px;
+  display: block;
 }
 
 .social-icon:hover {
   transform: translateY(-4px) scale(1.05);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* desktop */
+@media (min-width: 901px) {
+  .footer-socials {
+    min-width: 180px;
+    justify-content: flex-end;
+  }
+
+  .social-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .social-icon svg {
+    width: 28px;
+    height: 28px;
+  }
 }
 }
