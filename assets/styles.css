@@ -479,3 +479,6 @@ select {
   transform: scale(1.08) !important;
   filter: brightness(1.06) !important;
 }
+.portfolio-card:hover {
+  background: rgba(255,255,255,0.06) !important;
+}
