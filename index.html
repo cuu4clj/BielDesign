@@ -246,8 +246,12 @@
       document.getElementById('contact-location').textContent = data.contact.location;
 
       document.getElementById('services-grid').innerHTML = data.services.map(item => `
-        <article class="card"><h3>${item.title}</h3><p>${item.text}</p></article>
-      `).join('');
+  <article class="card service-card">
+    <div class="service-icon">✦</div>
+    <h3>${item.title}</h3>
+    <p>${item.text}</p>
+  </article>
+`).join('');
 document.getElementById('portfolio-grid').innerHTML = data.portfolio.map((item, index) => `
   <a class="portfolio-card" href="projects/portfolio-${index+1}.html">
     <img src="assets/portfolio-${index+1}.jpg" alt="${item.title}">
