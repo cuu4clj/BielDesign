@@ -18,20 +18,32 @@
     "primaryButton": "Programează o discuție",
     "secondaryButton": "Vezi proiecte"
   },
-  "services": [
-    {
-      "title": "Concept & Moodboard",
-      "text": "Direcție vizuală clară, materiale și atmosferă."
-    },
-    {
-      "title": "Design complet",
-      "text": "Planificare, mobilier, lumină și finisaje."
-    },
-    {
-      "title": "Implementare",
-      "text": "Suport în execuție și urmărirea detaliilor."
-    }
-  ],
+ "services": [
+  {
+    "title": "Concept & Moodboard",
+    "text": "Definim direcția estetică prin palete cromatice, materiale, texturi și scenarii de atmosferă adaptate spațiului tău."
+  },
+  {
+    "title": "Design Complet",
+    "text": "Propuneri de layout, randări 3D, selecții de finisaje și mobilier, plus documentație coerentă pentru implementare."
+  },
+  {
+    "title": "Fit-Out Premium",
+    "text": "Coordonare vizuală și consultanță pentru execuție astfel încât rezultatul final să rămână fidel conceptului aprobat."
+  },
+  {
+    "title": "Spații Comerciale",
+    "text": "Construim locații care vând prin atmosferă: showroom-uri, birouri premium, restaurante și spații hospitality."
+  },
+  {
+    "title": "Restilizare de Lux",
+    "text": "Upgradăm spații existente fără a reconstrui totul, prin intervenții inteligente cu impact vizual major."
+  },
+  {
+    "title": "Achiziții & Styling",
+    "text": "Te ajutăm să alegi piese, corpuri de iluminat și obiecte decorative care susțin coerența finală."
+  }
+],
 "portfolio": [
   {
     "title": "Apartament premium",
