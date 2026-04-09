@@ -537,3 +537,12 @@ select {
 .nav a:hover {
   opacity: 0.75;
 }
+/* =========================================================
+   21. Social Media
+  ========================================================= */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 100;
+}
