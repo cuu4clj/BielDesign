@@ -47,16 +47,19 @@
 "portfolio": [
   {
     "title": "Restaurant Germania",
+    "meta": "Hospitality · București",
     "text": "Rafinament Atemporal și Detalii Statement.",
     "link": "portfolio-1.html"
   },
   {
     "title": "Apart-Hotel Germania",
+    "meta": "Hospitality · București",
     "text": "Echilibru Contemporan cu Accente Rafinate.",
     "link": "portfolio-2.html"
   },
   {
     "title": "Restaurant elegant",
+    "meta": "Hospitality · București",
     "text": "Atmosferă memorabilă și brand presence.",
     "link": "portfolio-3.html"
   }
