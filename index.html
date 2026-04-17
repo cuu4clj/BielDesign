@@ -249,6 +249,7 @@
       document.getElementById('services-grid').innerHTML = data.services.map(item => `
   <article class="card service-card">
     <h3>${item.title}</h3>
+    <p class="portfolio-meta">${item.meta}</p>
     <p>${item.text}</p>
   </article>
 `).join('');
