@@ -258,6 +258,7 @@ document.getElementById('portfolio-grid').innerHTML = data.portfolio.map((item, 
     <img src="assets/portfolio-${index+1}.jpg" alt="${item.title}">
     <div class="portfolio-copy">
       <h3>${item.title}</h3>
+      <p class="portfolio-meta">${item.meta}</p>
       <p>${item.text}</p>
     </div>
   </a>
