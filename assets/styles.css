@@ -484,6 +484,12 @@ select {
   transform: scale(1.08);
   filter: brightness(1.06);
 }
+.portfolio-meta {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 6px;
+  letter-spacing: 0.3px;
+}
 
 /* =========================================================
    16. HOVER BUTOANE
