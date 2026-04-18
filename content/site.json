@@ -64,16 +64,22 @@
     "link": "portfolio-3.html"
   },
   {
-    "title": "Apartament",
+    "title": "Urban Apartment",
     "meta": "Residential · Cluj-Napoca",
     "text": "Armonie Contemporană și Accente Premium.",
     "link": "portfolio-4.html"
   },
   {
-    "title": "Casa",
+    "title": "Contemporary House",
     "meta": "Residential · Cluj-Napoca",
     "text": "Eleganță Sculpturală și Accente Premium.",
     "link": "portfolio-5.html"
+  },
+  {
+    "title": "Casa",
+    "meta": "Residential · Cluj-Napoca",
+    "text": "Eleganță Sculpturală și Accente Premium.",
+    "link": "portfolio-6.html"
   }
 ],
   "reviews": [
