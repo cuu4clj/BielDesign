@@ -71,6 +71,12 @@ body {
   color: var(--text);
   font-family: var(--body-font);
   font-size: var(--body-size);
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+body.page-loaded {
+  opacity: 1;
 }
 
 img {
@@ -275,7 +281,6 @@ p {
   padding: 16px 18px;
 }
 
-/* text deschis pe suprafețe închise */
 .card h3,
 .card p,
 .portfolio-card h3,
@@ -651,8 +656,8 @@ textarea::placeholder {
 }
 
 /* =========================================================
-   23. Reveal
-  ========================================================= */
+   23. REVEAL
+   ========================================================= */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -663,14 +668,17 @@ textarea::placeholder {
   opacity: 1;
   transform: translateY(0);
 }
-/* =========================================================
-   23. Fade in pagini
- ========================================================= */
-body {
-  opacity: 0;
-  transition: opacity 0.45s ease;
-}
 
-body.page-loaded {
-  opacity: 1;
+/* =========================================================
+   24. SCROLL PROGRESS BAR
+   ========================================================= */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: var(--accent);
+  z-index: 9999;
+  transition: width 0.1s linear;
 }
