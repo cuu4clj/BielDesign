@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restaurant elegant — BielDesign</title>
+  <title>BielDesign — Portfolio</title>
   <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body>
@@ -11,64 +11,156 @@
 <header class="topbar">
   <div class="container nav-wrap">
     <a class="brand" href="../index.html">
-      <img class="brand-logo" src="../assets/logo.jpg">
+      <img class="brand-logo" src="../assets/logo.jpg" alt="Logo">
       <span>
-        <strong>BielDesign</strong>
-        <small>Interior Design & Premium Fit-Out</small>
+        <strong id="brand-name">BielDesign</strong>
+        <small id="brand-tagline">Interior Design & Premium Fit-Out</small>
       </span>
     </a>
+
+    <nav class="nav">
+      <a href="../index.html?lang=ro#portfolio" id="back-link" class="btn btn-gold">Back</a>
+      <button type="button" class="btn btn-ghost" id="lang-toggle">EN</button>
+    </nav>
   </div>
 </header>
 
 <section class="section">
   <div class="container">
-    <p class="eyebrow">Portofoliu</p>
-    <h2>Contemporary House</h2>
-    <p>Eleganță Sculpturală și Accente Premium</p>
-    <p>
-    Amenajarea propune un interior rafinat, în care materialele cu personalitate, cromatica caldă și detaliile atent evidențiate construiesc o atmosferă luminoasă și sofisticată. Suprafețele decorative devin puncte de interes vizual, iar echilibrul dintre texturi, proporții și lumină conturează un spațiu contemporan, definit prin coerență și expresivitate.
-    </p>
-    <p>
-    Mobilierul cu forme rotunjite, volume echilibrate și prezență discretă completează armonios întregul concept. Relația dintre piesele de decor, accentele metalice și elementele iluminate adaugă profunzime și ritm amenajării, fără a încărca vizual spațiul. Întregul ansamblu este gândit pentru a susține o estetică elegantă, în care confortul și detaliul decorativ coexistă firesc.
-    </p>
-    <p>
-    Spațiul transmite căldură, claritate vizuală și o atmosferă premium, definită prin rafinament, luminozitate și echilibru contemporan.
+    <p class="eyebrow" id="portfolio-label">Portofoliu</p>
+
+    <h2 id="project-title">Contemporary House</h2>
+    <p><strong id="project-subtitle">Eleganță Sculpturală și Accente Premium</strong></p>
+
+    <p id="project-text1">
+      Amenajarea propune un interior rafinat, în care materialele cu personalitate, cromatica caldă și detaliile atent evidențiate construiesc o atmosferă luminoasă și sofisticată. Suprafețele decorative devin puncte de interes vizual, iar echilibrul dintre texturi, proporții și lumină conturează un spațiu contemporan, definit prin coerență și expresivitate.
     </p>
 
-<div class="project-gallery">
-  <div class="project-photo">
-    <img src="../assets/project_pictures/project-5-1.jpg">
-  </div>
-  <div class="project-photo">
-    <img src="../assets/project_pictures/project-5-2.jpg">
-  </div>
-  <div class="project-photo">
-    <img src="../assets/project_pictures/project-5-3.jpg">
-  </div>
-  <div class="project-photo">
-    <img src="../assets/project_pictures/project-5-4.jpg">
-  </div>
-  <div class="project-photo">
-    <img src="../assets/project_pictures/project-5-5.jpg">
-  </div>
-  <div class="project-photo">
-    <img src="../assets/project_pictures/project-5-6.jpg">
-  </div>
-  <div class="project-photo">
-    <img src="../assets/project_pictures/project-5-7.jpg">
-  </div>
-  <div class="project-photo">
-    <img src="../assets/project_pictures/project-5-8.jpg">
-  </div>
-</div>
+    <p id="project-text2">
+      Mobilierul cu forme rotunjite, volume echilibrate și prezență discretă completează armonios întregul concept. Relația dintre piesele de decor, accentele metalice și elementele iluminate adaugă profunzime și ritm amenajării, fără a încărca vizual spațiul. Întregul ansamblu este gândit pentru a susține o estetică elegantă, în care confortul și detaliul decorativ coexistă firesc.
+    </p>
+
+    <p id="project-text3">
+      Spațiul transmite căldură, claritate vizuală și o atmosferă premium, definită prin rafinament, luminozitate și echilibru contemporan.
+    </p>
+
+    <div class="project-gallery">
+      <div class="project-photo">
+        <img src="../assets/project_pictures/project-5-1.jpg" alt="Project image 1">
+      </div>
+      <div class="project-photo">
+        <img src="../assets/project_pictures/project-5-2.jpg" alt="Project image 2">
+      </div>
+      <div class="project-photo">
+        <img src="../assets/project_pictures/project-5-3.jpg" alt="Project image 3">
+      </div>
+      <div class="project-photo">
+        <img src="../assets/project_pictures/project-5-4.jpg" alt="Project image 4">
+      </div>
+      <div class="project-photo">
+        <img src="../assets/project_pictures/project-5-5.jpg" alt="Project image 5">
+      </div>
+      <div class="project-photo">
+        <img src="../assets/project_pictures/project-5-6.jpg" alt="Project image 6">
+      </div>
+      <div class="project-photo">
+        <img src="../assets/project_pictures/project-5-7.jpg" alt="Project image 7">
+      </div>
+      <div class="project-photo">
+        <img src="../assets/project_pictures/project-5-8.jpg" alt="Project image 8">
+      </div>
+    </div>
 
     <div style="margin-top:40px;">
-      <a href="../index.html#portfolio" class="btn btn-gold">Back</a>
+      <a href="../index.html#portfolio" class="btn btn-gold" id="back-button">Back</a>
     </div>
   </div>
 </section>
+
 <script>
+  const projectData = {
+    brand: {
+      name: "BielDesign",
+      tagline: {
+        ro: "Interior Design & Premium Fit-Out",
+        en: "Interior Design & Premium Fit-Out"
+      }
+    },
+    ui: {
+      portfolio: {
+        ro: "Portofoliu",
+        en: "Portfolio"
+      },
+      back: {
+        ro: "Înapoi",
+        en: "Back"
+      }
+    },
+    project: {
+      title: {
+        ro: "Contemporary House",
+        en: "Contemporary House"
+      },
+      subtitle: {
+        ro: "Eleganță Sculpturală și Accente Premium",
+        en: "Sculptural Elegance and Premium Accents"
+      },
+      text1: {
+        ro: "Amenajarea propune un interior rafinat, în care materialele cu personalitate, cromatica caldă și detaliile atent evidențiate construiesc o atmosferă luminoasă și sofisticată. Suprafețele decorative devin puncte de interes vizual, iar echilibrul dintre texturi, proporții și lumină conturează un spațiu contemporan, definit prin coerență și expresivitate.",
+        en: "The design proposes a refined interior, where materials with character, a warm palette, and carefully highlighted details build a luminous and sophisticated atmosphere. Decorative surfaces become focal points of visual interest, while the balance between textures, proportions, and light shapes a contemporary space defined by coherence and expressiveness."
+      },
+      text2: {
+        ro: "Mobilierul cu forme rotunjite, volume echilibrate și prezență discretă completează armonios întregul concept. Relația dintre piesele de decor, accentele metalice și elementele iluminate adaugă profunzime și ritm amenajării, fără a încărca vizual spațiul. Întregul ansamblu este gândit pentru a susține o estetică elegantă, în care confortul și detaliul decorativ coexistă firesc.",
+        en: "Furniture with rounded forms, balanced volumes, and a discreet presence harmoniously completes the entire concept. The relationship between decorative pieces, metallic accents, and illuminated elements adds depth and rhythm to the design without visually overwhelming the space. The whole composition is conceived to support an elegant aesthetic in which comfort and decorative detail coexist naturally."
+      },
+      text3: {
+        ro: "Spațiul transmite căldură, claritate vizuală și o atmosferă premium, definită prin rafinament, luminozitate și echilibru contemporan.",
+        en: "The space conveys warmth, visual clarity, and a premium atmosphere defined by refinement, luminosity, and contemporary balance."
+      }
+    }
+  };
+
+  let currentLang = new URLSearchParams(window.location.search).get('lang') || localStorage.getItem('siteLang') || 'ro';
+
+  function t(value) {
+    return value[currentLang] || '';
+  }
+
+  function applyLanguage() {
+    document.documentElement.lang = currentLang;
+
+    document.getElementById('brand-name').textContent = projectData.brand.name;
+    document.getElementById('brand-tagline').textContent = t(projectData.brand.tagline);
+
+    document.getElementById('portfolio-label').textContent = t(projectData.ui.portfolio);
+    document.getElementById('project-title').textContent = t(projectData.project.title);
+    document.getElementById('project-subtitle').textContent = t(projectData.project.subtitle);
+    document.getElementById('project-text1').textContent = t(projectData.project.text1);
+    document.getElementById('project-text2').textContent = t(projectData.project.text2);
+    document.getElementById('project-text3').textContent = t(projectData.project.text3);
+
+    document.getElementById('back-button').textContent = t(projectData.ui.back);
+    document.getElementById('back-button').href = `../index.html?lang=${currentLang}#portfolio`;
+
+    document.getElementById('back-link').textContent = t(projectData.ui.back);
+    document.getElementById('back-link').href = `../index.html?lang=${currentLang}#portfolio`;
+
+    document.getElementById('lang-toggle').textContent = currentLang === 'ro' ? 'EN' : 'RO';
+
+    document.title = currentLang === 'ro'
+      ? 'Contemporary House — BielDesign'
+      : 'Contemporary House — BielDesign';
+  }
+
+  document.getElementById('lang-toggle').addEventListener('click', () => {
+    currentLang = currentLang === 'ro' ? 'en' : 'ro';
+    localStorage.setItem('siteLang', currentLang);
+    applyLanguage();
+  });
+
+  applyLanguage();
   document.body.classList.add('page-loaded');
 </script>
+
 </body>
 </html>
