@@ -581,3 +581,24 @@ select {
 .service-card p {
   margin: 0;
 }
+
+.about-photo-panel {
+  padding: 22px;
+}
+/* =========================================================
+   22. About Photo
+  ========================================================= */
+.about-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-lg);
+  margin-bottom: 18px;
+}
+
+.about-quote {
+  margin: 0;
+  color: var(--text);
+  font-style: italic;
+  line-height: 1.7;
+}
