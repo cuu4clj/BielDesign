@@ -221,66 +221,88 @@
   </div>
 </footer>
 
-  <script>
-    async function loadSite(){
-      const data = await fetch('content/site.json').then(r=>r.json());
-      document.documentElement.style.setProperty('--body-font', data.theme.bodyFont);
-      document.documentElement.style.setProperty('--heading-font', data.theme.headingFont);
-      document.documentElement.style.setProperty('--body-size', data.theme.bodySize);
-      document.documentElement.style.setProperty('--h1-size', data.theme.h1Size);
-      document.documentElement.style.setProperty('--h2-size', data.theme.h2Size);
-      document.documentElement.style.setProperty('--h3-size', data.theme.h3Size);
+<script>
+  async function loadSite() {
+    const data = await fetch('content/site.json').then(r => r.json());
 
-      document.getElementById('brand-name').textContent = data.brand.name;
-      document.getElementById('brand-tagline').textContent = data.brand.tagline;
-      document.getElementById('footer-brand').textContent = data.brand.name;
-      document.getElementById('footer-text').textContent = data.footer.text;
+    document.documentElement.style.setProperty('--body-font', data.theme.bodyFont);
+    document.documentElement.style.setProperty('--heading-font', data.theme.headingFont);
+    document.documentElement.style.setProperty('--body-size', data.theme.bodySize);
+    document.documentElement.style.setProperty('--h1-size', data.theme.h1Size);
+    document.documentElement.style.setProperty('--h2-size', data.theme.h2Size);
+    document.documentElement.style.setProperty('--h3-size', data.theme.h3Size);
 
-      document.getElementById('hero-kicker').textContent = data.hero.kicker;
-      document.getElementById('hero-title').textContent = data.hero.title;
-      document.getElementById('hero-text').textContent = data.hero.text;
-      document.getElementById('hero-primary').textContent = data.hero.primaryButton;
-      document.getElementById('hero-secondary').textContent = data.hero.secondaryButton;
+    document.getElementById('brand-name').textContent = data.brand.name;
+    document.getElementById('brand-tagline').textContent = data.brand.tagline;
+    document.getElementById('footer-brand').textContent = data.brand.name;
+    document.getElementById('footer-text').textContent = data.footer.text;
 
-      document.getElementById('about-title').textContent = data.about.title;
-      document.getElementById('about-text1').textContent = data.about.text1 || '';
-      document.getElementById('about-text2').textContent = data.about.text2 || '';
-      document.getElementById('about-text3').textContent = data.about.text3 || '';
-      document.getElementById('about-text4').textContent = data.about.text4 || '';
-      document.getElementById('about-text5').textContent = data.about.text5 || '';
-      document.getElementById('about-text6').textContent = data.about.text6 || '';
-      document.getElementById('about-text7').textContent = data.about.text7 || '';
-      document.getElementById('about-text7').textContent = data.about.text8 || '';
+    document.getElementById('hero-kicker').textContent = data.hero.kicker;
+    document.getElementById('hero-title').textContent = data.hero.title;
+    document.getElementById('hero-text').textContent = data.hero.text;
+    document.getElementById('hero-primary').textContent = data.hero.primaryButton;
+    document.getElementById('hero-secondary').textContent = data.hero.secondaryButton;
 
-      document.getElementById('contact-title').textContent = data.contact.title;
-      document.getElementById('contact-text').textContent = data.contact.text;
-      document.getElementById('contact-phone').textContent = data.contact.phone;
-      document.getElementById('contact-email').textContent = data.contact.email;
-      document.getElementById('contact-location').textContent = data.contact.location;
+    document.getElementById('about-title').textContent = data.about.title;
+    document.getElementById('about-text1').textContent = data.about.text1 || '';
+    document.getElementById('about-text2').textContent = data.about.text2 || '';
+    document.getElementById('about-text3').textContent = data.about.text3 || '';
+    document.getElementById('about-text4').textContent = data.about.text4 || '';
+    document.getElementById('about-text5').textContent = data.about.text5 || '';
+    document.getElementById('about-text6').textContent = data.about.text6 || '';
+    document.getElementById('about-text7').textContent = data.about.text7 || '';
 
-      document.getElementById('services-grid').innerHTML = data.services.map(item => `
-  <article class="card service-card">
-    <h3>${item.title}</h3>
-    <p>${item.text}</p>
-    <h3>${item.title2}</h3>
-    <p>${item.text2}</p>
-  </article>
-`).join('');
-document.getElementById('portfolio-grid').innerHTML = data.portfolio.map((item, index) => `
-  <a class="portfolio-card" href="projects/portfolio-${index+1}.html">
-    <img src="assets/portfolio-${index+1}.jpg" alt="${item.title}">
-    <div class="portfolio-copy">
-      <h3>${item.title}</h3>
-      <p class="portfolio-meta">${item.meta}</p>
-      <p>${item.text}</p>
-    </div>
-  </a>
-`).join('');
-      document.getElementById('reviews-grid').innerHTML = data.reviews.map(item => `
-        <article class="review-card"><div class="stars">${item.stars}</div><p>${item.text}</p><strong>${item.name}</strong></article>
-      `).join('');
-    }
-    loadSite();
-  </script>
+    document.getElementById('contact-title').textContent = data.contact.title;
+    document.getElementById('contact-text').textContent = data.contact.text;
+    document.getElementById('contact-phone').textContent = data.contact.phone;
+    document.getElementById('contact-email').textContent = data.contact.email;
+    document.getElementById('contact-location').textContent = data.contact.location;
+
+    document.getElementById('services-grid').innerHTML = data.services.map(item => `
+      <article class="card service-card reveal">
+        <h3>${item.title}</h3>
+        <p>${item.text}</p>
+        <h3>${item.title2}</h3>
+        <p>${item.text2}</p>
+      </article>
+    `).join('');
+
+    document.getElementById('portfolio-grid').innerHTML = data.portfolio.map((item, index) => `
+      <a class="portfolio-card reveal" href="projects/portfolio-${index + 1}.html">
+        <img src="assets/portfolio-${index + 1}.jpg" alt="${item.title}">
+        <div class="portfolio-copy">
+          <h3>${item.title}</h3>
+          <p class="portfolio-meta">${item.meta}</p>
+          <p>${item.text}</p>
+        </div>
+      </a>
+    `).join('');
+
+    document.getElementById('reviews-grid').innerHTML = data.reviews.map(item => `
+      <article class="review-card reveal">
+        <div class="stars">${item.stars}</div>
+        <p>${item.text}</p>
+        <strong>${item.name}</strong>
+      </article>
+    `).join('');
+  }
+
+  function revealOnScroll() {
+    const reveals = document.querySelectorAll('.reveal');
+    const windowHeight = window.innerHeight;
+
+    reveals.forEach(el => {
+      const elementTop = el.getBoundingClientRect().top;
+      if (elementTop < windowHeight - 80) {
+        el.classList.add('active');
+      }
+    });
+  }
+
+  loadSite().then(() => {
+    revealOnScroll();
+    window.addEventListener('scroll', revealOnScroll);
+  });
+</script>
 </body>
 </html>
