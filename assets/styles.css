@@ -98,6 +98,7 @@ h3 {
   line-height: 1.08;
   font-family: var(--heading-font);
   color: var(--text);
+  text-transform: uppercase;
 }
 
 h1 {
