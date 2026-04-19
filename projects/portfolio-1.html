@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Apartament premium — BielDesign</title>
+  <title>BielDesign — Portfolio</title>
   <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body>
@@ -11,64 +11,156 @@
 <header class="topbar">
   <div class="container nav-wrap">
     <a class="brand" href="../index.html">
-      <img class="brand-logo" src="../assets/logo.jpg">
+      <img class="brand-logo" src="../assets/logo.jpg" alt="Logo">
       <span>
-        <strong>BielDesign</strong>
-        <small>Interior Design & Premium Fit-Out</small>
+        <strong id="brand-name">BielDesign</strong>
+        <small id="brand-tagline">Interior Design & Premium Fit-Out</small>
       </span>
     </a>
+
+    <nav class="nav">
+      <a href="../index.html?lang=ro#portfolio" id="back-link" class="btn btn-gold">Back</a>
+      <button type="button" class="btn btn-ghost" id="lang-toggle">EN</button>
+    </nav>
   </div>
 </header>
 
 <section class="section">
   <div class="container">
-    <p class="eyebrow">Portofoliu</p>
-   <h1>Restaurant Germania</h1>
-   <p><strong>Rafinament Atemporal și Detalii Statement</strong></p>
-   <p>
-  Amenajarea propune o interpretare elegantă a luxului modern, unde fiecare element contribuie la o compoziție coerentă și expresivă. Finisajele atent selecționate, volumele echilibrate și detaliile decorative cu personalitate creează un ambient sofisticat, luminos și perfect armonizat.
-   </p>
-   <p>
-  Mobilierul și elementele de decor sunt gândite ca piese statement, capabile să ofere ritm, dinamism și personalitate întregii amenajări. Liniile echilibrate, formele atent controlate și raportul dintre funcționalitate și expresivitate transformă spațiul într-o experiență vizuală completă, în care frumusețea fiecărui detaliu este pusă în valoare de ansamblu. Iluminatul decorativ completează această compoziție printr-o prezență sculpturală, accentuând zonele-cheie și adăugând profunzime întregului concept.
-  </p>
-  <p>
-  Spațiul transmite o eleganță atemporală, o identitate distinctă și o atmosferă premium, concepută pentru a inspira exclusivitate, bun gust și rafinament autentic.
-  </p>
+    <p class="eyebrow" id="portfolio-label">Portofoliu</p>
 
-<div class="project-gallery">
-  <div class="project-photo">
-    <img src="../assets/project_pictures/project-1-1.jpg">
-  </div>
-  <div class="project-photo">
-    <img src="../assets/project_pictures/project-1-2.jpg">
-  </div>
-  <div class="project-photo">
-    <img src="../assets/project_pictures/project-1-3.jpg">
-  </div>
-  <div class="project-photo">
-    <img src="../assets/project_pictures/project-1-4.jpg">
-  </div>
-  <div class="project-photo">
-    <img src="../assets/project_pictures/project-1-5.jpg">
-  </div>
-  <div class="project-photo">
-    <img src="../assets/project_pictures/project-1-6.jpg">
-  </div>
-  <div class="project-photo">
-    <img src="../assets/project_pictures/project-1-7.jpg">
-  </div>
-  <div class="project-photo">
-    <img src="../assets/project_pictures/project-1-8.jpg">
-  </div>
-</div>
+    <h1 id="project-title">Restaurant Germania</h1>
+    <p><strong id="project-subtitle">Rafinament Atemporal și Detalii Statement</strong></p>
+
+    <p id="project-text1">
+      Amenajarea propune o interpretare elegantă a luxului modern, unde fiecare element contribuie la o compoziție coerentă și expresivă. Finisajele atent selecționate, volumele echilibrate și detaliile decorative cu personalitate creează un ambient sofisticat, luminos și perfect armonizat.
+    </p>
+
+    <p id="project-text2">
+      Mobilierul și elementele de decor sunt gândite ca piese statement, capabile să ofere ritm, dinamism și personalitate întregii amenajări. Liniile echilibrate, formele atent controlate și raportul dintre funcționalitate și expresivitate transformă spațiul într-o experiență vizuală completă, în care frumusețea fiecărui detaliu este pusă în valoare de ansamblu. Iluminatul decorativ completează această compoziție printr-o prezență sculpturală, accentuând zonele-cheie și adăugând profunzime întregului concept.
+    </p>
+
+    <p id="project-text3">
+      Spațiul transmite o eleganță atemporală, o identitate distinctă și o atmosferă premium, concepută pentru a inspira exclusivitate, bun gust și rafinament autentic.
+    </p>
+
+    <div class="project-gallery">
+      <div class="project-photo">
+        <img src="../assets/project_pictures/project-1-1.jpg" alt="Project image 1">
+      </div>
+      <div class="project-photo">
+        <img src="../assets/project_pictures/project-1-2.jpg" alt="Project image 2">
+      </div>
+      <div class="project-photo">
+        <img src="../assets/project_pictures/project-1-3.jpg" alt="Project image 3">
+      </div>
+      <div class="project-photo">
+        <img src="../assets/project_pictures/project-1-4.jpg" alt="Project image 4">
+      </div>
+      <div class="project-photo">
+        <img src="../assets/project_pictures/project-1-5.jpg" alt="Project image 5">
+      </div>
+      <div class="project-photo">
+        <img src="../assets/project_pictures/project-1-6.jpg" alt="Project image 6">
+      </div>
+      <div class="project-photo">
+        <img src="../assets/project_pictures/project-1-7.jpg" alt="Project image 7">
+      </div>
+      <div class="project-photo">
+        <img src="../assets/project_pictures/project-1-8.jpg" alt="Project image 8">
+      </div>
+    </div>
 
     <div style="margin-top:40px;">
-      <a href="../index.html#portfolio" class="btn btn-gold">Back</a>
+      <a href="../index.html#portfolio" class="btn btn-gold" id="back-button">Back</a>
     </div>
   </div>
 </section>
+
 <script>
+  const projectData = {
+    brand: {
+      name: "BielDesign",
+      tagline: {
+        ro: "Interior Design & Premium Fit-Out",
+        en: "Interior Design & Premium Fit-Out"
+      }
+    },
+    ui: {
+      portfolio: {
+        ro: "Portofoliu",
+        en: "Portfolio"
+      },
+      back: {
+        ro: "Înapoi",
+        en: "Back"
+      }
+    },
+    project: {
+      title: {
+        ro: "Restaurant Germania",
+        en: "Germania Restaurant"
+      },
+      subtitle: {
+        ro: "Rafinament Atemporal și Detalii Statement",
+        en: "Timeless Refinement and Statement Details"
+      },
+      text1: {
+        ro: "Amenajarea propune o interpretare elegantă a luxului modern, unde fiecare element contribuie la o compoziție coerentă și expresivă. Finisajele atent selecționate, volumele echilibrate și detaliile decorative cu personalitate creează un ambient sofisticat, luminos și perfect armonizat.",
+        en: "The design proposes an elegant interpretation of modern luxury, where each element contributes to a coherent and expressive composition. Carefully selected finishes, balanced volumes, and decorative details with personality create a sophisticated, luminous, and perfectly harmonized atmosphere."
+      },
+      text2: {
+        ro: "Mobilierul și elementele de decor sunt gândite ca piese statement, capabile să ofere ritm, dinamism și personalitate întregii amenajări. Liniile echilibrate, formele atent controlate și raportul dintre funcționalitate și expresivitate transformă spațiul într-o experiență vizuală completă, în care frumusețea fiecărui detaliu este pusă în valoare de ansamblu. Iluminatul decorativ completează această compoziție printr-o prezență sculpturală, accentuând zonele-cheie și adăugând profunzime întregului concept.",
+        en: "The furniture and decorative elements are conceived as statement pieces, capable of bringing rhythm, dynamism, and personality to the entire design. Balanced lines, carefully controlled forms, and the relationship between functionality and expressiveness transform the space into a complete visual experience, where the beauty of every detail is elevated by the whole. Decorative lighting completes the composition through a sculptural presence, highlighting key areas and adding depth to the overall concept."
+      },
+      text3: {
+        ro: "Spațiul transmite o eleganță atemporală, o identitate distinctă și o atmosferă premium, concepută pentru a inspira exclusivitate, bun gust și rafinament autentic.",
+        en: "The space conveys timeless elegance, a distinct identity, and a premium atmosphere designed to inspire exclusivity, good taste, and authentic refinement."
+      }
+    }
+  };
+
+  let currentLang = new URLSearchParams(window.location.search).get('lang') || localStorage.getItem('siteLang') || 'ro';
+
+  function t(value) {
+    return value[currentLang] || '';
+  }
+
+  function applyLanguage() {
+    document.documentElement.lang = currentLang;
+
+    document.getElementById('brand-name').textContent = projectData.brand.name;
+    document.getElementById('brand-tagline').textContent = t(projectData.brand.tagline);
+
+    document.getElementById('portfolio-label').textContent = t(projectData.ui.portfolio);
+    document.getElementById('project-title').textContent = t(projectData.project.title);
+    document.getElementById('project-subtitle').textContent = t(projectData.project.subtitle);
+    document.getElementById('project-text1').textContent = t(projectData.project.text1);
+    document.getElementById('project-text2').textContent = t(projectData.project.text2);
+    document.getElementById('project-text3').textContent = t(projectData.project.text3);
+
+    document.getElementById('back-button').textContent = t(projectData.ui.back);
+    document.getElementById('back-button').href = `../index.html?lang=${currentLang}#portfolio`;
+
+    document.getElementById('back-link').textContent = t(projectData.ui.back);
+    document.getElementById('back-link').href = `../index.html?lang=${currentLang}#portfolio`;
+
+    document.getElementById('lang-toggle').textContent = currentLang === 'ro' ? 'EN' : 'RO';
+
+    document.title = currentLang === 'ro'
+      ? 'Restaurant Germania — BielDesign'
+      : 'Germania Restaurant — BielDesign';
+  }
+
+  document.getElementById('lang-toggle').addEventListener('click', () => {
+    currentLang = currentLang === 'ro' ? 'en' : 'ro';
+    localStorage.setItem('siteLang', currentLang);
+    applyLanguage();
+  });
+
+  applyLanguage();
   document.body.classList.add('page-loaded');
 </script>
+
 </body>
 </html>
