@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ro">
 <head>
@@ -12,11 +11,9 @@
 
   <meta name="description" content="Design interior premium pentru spații elegante. Proiecte rezidențiale, HoReCa și birouri cu execuție impecabilă." />
 
-  <!-- SEO extra -->
   <meta name="keywords" content="design interior, amenajare premium, interior luxury, design apartament, design restaurant" />
   <meta name="author" content="BielDesign" />
 
-  <!-- Open Graph (WhatsApp / Facebook preview) -->
   <meta property="og:title" content="BielDesign — Design Interior Premium" />
   <meta property="og:description" content="Design interior premium pentru spații elegante" />
   <meta property="og:image" content="https://bieldesign.studio/assets/preview.jpg" />
@@ -28,24 +25,22 @@
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="ro_RO" />
   
-  <!-- Twitter / WhatsApp -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="BielDesign — Design Interior Premium" />
   <meta name="twitter:description" content="Design interior premium pentru spații elegante" />
   <meta name="twitter:image" content="https://bieldesign.studio/assets/preview.jpg" />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- Styles -->
   <link rel="stylesheet" href="assets/styles.css" />
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/favicon.png" />
 </head>
 <body>
+  <div id="scroll-progress"></div>
+
   <header class="topbar">
     <div class="container nav-wrap">
       <a class="brand" href="#home">
@@ -104,61 +99,61 @@
     </section>
 
     <section class="section" id="about">
-  <div class="container about-grid">
-    <div>
-      <p class="eyebrow">Despre</p>
-      <h2 id="about-title"></h2>
-      <p id="about-text1"></p>
-      <p id="about-text2"></p>
-      <p id="about-text3"></p>
-      <p id="about-text4"></p>
-      <p id="about-text5"></p>
-      <p id="about-text6"></p>
-      <p id="about-text7"></p>
-      <p id="about-text8"></p>
-    </div>
-    <div class="about-panel about-photo-panel">
-  <img src="assets/adina.jpg" alt="Adina BielDesign" class="about-photo">
-  <p class="about-quote">„Cred în interioare care îmbină rafinamentul, echilibrul și emoția autentică.”</p>
-    </div>
-  </div>
-</section>
+      <div class="container about-grid">
+        <div>
+          <p class="eyebrow">Despre</p>
+          <h2 id="about-title"></h2>
+          <p id="about-text1"></p>
+          <p id="about-text2"></p>
+          <p id="about-text3"></p>
+          <p id="about-text4"></p>
+          <p id="about-text5"></p>
+          <p id="about-text6"></p>
+          <p id="about-text7"></p>
+          <p id="about-text8"></p>
+        </div>
+        <div class="about-panel about-photo-panel">
+          <img src="assets/adina.jpg" alt="Adina BielDesign" class="about-photo">
+          <p class="about-quote">„Cred în interioare care îmbină rafinamentul, echilibrul și emoția autentică.”</p>
+        </div>
+      </div>
+    </section>
 
-<section class="section alt-section" id="reviews">
-  <div class="container">
-    <div class="section-heading">
-      <p class="eyebrow">Recenzii</p>
-      <!-- <h2>Feedback autentic de la clienți.</h2> -->
-    </div>
+    <section class="section alt-section" id="reviews">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Recenzii</p>
+          <!-- <h2>Feedback autentic de la clienți.</h2> -->
+        </div>
 
-    <div class="reviews-grid" id="reviews-grid"></div>
-    <div class="reviews-spacer"></div>
-    <form class="contact-form review-form" name="review" method="POST" data-netlify="true" style="margin-top: 80px;">
-      <input type="hidden" name="form-name" value="review">
+        <div class="reviews-grid" id="reviews-grid"></div>
+        <div class="reviews-spacer"></div>
+        <form class="contact-form review-form" name="review" method="POST" data-netlify="true" style="margin-top: 80px;">
+          <input type="hidden" name="form-name" value="review">
 
-      <label>Nume
-        <input type="text" name="name" placeholder="Numele tău" required>
-      </label>
+          <label>Nume
+            <input type="text" name="name" placeholder="Numele tău" required>
+          </label>
 
-      <label>Rating
-        <select name="rating" required>
-          <option value="">Alege rating</option>
-          <option value="5">5 stele</option>
-          <option value="4">4 stele</option>
-          <option value="3">3 stele</option>
-          <option value="2">2 stele</option>
-          <option value="1">1 stea</option>
-        </select>
-      </label>
+          <label>Rating
+            <select name="rating" required>
+              <option value="">Alege rating</option>
+              <option value="5">5 stele</option>
+              <option value="4">4 stele</option>
+              <option value="3">3 stele</option>
+              <option value="2">2 stele</option>
+              <option value="1">1 stea</option>
+            </select>
+          </label>
 
-      <label>Recenzie
-        <textarea name="message" rows="5" placeholder="Scrie feedback-ul tău" required></textarea>
-      </label>
+          <label>Recenzie
+            <textarea name="message" rows="5" placeholder="Scrie feedback-ul tău" required></textarea>
+          </label>
 
-      <button type="submit" class="btn btn-gold btn-full">Trimite recenzia</button>
-    </form>
-  </div>
-</section>
+          <button type="submit" class="btn btn-gold btn-full">Trimite recenzia</button>
+        </form>
+      </div>
+    </section>
 
     <section class="section contact-section">
       <div class="container contact-grid" id="contact">
@@ -172,138 +167,152 @@
             <div class="contact-card" id="contact-location"></div>
           </div>
         </div>
-<form class="contact-form" name="contact" method="POST" data-netlify="true">
-  <input type="hidden" name="form-name" value="contact" />
+        <form class="contact-form" name="contact" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact" />
 
-  <label>Nume
-    <input type="text" name="name" placeholder="Numele tău" required>
-  </label>
+          <label>Nume
+            <input type="text" name="name" placeholder="Numele tău" required>
+          </label>
 
-  <label>Email
-    <input type="email" name="email" placeholder="email@exemplu.ro">
-  </label>
+          <label>Email
+            <input type="email" name="email" placeholder="email@exemplu.ro">
+          </label>
 
-  <label>Telefon
-    <input type="tel" name="phone" placeholder="+40 7xx xxx xxx" required>
-  </label>
+          <label>Telefon
+            <input type="tel" name="phone" placeholder="+40 7xx xxx xxx" required>
+          </label>
 
-  <label>Detalii
-    <textarea name="message" rows="5" placeholder="Spune-ne pe scurt ce ai nevoie"></textarea>
-  </label>
+          <label>Detalii
+            <textarea name="message" rows="5" placeholder="Spune-ne pe scurt ce ai nevoie"></textarea>
+          </label>
 
-  <button type="submit" class="btn btn-gold btn-full">Trimite cererea</button>
-</form>
+          <button type="submit" class="btn btn-gold btn-full">Trimite cererea</button>
+        </form>
       </div>
     </section>
   </main>
 
-<footer class="footer">
-  <div class="container footer-wrap">
-    <div>
-      <strong id="footer-brand">BielDesign</strong>
-      <p id="footer-text">Design interior premium. Prezență vizuală impecabilă. Execuție clară.</p>
-      <p class="footer-legal">© 2026 BielDesign · Toate drepturile rezervate.</p>
+  <footer class="footer">
+    <div class="container footer-wrap">
+      <div>
+        <strong id="footer-brand">BielDesign</strong>
+        <p id="footer-text">Design interior premium. Prezență vizuală impecabilă. Execuție clară.</p>
+        <p class="footer-legal">© 2026 BielDesign · Toate drepturile rezervate.</p>
+      </div>
+
+      <div class="footer-socials" style="display:flex; gap:18px; justify-content:flex-end; align-items:center;">
+        <a href="https://instagram.com/bieldesign.ro" target="_blank"
+           style="display:inline-flex; align-items:center; justify-content:center;">
+          <img src="assets/instagram-icon.png" alt="Instagram"
+               style="width:40px; height:40px; object-fit:contain; display:block;">
+        </a>
+
+        <a href="https://wa.me/40746380294" target="_blank"
+           style="display:inline-flex; align-items:center; justify-content:center;">
+          <img src="assets/whatsapp-icon.png" alt="WhatsApp"
+               style="width:60px; height:60px; object-fit:contain; display:block;">
+        </a>
+      </div>
     </div>
+  </footer>
 
-<div class="footer-socials" style="display:flex; gap:18px; justify-content:flex-end; align-items:center;">
-  <a href="https://instagram.com/bieldesign.ro" target="_blank"
-     style="display:inline-flex; align-items:center; justify-content:center;">
-    <img src="assets/instagram-icon.png" alt="Instagram"
-         style="width:40px; height:40px; object-fit:contain; display:block;">
-  </a>
+  <script>
+    async function loadSite() {
+      const data = await fetch('content/site.json').then(r => r.json());
 
-  <a href="https://wa.me/40746380294" target="_blank"
-     style="display:inline-flex; align-items:center; justify-content:center;">
-    <img src="assets/whatsapp-icon.png" alt="WhatsApp"
-         style="width:60px; height:60px; object-fit:contain; display:block;">
-  </a>
-</div>
-  </div>
-</footer>
+      document.documentElement.style.setProperty('--body-font', data.theme.bodyFont);
+      document.documentElement.style.setProperty('--heading-font', data.theme.headingFont);
+      document.documentElement.style.setProperty('--body-size', data.theme.bodySize);
+      document.documentElement.style.setProperty('--h1-size', data.theme.h1Size);
+      document.documentElement.style.setProperty('--h2-size', data.theme.h2Size);
+      document.documentElement.style.setProperty('--h3-size', data.theme.h3Size);
 
-<script>
-  async function loadSite() {
-    const data = await fetch('content/site.json').then(r => r.json());
+      document.getElementById('brand-name').textContent = data.brand.name;
+      document.getElementById('brand-tagline').textContent = data.brand.tagline;
+      document.getElementById('footer-brand').textContent = data.brand.name;
+      document.getElementById('footer-text').textContent = data.footer.text;
 
-    document.documentElement.style.setProperty('--body-font', data.theme.bodyFont);
-    document.documentElement.style.setProperty('--heading-font', data.theme.headingFont);
-    document.documentElement.style.setProperty('--body-size', data.theme.bodySize);
-    document.documentElement.style.setProperty('--h1-size', data.theme.h1Size);
-    document.documentElement.style.setProperty('--h2-size', data.theme.h2Size);
-    document.documentElement.style.setProperty('--h3-size', data.theme.h3Size);
+      document.getElementById('hero-kicker').textContent = data.hero.kicker;
+      document.getElementById('hero-title').textContent = data.hero.title;
+      document.getElementById('hero-text').textContent = data.hero.text;
+      document.getElementById('hero-primary').textContent = data.hero.primaryButton;
+      document.getElementById('hero-secondary').textContent = data.hero.secondaryButton;
 
-    document.getElementById('brand-name').textContent = data.brand.name;
-    document.getElementById('brand-tagline').textContent = data.brand.tagline;
-    document.getElementById('footer-brand').textContent = data.brand.name;
-    document.getElementById('footer-text').textContent = data.footer.text;
+      document.getElementById('about-title').textContent = data.about.title;
+      document.getElementById('about-text1').textContent = data.about.text1 || '';
+      document.getElementById('about-text2').textContent = data.about.text2 || '';
+      document.getElementById('about-text3').textContent = data.about.text3 || '';
+      document.getElementById('about-text4').textContent = data.about.text4 || '';
+      document.getElementById('about-text5').textContent = data.about.text5 || '';
+      document.getElementById('about-text6').textContent = data.about.text6 || '';
+      document.getElementById('about-text7').textContent = data.about.text7 || '';
+      document.getElementById('about-text8').textContent = data.about.text8 || '';
 
-    document.getElementById('hero-kicker').textContent = data.hero.kicker;
-    document.getElementById('hero-title').textContent = data.hero.title;
-    document.getElementById('hero-text').textContent = data.hero.text;
-    document.getElementById('hero-primary').textContent = data.hero.primaryButton;
-    document.getElementById('hero-secondary').textContent = data.hero.secondaryButton;
+      document.getElementById('contact-title').textContent = data.contact.title;
+      document.getElementById('contact-text').textContent = data.contact.text;
+      document.getElementById('contact-phone').textContent = data.contact.phone;
+      document.getElementById('contact-email').textContent = data.contact.email;
+      document.getElementById('contact-location').textContent = data.contact.location;
 
-    document.getElementById('about-title').textContent = data.about.title;
-    document.getElementById('about-text1').textContent = data.about.text1 || '';
-    document.getElementById('about-text2').textContent = data.about.text2 || '';
-    document.getElementById('about-text3').textContent = data.about.text3 || '';
-    document.getElementById('about-text4').textContent = data.about.text4 || '';
-    document.getElementById('about-text5').textContent = data.about.text5 || '';
-    document.getElementById('about-text6').textContent = data.about.text6 || '';
-    document.getElementById('about-text7').textContent = data.about.text7 || '';
-
-    document.getElementById('contact-title').textContent = data.contact.title;
-    document.getElementById('contact-text').textContent = data.contact.text;
-    document.getElementById('contact-phone').textContent = data.contact.phone;
-    document.getElementById('contact-email').textContent = data.contact.email;
-    document.getElementById('contact-location').textContent = data.contact.location;
-
-    document.getElementById('services-grid').innerHTML = data.services.map(item => `
-      <article class="card service-card reveal">
-        <h3>${item.title}</h3>
-        <p>${item.text}</p>
-        <h3>${item.title2}</h3>
-        <p>${item.text2}</p>
-      </article>
-    `).join('');
-
-    document.getElementById('portfolio-grid').innerHTML = data.portfolio.map((item, index) => `
-      <a class="portfolio-card reveal" href="projects/portfolio-${index + 1}.html">
-        <img src="assets/portfolio-${index + 1}.jpg" alt="${item.title}">
-        <div class="portfolio-copy">
+      document.getElementById('services-grid').innerHTML = data.services.map(item => `
+        <article class="card service-card reveal">
           <h3>${item.title}</h3>
-          <p class="portfolio-meta">${item.meta}</p>
           <p>${item.text}</p>
-        </div>
-      </a>
-    `).join('');
+          <h3>${item.title2}</h3>
+          <p>${item.text2}</p>
+        </article>
+      `).join('');
 
-    document.getElementById('reviews-grid').innerHTML = data.reviews.map(item => `
-      <article class="review-card reveal">
-        <div class="stars">${item.stars}</div>
-        <p>${item.text}</p>
-        <strong>${item.name}</strong>
-      </article>
-    `).join('');
-  }
+      document.getElementById('portfolio-grid').innerHTML = data.portfolio.map((item, index) => `
+        <a class="portfolio-card reveal" href="projects/portfolio-${index + 1}.html">
+          <img src="assets/portfolio-${index + 1}.jpg" alt="${item.title}">
+          <div class="portfolio-copy">
+            <h3>${item.title}</h3>
+            <p class="portfolio-meta">${item.meta}</p>
+            <p>${item.text}</p>
+          </div>
+        </a>
+      `).join('');
 
-  function revealOnScroll() {
-    const reveals = document.querySelectorAll('.reveal');
-    const windowHeight = window.innerHeight;
+      document.getElementById('reviews-grid').innerHTML = data.reviews.map(item => `
+        <article class="review-card reveal">
+          <div class="stars">${item.stars}</div>
+          <p>${item.text}</p>
+          <strong>${item.name}</strong>
+        </article>
+      `).join('');
+    }
 
-    reveals.forEach(el => {
-      const elementTop = el.getBoundingClientRect().top;
-      if (elementTop < windowHeight - 80) {
-        el.classList.add('active');
+    function revealOnScroll() {
+      const reveals = document.querySelectorAll('.reveal');
+      const windowHeight = window.innerHeight;
+
+      reveals.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 80) {
+          el.classList.add('active');
+        }
+      });
+    }
+
+    function updateScrollProgress() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrolled = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      const progressBar = document.getElementById('scroll-progress');
+
+      if (progressBar) {
+        progressBar.style.width = scrolled + '%';
       }
-    });
-  }
+    }
 
-  loadSite().then(() => {
-  revealOnScroll();
-  window.addEventListener('scroll', revealOnScroll);
-  document.body.classList.add('page-loaded');
-});
-</script>
+    loadSite().then(() => {
+      revealOnScroll();
+      updateScrollProgress();
+      window.addEventListener('scroll', revealOnScroll);
+      window.addEventListener('scroll', updateScrollProgress);
+      document.body.classList.add('page-loaded');
+    });
+  </script>
 </body>
 </html>
