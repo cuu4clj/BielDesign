@@ -663,3 +663,14 @@ textarea::placeholder {
   opacity: 1;
   transform: translateY(0);
 }
+/* =========================================================
+   23. Fade in pagini
+ ========================================================= */
+body {
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+body.page-loaded {
+  opacity: 1;
+}
