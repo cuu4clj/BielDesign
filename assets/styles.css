@@ -53,7 +53,7 @@ body {
   margin: 0;
   background:
     linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.35)),
-    url("fundal.jpg") center top / cover no-repeat fixed;
+    url("fundal.jpg") center center / contain no-repeat fixed;
   color: var(--text);
   font-family: var(--body-font);
   font-size: var(--body-size);
