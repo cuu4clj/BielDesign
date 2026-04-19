@@ -104,19 +104,24 @@
     </section>
 
     <section class="section" id="about">
-      <div class="container about-grid">
-        <div>
-          <p class="eyebrow">Despre</p>
-          <h2 id="about-title">Construim interioare premium cu personalitate.</h2>
-          <p id="about-text1"></p>
-          <p id="about-text2"></p>
-        </div>
-        <div class="about-panel">
-          <h3>Imagine premium, structură clară</h3>
-          <p>Site-ul este pregătit pentru actualizare simplă din admin.</p>
-        </div>
-      </div>
-    </section>
+  <div class="container about-grid">
+    <div>
+      <p class="eyebrow">Despre</p>
+      <h2 id="about-title"></h2>
+      <p id="about-text1"></p>
+      <p id="about-text2"></p>
+      <p id="about-text3"></p>
+      <p id="about-text4"></p>
+      <p id="about-text5"></p>
+      <p id="about-text6"></p>
+      <p id="about-text7"></p>
+    </div>
+    <div class="about-panel">
+      <h3>Despre BielDesign</h3>
+      <p>Design interior premium, gândit cu atenție la proporții, atmosferă și detalii.</p>
+    </div>
+  </div>
+</section>
 
 <section class="section alt-section" id="reviews">
   <div class="container">
@@ -237,8 +242,13 @@
       document.getElementById('hero-secondary').textContent = data.hero.secondaryButton;
 
       document.getElementById('about-title').textContent = data.about.title;
-      document.getElementById('about-text1').textContent = data.about.text1;
-      document.getElementById('about-text2').textContent = data.about.text2;
+      document.getElementById('about-text1').textContent = data.about.text1 || '';
+      document.getElementById('about-text2').textContent = data.about.text2 || '';
+      document.getElementById('about-text3').textContent = data.about.text3 || '';
+      document.getElementById('about-text4').textContent = data.about.text4 || '';
+      document.getElementById('about-text5').textContent = data.about.text5 || '';
+      document.getElementById('about-text6').textContent = data.about.text6 || '';
+      document.getElementById('about-text7').textContent = data.about.text7 || '';
 
       document.getElementById('contact-title').textContent = data.contact.title;
       document.getElementById('contact-text').textContent = data.contact.text;
