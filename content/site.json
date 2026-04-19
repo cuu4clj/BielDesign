@@ -20,28 +20,52 @@
   },
  "services": [
   {
-    "title": "Concept & Moodboard",
-    "text": "Definim direcția estetică prin palete cromatice, materiale, texturi și scenarii de atmosferă adaptate spațiului tău."
+    "title": "Consultanță Inițială",
+    "text": "Stabilim direcția proiectului în funcție de stilul dorit, nevoile spațiului, funcționalitate și nivelul de investiție urmărit."
   },
   {
-    "title": "Design Complet",
-    "text": "Propuneri de layout, randări 3D, selecții de finisaje și mobilier, plus documentație coerentă pentru implementare."
+    "title": "Releveu și Analiză Spațiu",
+    "text": "Realizăm măsurători exacte și evaluăm particularitățile spațiului pentru a construi un proiect coerent, bine proporționat și corect fundamentat."
   },
   {
-    "title": "Fit-Out Premium",
-    "text": "Coordonare vizuală și consultanță pentru execuție astfel încât rezultatul final să rămână fidel conceptului aprobat."
+    "title": "Concept de Design",
+    "text": "Definim identitatea estetică a proiectului prin stil, paletă cromatică, materiale și atmosfera generală care va ghida întreaga amenajare."
   },
   {
-    "title": "Spații Comerciale",
-    "text": "Construim locații care vând prin atmosferă: showroom-uri, birouri premium, restaurante și spații hospitality."
+    "title": "Planificare Funcțională",
+    "text": "Organizăm spațiul astfel încât fiecare zonă să răspundă eficient nevoilor reale, păstrând echilibrul dintre confort, logică și expresivitate vizuală."
   },
   {
-    "title": "Restilizare de Lux",
-    "text": "Upgradăm spații existente fără a reconstrui totul, prin intervenții inteligente cu impact vizual major."
+    "title": "Randări 3D și Vizualizare",
+    "text": "Transpunem conceptul în imagini fotorealiste pentru a ilustra clar amenajarea finală înainte de etapa de execuție."
   },
   {
-    "title": "Achiziții & Styling",
-    "text": "Te ajutăm să alegi piese, corpuri de iluminat și obiecte decorative care susțin coerența finală."
+    "title": "Selecție de Materiale și Finisaje",
+    "text": "Alegem materiale, texturi și finisaje care susțin conceptul estetic și oferă spațiului coerență, durabilitate și rafinament."
+  },
+  {
+    "title": "Selecție de Mobilier și Iluminat",
+    "text": "Selectăm piese de mobilier, corpuri de iluminat și elemente decorative care completează armonios funcționalitatea și identitatea vizuală a proiectului."
+  },
+  {
+    "title": "Documentație Tehnică",
+    "text": "Pregătim planurile și detaliile necesare implementării corecte a proiectului, pentru o execuție clară, eficientă și bine coordonată."
+  },
+  {
+    "title": "Bugetare și Ofertare",
+    "text": "Centralizăm propunerile de cost pentru materiale, mobilier, iluminat și execuții personalizate, astfel încât investiția să fie clară și realistă."
+  },
+  {
+    "title": "Implementare și Coordonare",
+    "text": "Urmărim aplicarea conceptului în execuție și colaborăm cu echipele implicate pentru a păstra coerența și calitatea rezultatului final."
+  },
+  {
+    "title": "Styling Final",
+    "text": "Completăm amenajarea cu textile, decor și accente finale care evidențiază atmosfera, personalitatea și rafinamentul proiectului."
+  },
+  {
+    "title": "Personalizarea Serviciilor",
+    "text": "Etapele proiectului sunt configurate în funcție de pachetul ales, putând include fie întregul proces de amenajare, fie doar etape punctuale."
   }
 ],
 "portfolio": [
