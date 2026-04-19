@@ -4,12 +4,12 @@
     "tagline": "Interior Design & Premium Fit-Out"
   },
   "theme": {
-    "bodyFont": "Inter, Arial, sans-serif",
-    "headingFont": "\"Cormorant Garamond\", Georgia, serif",
-    "bodySize": "17px",
-    "h1Size": "clamp(1.9rem, 3.6vw, 3rem)",
-    "h2Size": "clamp(1.5rem, 3vw, 2.4rem)",
-    "h3Size": "1.35rem"
+  "bodyFont": "Inter",
+  "headingFont": "Inter",
+  "bodySize": "17px",
+  "h1Size": "clamp(1.9rem, 3.6vw, 3rem)",
+  "h2Size": "clamp(1.5rem, 3vw, 2.4rem)",
+  "h3Size": "1.35rem"
   },
   "hero": {
     "kicker": "Luxury Interior Design",
