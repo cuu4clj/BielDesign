@@ -300,9 +300,10 @@
   }
 
   loadSite().then(() => {
-    revealOnScroll();
-    window.addEventListener('scroll', revealOnScroll);
-  });
+  revealOnScroll();
+  window.addEventListener('scroll', revealOnScroll);
+  document.body.classList.add('page-loaded');
+});
 </script>
 </body>
 </html>
