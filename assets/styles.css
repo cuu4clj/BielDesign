@@ -595,10 +595,23 @@ select {
   border-radius: var(--radius-lg);
   margin-bottom: 18px;
 }
-
 .about-quote {
   margin: 0;
   color: var(--text);
   font-style: italic;
   line-height: 1.7;
+}
+.about-photo-panel {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
+  padding: 0;
+}
+.about-grid {
+  align-items: start;
+}
+
+.about-photo {
+  margin-top: 8px;
 }
