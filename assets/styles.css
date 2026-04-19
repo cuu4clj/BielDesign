@@ -631,3 +631,11 @@ select {
 .about-photo {
   margin-top: 8px;
 }
+
+.service-card h3 {
+  color: #111111;
+}
+
+.service-card p {
+  color: #f5f1e8;
+}
