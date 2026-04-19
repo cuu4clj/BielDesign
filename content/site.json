@@ -4,12 +4,12 @@
     "tagline": "Interior Design & Premium Fit-Out"
   },
   "theme": {
-  "bodyFont": "Inter",
-  "headingFont": "Inter",
-  "bodySize": "17px",
-  "h1Size": "clamp(1.9rem, 3.6vw, 3rem)"
-  "h2Size": "clamp(1.5rem, 3vw, 2.4rem)",
-  "h3Size": "1.35rem"
+    "bodyFont": "Inter",
+    "headingFont": "Inter",
+    "bodySize": "17px",
+    "h1Size": "clamp(1.5rem, 2.8vw, 2.4rem)",
+    "h2Size": "clamp(1.5rem, 3vw, 2.4rem)",
+    "h3Size": "1.35rem"
   },
   "hero": {
     "kicker": "Luxury Interior Design",
@@ -18,100 +18,100 @@
     "primaryButton": "Programează o discuție",
     "secondaryButton": "Vezi proiecte"
   },
- "services": [
-  {
-    "title": "Consultanță Inițială",
-    "text": "Stabilim direcția proiectului în funcție de stilul dorit, nevoile spațiului, funcționalitate și nivelul de investiție urmărit.",
-    "title2": "Releveu și Analiză Spațiu",
-    "text2": "Realizăm măsurători exacte și evaluăm particularitățile spațiului pentru a construi un proiect coerent, bine proporționat și corect fundamentat."
-  },
-  {
-    "title": "Concept de Design",
-    "text": "Definim identitatea estetică a proiectului prin stil, paletă cromatică, materiale și atmosfera generală care va ghida întreaga amenajare.",
-    "title2": "Planificare Funcțională",
-    "text2": "Organizăm spațiul astfel încât fiecare zonă să răspundă eficient nevoilor reale, păstrând echilibrul dintre confort, logică și expresivitate vizuală."
-  },
-  {
-    "title": "Randări 3D și Vizualizare",
-    "text": "Transpunem conceptul în imagini fotorealiste pentru a ilustra clar amenajarea finală înainte de etapa de execuție.",
-    "title2": "Selecție de Materiale și Finisaje",
-    "text2": "Alegem materiale, texturi și finisaje care susțin conceptul estetic și oferă spațiului coerență, durabilitate și rafinament."
-  },
-  {
-    "title": "Selecție de Mobilier și Iluminat",
-    "text": "Selectăm piese de mobilier, corpuri de iluminat și elemente decorative care completează armonios funcționalitatea și identitatea vizuală a proiectului.",
-    "title2": "Documentație Tehnică",
-    "text2": "Pregătim planurile și detaliile necesare implementării corecte a proiectului, pentru o execuție clară, eficientă și bine coordonată."
-  },
-  {
-    "title": "Bugetare și Ofertare",
-    "text": "Centralizăm propunerile de cost pentru materiale, mobilier, iluminat și execuții personalizate, astfel încât investiția să fie clară și realistă.",
-    "title2": "Implementare și Coordonare",
-    "text2": "Urmărim aplicarea conceptului în execuție și colaborăm cu echipele implicate pentru a păstra coerența și calitatea rezultatului final."
-  },
-  {
-    "title": "Styling Final",
-    "text": "Completăm amenajarea cu textile, decor și accente finale care evidențiază atmosfera, personalitatea și rafinamentul proiectului.",
-    "title2": "Personalizarea Serviciilor",
-    "text2": "Etapele proiectului sunt configurate în funcție de pachetul ales, putând include fie întregul proces de amenajare, fie doar etape punctuale."
-  }
-],
-"portfolio": [
-  {
-    "title": "Restaurant Germania",
-    "meta": "Hospitality · Germania",
-    "text": "Rafinament Atemporal și Detalii Statement.",
-    "link": "portfolio-1.html"
-  },
-  {
-    "title": "Apart-Hotel Germania",
-    "meta": "Hospitality · Germania",
-    "text": "Echilibru Contemporan cu Accente Rafinate.",
-    "link": "portfolio-2.html"
-  },
-  {
-    "title": "Urban House",
-    "meta": "Residential · Bistrita",
-    "text": "Expresie Modernă în Tonuri Închise.",
-    "link": "portfolio-3.html"
-  },
-  {
-    "title": "Urban Apartment",
-    "meta": "Residential · Cluj-Napoca",
-    "text": "Armonie Contemporană și Accente Premium.",
-    "link": "portfolio-4.html"
-  },
-  {
-    "title": "Contemporary House",
-    "meta": "Residential · Cluj-Napoca",
-    "text": "Eleganță Sculpturală și Accente Premium.",
-    "link": "portfolio-5.html"
-  },
-  {
-    "title": "Penthouse Residence",
-    "meta": "Residential · Bistrita",
-    "text": "Contrast Elegant și Detalii Statement.",
-    "link": "portfolio-6.html"
-  },
-  {
-    "title": "Penthouse Residence - Columna",
-    "meta": "Residential · Cluj-Napoca",
-    "text": "Echilibru Vizual și Accente Contemporane.",
-    "link": "portfolio-7.html"
-  },
-  {
-    "title": "Penthouse Residence No2",
-    "meta": "Residential · Cluj-Napoca",
-    "text": "Eleganță Clasică în Note Contemporane.",
-    "link": "portfolio-8.html"
-  },
-  {
-    "title": "Modern Residence",
-    "meta": "Residential · Cluj-Napoca",
-    "text": "Design Premium în Tonuri Contemporane.",
-    "link": "portfolio-9.html"
-  }
-],
+  "services": [
+    {
+      "title": "Consultanță Inițială",
+      "text": "Stabilim direcția proiectului în funcție de stilul dorit, nevoile spațiului, funcționalitate și nivelul de investiție urmărit.",
+      "title2": "Releveu și Analiză Spațiu",
+      "text2": "Realizăm măsurători exacte și evaluăm particularitățile spațiului pentru a construi un proiect coerent, bine proporționat și corect fundamentat."
+    },
+    {
+      "title": "Concept de Design",
+      "text": "Definim identitatea estetică a proiectului prin stil, paletă cromatică, materiale și atmosfera generală care va ghida întreaga amenajare.",
+      "title2": "Planificare Funcțională",
+      "text2": "Organizăm spațiul astfel încât fiecare zonă să răspundă eficient nevoilor reale, păstrând echilibrul dintre confort, logică și expresivitate vizuală."
+    },
+    {
+      "title": "Randări 3D și Vizualizare",
+      "text": "Transpunem conceptul în imagini fotorealiste pentru a ilustra clar amenajarea finală înainte de etapa de execuție.",
+      "title2": "Selecție de Materiale și Finisaje",
+      "text2": "Alegem materiale, texturi și finisaje care susțin conceptul estetic și oferă spațiului coerență, durabilitate și rafinament."
+    },
+    {
+      "title": "Selecție de Mobilier și Iluminat",
+      "text": "Selectăm piese de mobilier, corpuri de iluminat și elemente decorative care completează armonios funcționalitatea și identitatea vizuală a proiectului.",
+      "title2": "Documentație Tehnică",
+      "text2": "Pregătim planurile și detaliile necesare implementării corecte a proiectului, pentru o execuție clară, eficientă și bine coordonată."
+    },
+    {
+      "title": "Bugetare și Ofertare",
+      "text": "Centralizăm propunerile de cost pentru materiale, mobilier, iluminat și execuții personalizate, astfel încât investiția să fie clară și realistă.",
+      "title2": "Implementare și Coordonare",
+      "text2": "Urmărim aplicarea conceptului în execuție și colaborăm cu echipele implicate pentru a păstra coerența și calitatea rezultatului final."
+    },
+    {
+      "title": "Styling Final",
+      "text": "Completăm amenajarea cu textile, decor și accente finale care evidențiază atmosfera, personalitatea și rafinamentul proiectului.",
+      "title2": "Personalizarea Serviciilor",
+      "text2": "Etapele proiectului sunt configurate în funcție de pachetul ales, putând include fie întregul proces de amenajare, fie doar etape punctuale."
+    }
+  ],
+  "portfolio": [
+    {
+      "title": "Restaurant Germania",
+      "meta": "Hospitality · Germania",
+      "text": "Rafinament Atemporal și Detalii Statement.",
+      "link": "portfolio-1.html"
+    },
+    {
+      "title": "Apart-Hotel Germania",
+      "meta": "Hospitality · Germania",
+      "text": "Echilibru Contemporan cu Accente Rafinate.",
+      "link": "portfolio-2.html"
+    },
+    {
+      "title": "Urban House",
+      "meta": "Residential · Bistrita",
+      "text": "Expresie Modernă în Tonuri Închise.",
+      "link": "portfolio-3.html"
+    },
+    {
+      "title": "Urban Apartment",
+      "meta": "Residential · Cluj-Napoca",
+      "text": "Armonie Contemporană și Accente Premium.",
+      "link": "portfolio-4.html"
+    },
+    {
+      "title": "Contemporary House",
+      "meta": "Residential · Cluj-Napoca",
+      "text": "Eleganță Sculpturală și Accente Premium.",
+      "link": "portfolio-5.html"
+    },
+    {
+      "title": "Penthouse Residence",
+      "meta": "Residential · Bistrita",
+      "text": "Contrast Elegant și Detalii Statement.",
+      "link": "portfolio-6.html"
+    },
+    {
+      "title": "Penthouse Residence - Columna",
+      "meta": "Residential · Cluj-Napoca",
+      "text": "Echilibru Vizual și Accente Contemporane.",
+      "link": "portfolio-7.html"
+    },
+    {
+      "title": "Penthouse Residence No2",
+      "meta": "Residential · Cluj-Napoca",
+      "text": "Eleganță Clasică în Note Contemporane.",
+      "link": "portfolio-8.html"
+    },
+    {
+      "title": "Modern Residence",
+      "meta": "Residential · Cluj-Napoca",
+      "text": "Design Premium în Tonuri Contemporane.",
+      "link": "portfolio-9.html"
+    }
+  ],
   "reviews": [
     {
       "name": "Client 1",
@@ -129,10 +129,10 @@
       "stars": "★★★★★"
     },
     {
-    "name": "Andrei Popescu",
-    "text": "Serviciu excelent, foarte atenți la detalii și rezultat premium.",
-    "stars": "★★★★★"
-   }
+      "name": "Andrei Popescu",
+      "text": "Serviciu excelent, foarte atenți la detalii și rezultat premium.",
+      "stars": "★★★★★"
+    }
   ],
   "about": {
     "title": "Povestea din spatele fiecărui spațiu",
