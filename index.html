@@ -4,13 +4,11 @@
   <meta charset="UTF-8" />
   
   <meta name="google-site-verification" content="FA7hseq0gDhnpl4jvCRrL5lCWdOcSFrV8O1LAwaHsx4" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>BielDesign — Design Interior Premium</title>
 
   <meta name="description" content="Design interior premium pentru spații elegante. Proiecte rezidențiale, HoReCa și birouri cu execuție impecabilă." />
-
   <meta name="keywords" content="design interior, amenajare premium, interior luxury, design apartament, design restaurant" />
   <meta name="author" content="BielDesign" />
 
@@ -35,7 +33,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="assets/styles.css" />
-
   <link rel="icon" type="image/png" href="assets/favicon.png" />
 </head>
 <body>
@@ -50,12 +47,14 @@
           <small id="brand-tagline">Interior Design & Premium Fit-Out</small>
         </span>
       </a>
+
       <nav class="nav">
-        <a href="#services">Servicii</a>
-        <a href="#portfolio">Portofoliu</a>
-        <a href="#about">Despre</a>
-        <a href="#reviews">Recenzii</a>
-        <a href="#contact" class="btn btn-gold">Contact</a>
+        <a href="#services" id="nav-services">Servicii</a>
+        <a href="#portfolio" id="nav-portfolio">Portofoliu</a>
+        <a href="#about" id="nav-about">Despre</a>
+        <a href="#reviews" id="nav-reviews">Recenzii</a>
+        <a href="#contact" class="btn btn-gold" id="nav-contact">Contact</a>
+        <button type="button" class="btn btn-ghost" id="lang-toggle">EN</button>
       </nav>
     </div>
   </header>
@@ -81,8 +80,7 @@
     <section class="section" id="services">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">Servicii</p>
-          <!-- <h2>Soluții complete, de la concept la implementare.</h2> -->
+          <p class="eyebrow" id="section-services">Servicii</p>
         </div>
         <div class="cards-grid" id="services-grid"></div>
       </div>
@@ -91,8 +89,7 @@
     <section class="section alt-section" id="portfolio">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">Portofoliu</p>
-          <!-- <h2>Proiecte cu prezență vizuală puternică.</h2> -->
+          <p class="eyebrow" id="section-portfolio">Portofoliu</p>
         </div>
         <div class="portfolio-grid" id="portfolio-grid"></div>
       </div>
@@ -101,7 +98,7 @@
     <section class="section" id="about">
       <div class="container about-grid">
         <div>
-          <p class="eyebrow">Despre</p>
+          <p class="eyebrow" id="section-about">Despre</p>
           <h2 id="about-title"></h2>
           <p id="about-text1"></p>
           <p id="about-text2"></p>
@@ -114,7 +111,7 @@
         </div>
         <div class="about-panel about-photo-panel">
           <img src="assets/adina.jpg" alt="Adina BielDesign" class="about-photo">
-          <p class="about-quote">„Cred în interioare care îmbină rafinamentul, echilibrul și emoția autentică.”</p>
+          <p class="about-quote" id="about-quote">„Cred în interioare care îmbină rafinamentul, echilibrul și emoția autentică.”</p>
         </div>
       </div>
     </section>
@@ -122,35 +119,35 @@
     <section class="section alt-section" id="reviews">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">Recenzii</p>
-          <!-- <h2>Feedback autentic de la clienți.</h2> -->
+          <p class="eyebrow" id="section-reviews">Recenzii</p>
         </div>
 
         <div class="reviews-grid" id="reviews-grid"></div>
         <div class="reviews-spacer"></div>
+
         <form class="contact-form review-form" name="review" method="POST" data-netlify="true" style="margin-top: 80px;">
           <input type="hidden" name="form-name" value="review">
 
-          <label>Nume
-            <input type="text" name="name" placeholder="Numele tău" required>
+          <label id="review-name-label">Nume
+            <input type="text" name="name" id="review-name-input" placeholder="Numele tău" required>
           </label>
 
-          <label>Rating
-            <select name="rating" required>
-              <option value="">Alege rating</option>
-              <option value="5">5 stele</option>
-              <option value="4">4 stele</option>
-              <option value="3">3 stele</option>
-              <option value="2">2 stele</option>
-              <option value="1">1 stea</option>
+          <label id="review-rating-label">Rating
+            <select name="rating" id="review-rating-select" required>
+              <option value="" id="review-rating-placeholder">Alege rating</option>
+              <option value="5" id="review-star5">5 stele</option>
+              <option value="4" id="review-star4">4 stele</option>
+              <option value="3" id="review-star3">3 stele</option>
+              <option value="2" id="review-star2">2 stele</option>
+              <option value="1" id="review-star1">1 stea</option>
             </select>
           </label>
 
-          <label>Recenzie
-            <textarea name="message" rows="5" placeholder="Scrie feedback-ul tău" required></textarea>
+          <label id="review-message-label">Recenzie
+            <textarea name="message" rows="5" id="review-message-input" placeholder="Scrie feedback-ul tău" required></textarea>
           </label>
 
-          <button type="submit" class="btn btn-gold btn-full">Trimite recenzia</button>
+          <button type="submit" class="btn btn-gold btn-full" id="review-button">Trimite recenzia</button>
         </form>
       </div>
     </section>
@@ -158,7 +155,7 @@
     <section class="section contact-section">
       <div class="container contact-grid" id="contact">
         <div>
-          <p class="eyebrow">Contact</p>
+          <p class="eyebrow" id="section-contact">Contact</p>
           <h2 id="contact-title">Hai să transformăm spațiul tău într-o semnătură vizuală.</h2>
           <p id="contact-text"></p>
           <div class="contact-cards">
@@ -167,26 +164,27 @@
             <div class="contact-card" id="contact-location"></div>
           </div>
         </div>
+
         <form class="contact-form" name="contact" method="POST" data-netlify="true">
           <input type="hidden" name="form-name" value="contact" />
 
-          <label>Nume
-            <input type="text" name="name" placeholder="Numele tău" required>
+          <label id="contact-name-label">Nume
+            <input type="text" name="name" id="contact-name-input" placeholder="Numele tău" required>
           </label>
 
-          <label>Email
-            <input type="email" name="email" placeholder="email@exemplu.ro">
+          <label id="contact-email-label">Email
+            <input type="email" name="email" id="contact-email-input" placeholder="email@exemplu.ro">
           </label>
 
-          <label>Telefon
-            <input type="tel" name="phone" placeholder="+40 7xx xxx xxx" required>
+          <label id="contact-phone-label">Telefon
+            <input type="tel" name="phone" id="contact-phone-input" placeholder="+40 7xx xxx xxx" required>
           </label>
 
-          <label>Detalii
-            <textarea name="message" rows="5" placeholder="Spune-ne pe scurt ce ai nevoie"></textarea>
+          <label id="contact-message-label">Detalii
+            <textarea name="message" rows="5" id="contact-message-input" placeholder="Spune-ne pe scurt ce ai nevoie"></textarea>
           </label>
 
-          <button type="submit" class="btn btn-gold btn-full">Trimite cererea</button>
+          <button type="submit" class="btn btn-gold btn-full" id="contact-button">Trimite cererea</button>
         </form>
       </div>
     </section>
@@ -197,7 +195,7 @@
       <div>
         <strong id="footer-brand">BielDesign</strong>
         <p id="footer-text">Design interior premium. Prezență vizuală impecabilă. Execuție clară.</p>
-        <p class="footer-legal">© 2026 BielDesign · Toate drepturile rezervate.</p>
+        <p class="footer-legal" id="footer-legal">© 2026 BielDesign · Toate drepturile rezervate.</p>
       </div>
 
       <div class="footer-socials" style="display:flex; gap:18px; justify-content:flex-end; align-items:center;">
@@ -217,67 +215,122 @@
   </footer>
 
   <script>
-    async function loadSite() {
-      const data = await fetch('content/site.json').then(r => r.json());
+    let siteData = null;
+    let currentLang = localStorage.getItem('siteLang') || 'ro';
 
-      document.documentElement.style.setProperty('--body-font', data.theme.bodyFont);
-      document.documentElement.style.setProperty('--heading-font', data.theme.headingFont);
-      document.documentElement.style.setProperty('--body-size', data.theme.bodySize);
-      document.documentElement.style.setProperty('--h1-size', data.theme.h1Size);
-      document.documentElement.style.setProperty('--h2-size', data.theme.h2Size);
-      document.documentElement.style.setProperty('--h3-size', data.theme.h3Size);
+    function t(value) {
+      if (value && typeof value === 'object' && value[currentLang]) {
+        return value[currentLang];
+      }
+      return value || '';
+    }
 
-      document.getElementById('brand-name').textContent = data.brand.name;
-      document.getElementById('brand-tagline').textContent = data.brand.tagline;
-      document.getElementById('footer-brand').textContent = data.brand.name;
-      document.getElementById('footer-text').textContent = data.footer.text;
+    function setLangButton() {
+      const btn = document.getElementById('lang-toggle');
+      btn.textContent = currentLang === 'ro' ? 'EN' : 'RO';
+    }
 
-      document.getElementById('hero-kicker').textContent = data.hero.kicker;
-      document.getElementById('hero-title').textContent = data.hero.title;
-      document.getElementById('hero-text').textContent = data.hero.text;
-      document.getElementById('hero-primary').textContent = data.hero.primaryButton;
-      document.getElementById('hero-secondary').textContent = data.hero.secondaryButton;
+    function applyStaticTexts() {
+      document.documentElement.lang = currentLang;
 
-      document.getElementById('about-title').textContent = data.about.title;
-      document.getElementById('about-text1').textContent = data.about.text1 || '';
-      document.getElementById('about-text2').textContent = data.about.text2 || '';
-      document.getElementById('about-text3').textContent = data.about.text3 || '';
-      document.getElementById('about-text4').textContent = data.about.text4 || '';
-      document.getElementById('about-text5').textContent = data.about.text5 || '';
-      document.getElementById('about-text6').textContent = data.about.text6 || '';
-      document.getElementById('about-text7').textContent = data.about.text7 || '';
-      document.getElementById('about-text8').textContent = data.about.text8 || '';
+      document.getElementById('nav-services').textContent = t(siteData.ui.nav.services);
+      document.getElementById('nav-portfolio').textContent = t(siteData.ui.nav.portfolio);
+      document.getElementById('nav-about').textContent = t(siteData.ui.nav.about);
+      document.getElementById('nav-reviews').textContent = t(siteData.ui.nav.reviews);
+      document.getElementById('nav-contact').textContent = t(siteData.ui.nav.contact);
 
-      document.getElementById('contact-title').textContent = data.contact.title;
-      document.getElementById('contact-text').textContent = data.contact.text;
-      document.getElementById('contact-phone').textContent = data.contact.phone;
-      document.getElementById('contact-email').textContent = data.contact.email;
-      document.getElementById('contact-location').textContent = data.contact.location;
+      document.getElementById('section-services').textContent = t(siteData.ui.sections.services);
+      document.getElementById('section-portfolio').textContent = t(siteData.ui.sections.portfolio);
+      document.getElementById('section-about').textContent = t(siteData.ui.sections.about);
+      document.getElementById('section-reviews').textContent = t(siteData.ui.sections.reviews);
+      document.getElementById('section-contact').textContent = t(siteData.ui.sections.contact);
 
-      document.getElementById('services-grid').innerHTML = data.services.map(item => `
+      document.getElementById('brand-name').textContent = siteData.brand.name;
+      document.getElementById('brand-tagline').textContent = t(siteData.brand.tagline);
+      document.getElementById('footer-brand').textContent = siteData.brand.name;
+      document.getElementById('footer-text').textContent = t(siteData.footer.text);
+      document.getElementById('footer-legal').textContent = t(siteData.ui.footer.legal);
+
+      document.getElementById('hero-kicker').textContent = t(siteData.hero.kicker);
+      document.getElementById('hero-title').textContent = t(siteData.hero.title);
+      document.getElementById('hero-text').textContent = t(siteData.hero.text);
+      document.getElementById('hero-primary').textContent = t(siteData.hero.primaryButton);
+      document.getElementById('hero-secondary').textContent = t(siteData.hero.secondaryButton);
+
+      document.getElementById('about-title').textContent = t(siteData.about.title);
+      document.getElementById('about-text1').textContent = t(siteData.about.text1);
+      document.getElementById('about-text2').textContent = t(siteData.about.text2);
+      document.getElementById('about-text3').textContent = t(siteData.about.text3);
+      document.getElementById('about-text4').textContent = t(siteData.about.text4);
+      document.getElementById('about-text5').textContent = t(siteData.about.text5);
+      document.getElementById('about-text6').textContent = t(siteData.about.text6);
+      document.getElementById('about-text7').textContent = t(siteData.about.text7);
+      document.getElementById('about-text8').textContent = t(siteData.about.text8);
+      document.getElementById('about-quote').textContent = t(siteData.ui.aboutQuote);
+
+      document.getElementById('contact-title').textContent = t(siteData.contact.title);
+      document.getElementById('contact-text').textContent = t(siteData.contact.text);
+      document.getElementById('contact-phone').textContent = siteData.contact.phone;
+      document.getElementById('contact-email').textContent = siteData.contact.email;
+      document.getElementById('contact-location').textContent = t(siteData.contact.location);
+
+      document.getElementById('review-name-label').childNodes[0].nodeValue = t(siteData.ui.reviewForm.nameLabel) + '\n            ';
+      document.getElementById('review-name-input').placeholder = t(siteData.ui.reviewForm.namePlaceholder);
+      document.getElementById('review-rating-label').childNodes[0].nodeValue = t(siteData.ui.reviewForm.ratingLabel) + '\n            ';
+      document.getElementById('review-rating-placeholder').textContent = t(siteData.ui.reviewForm.ratingPlaceholder);
+      document.getElementById('review-star5').textContent = t(siteData.ui.reviewForm.star5);
+      document.getElementById('review-star4').textContent = t(siteData.ui.reviewForm.star4);
+      document.getElementById('review-star3').textContent = t(siteData.ui.reviewForm.star3);
+      document.getElementById('review-star2').textContent = t(siteData.ui.reviewForm.star2);
+      document.getElementById('review-star1').textContent = t(siteData.ui.reviewForm.star1);
+      document.getElementById('review-message-label').childNodes[0].nodeValue = t(siteData.ui.reviewForm.messageLabel) + '\n            ';
+      document.getElementById('review-message-input').placeholder = t(siteData.ui.reviewForm.messagePlaceholder);
+      document.getElementById('review-button').textContent = t(siteData.ui.reviewForm.button);
+
+      document.getElementById('contact-name-label').childNodes[0].nodeValue = t(siteData.ui.contactForm.nameLabel) + '\n            ';
+      document.getElementById('contact-name-input').placeholder = t(siteData.ui.contactForm.namePlaceholder);
+      document.getElementById('contact-email-label').childNodes[0].nodeValue = t(siteData.ui.contactForm.emailLabel) + '\n            ';
+      document.getElementById('contact-email-input').placeholder = t(siteData.ui.contactForm.emailPlaceholder);
+      document.getElementById('contact-phone-label').childNodes[0].nodeValue = t(siteData.ui.contactForm.phoneLabel) + '\n            ';
+      document.getElementById('contact-phone-input').placeholder = t(siteData.ui.contactForm.phonePlaceholder);
+      document.getElementById('contact-message-label').childNodes[0].nodeValue = t(siteData.ui.contactForm.messageLabel) + '\n            ';
+      document.getElementById('contact-message-input').placeholder = t(siteData.ui.contactForm.messagePlaceholder);
+      document.getElementById('contact-button').textContent = t(siteData.ui.contactForm.button);
+
+      document.title = currentLang === 'ro'
+        ? 'BielDesign — Design Interior Premium'
+        : 'BielDesign — Premium Interior Design';
+    }
+
+    function renderServices() {
+      document.getElementById('services-grid').innerHTML = siteData.services.map(item => `
         <article class="card service-card reveal">
-          <h3>${item.title}</h3>
-          <p>${item.text}</p>
-          <h3>${item.title2}</h3>
-          <p>${item.text2}</p>
+          <h3>${t(item.title)}</h3>
+          <p>${t(item.text)}</p>
+          <h3>${t(item.title2)}</h3>
+          <p>${t(item.text2)}</p>
         </article>
       `).join('');
+    }
 
-      document.getElementById('portfolio-grid').innerHTML = data.portfolio.map((item, index) => `
-        <a class="portfolio-card reveal" href="projects/portfolio-${index + 1}.html">
-          <img src="assets/portfolio-${index + 1}.jpg" alt="${item.title}">
+    function renderPortfolio() {
+      document.getElementById('portfolio-grid').innerHTML = siteData.portfolio.map((item, index) => `
+        <a class="portfolio-card reveal" href="projects/portfolio-${index + 1}.html?lang=${currentLang}">
+          <img src="assets/portfolio-${index + 1}.jpg" alt="${t(item.title)}">
           <div class="portfolio-copy">
-            <h3>${item.title}</h3>
-            <p class="portfolio-meta">${item.meta}</p>
-            <p>${item.text}</p>
+            <h3>${t(item.title)}</h3>
+            <p class="portfolio-meta">${t(item.meta)}</p>
+            <p>${t(item.text)}</p>
           </div>
         </a>
       `).join('');
+    }
 
-      document.getElementById('reviews-grid').innerHTML = data.reviews.map(item => `
+    function renderReviews() {
+      document.getElementById('reviews-grid').innerHTML = siteData.reviews.map(item => `
         <article class="review-card reveal">
           <div class="stars">${item.stars}</div>
-          <p>${item.text}</p>
+          <p>${t(item.text)}</p>
           <strong>${item.name}</strong>
         </article>
       `).join('');
@@ -306,9 +359,39 @@
       }
     }
 
+    function applyLanguage() {
+      applyStaticTexts();
+      renderServices();
+      renderPortfolio();
+      renderReviews();
+      setLangButton();
+
+      requestAnimationFrame(() => {
+        revealOnScroll();
+        updateScrollProgress();
+      });
+    }
+
+    async function loadSite() {
+      siteData = await fetch('content/site.json').then(r => r.json());
+
+      document.documentElement.style.setProperty('--body-font', siteData.theme.bodyFont);
+      document.documentElement.style.setProperty('--heading-font', siteData.theme.headingFont);
+      document.documentElement.style.setProperty('--body-size', siteData.theme.bodySize);
+      document.documentElement.style.setProperty('--h1-size', siteData.theme.h1Size);
+      document.documentElement.style.setProperty('--h2-size', siteData.theme.h2Size);
+      document.documentElement.style.setProperty('--h3-size', siteData.theme.h3Size);
+
+      applyLanguage();
+    }
+
+    document.getElementById('lang-toggle').addEventListener('click', () => {
+      currentLang = currentLang === 'ro' ? 'en' : 'ro';
+      localStorage.setItem('siteLang', currentLang);
+      applyLanguage();
+    });
+
     loadSite().then(() => {
-      revealOnScroll();
-      updateScrollProgress();
       window.addEventListener('scroll', revealOnScroll);
       window.addEventListener('scroll', updateScrollProgress);
       document.body.classList.add('page-loaded');
