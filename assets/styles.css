@@ -51,9 +51,23 @@ html {
 
 body {
   margin: 0;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.35)),
-    url("fundal.jpg") center top / 100% auto repeat-y;
+  background-color: #f3eee7;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.35), rgba(255,255,255,0.35)),
+    repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.018) 0px,
+      rgba(0,0,0,0.018) 1px,
+      transparent 1px,
+      transparent 6px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(0,0,0,0.014) 0px,
+      rgba(0,0,0,0.014) 1px,
+      transparent 1px,
+      transparent 6px
+    );
   color: var(--text);
   font-family: var(--body-font);
   font-size: var(--body-size);
