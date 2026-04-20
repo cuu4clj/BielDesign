@@ -90,47 +90,62 @@
       name: "BielDesign",
       tagline: {
         ro: "Interior Design & Premium Fit-Out",
-        en: "Interior Design & Premium Fit-Out"
+        en: "Interior Design & Premium Fit-Out",
+        it: "Interior Design & Realizzazioni Premium"
       }
     },
     ui: {
       portfolio: {
         ro: "Portofoliu",
-        en: "Portfolio"
+        en: "Portfolio",
+        it: "Portfolio"
       },
       back: {
         ro: "Înapoi",
-        en: "Back"
+        en: "Back",
+        it: "Indietro"
       }
     },
     project: {
       title: {
         ro: "Urban Apartment",
-        en: "Urban Apartment"
+        en: "Urban Apartment",
+        it: "Urban Apartment"
       },
       subtitle: {
         ro: "Armonie Contemporană și Accente Premium",
-        en: "Contemporary Harmony and Premium Accents"
+        en: "Contemporary Harmony and Premium Accents",
+        it: "Armonia Contemporanea e Accenti Premium"
       },
       text1: {
         ro: "Amenajarea propune un interior definit prin fluiditate vizuală, tonuri calde și o compoziție atent echilibrată, în care eleganța contemporană este exprimată prin forme ample și materiale sofisticate. Finisajele rafinate, jocul dintre suprafețele mate și texturile delicate, precum și lumina naturală care învăluie spațiul contribuie la crearea unei atmosfere calme, luminoase și exclusiviste.",
-        en: "The design proposes an interior defined by visual fluidity, warm tones, and a carefully balanced composition, where contemporary elegance is expressed through generous forms and sophisticated materials. Refined finishes, the interplay between matte surfaces and delicate textures, as well as the natural light enveloping the space, all contribute to creating a calm, luminous, and exclusive atmosphere."
+        en: "The design proposes an interior defined by visual fluidity, warm tones, and a carefully balanced composition, where contemporary elegance is expressed through generous forms and sophisticated materials. Refined finishes, the interplay between matte surfaces and delicate textures, as well as the natural light enveloping the space, all contribute to creating a calm, luminous, and exclusive atmosphere.",
+        it: "Il progetto propone un interno definito da fluidità visiva, toni caldi e una composizione attentamente equilibrata, in cui l’eleganza contemporanea si esprime attraverso forme ampie e materiali sofisticati. Le finiture raffinate, il dialogo tra superfici opache e texture delicate, insieme alla luce naturale che avvolge lo spazio, contribuiscono a creare un’atmosfera calma, luminosa ed esclusiva."
       },
       text2: {
         ro: "Mobilierul cu linii curbe, volume bine proporționate și detalii atent integrate oferă spațiului expresivitate și coerență estetică. Relația dintre piesele statement, accentele metalice și elementele arhitecturale construiește un decor elegant, în care confortul este completat de o identitate vizuală clar definită. Ansamblul capătă profunzime prin contrastul subtil dintre texturi, reflexii și forme, generând o imagine sofisticată și contemporană.",
-        en: "Furniture with curved lines, well-proportioned volumes, and carefully integrated details gives the space expressiveness and aesthetic coherence. The relationship between statement pieces, metallic accents, and architectural elements creates an elegant setting in which comfort is complemented by a clearly defined visual identity. The whole gains depth through the subtle contrast between textures, reflections, and forms, generating a sophisticated and contemporary image."
+        en: "Furniture with curved lines, well-proportioned volumes, and carefully integrated details gives the space expressiveness and aesthetic coherence. The relationship between statement pieces, metallic accents, and architectural elements creates an elegant setting in which comfort is complemented by a clearly defined visual identity. The whole gains depth through the subtle contrast between textures, reflections, and forms, generating a sophisticated and contemporary image.",
+        it: "Gli arredi dalle linee curve, dai volumi ben proporzionati e dai dettagli accuratamente integrati conferiscono allo spazio espressività e coerenza estetica. Il rapporto tra pezzi statement, accenti metallici ed elementi architettonici costruisce uno scenario elegante, in cui il comfort è completato da un’identità visiva chiaramente definita. L’insieme acquista profondità attraverso il sottile contrasto tra texture, riflessi e forme, generando un’immagine sofisticata e contemporanea."
       },
       text3: {
         ro: "Spațiul transmite căldură, echilibru și o atmosferă premium, definită prin armonie vizuală, confort și rafinament discret.",
-        en: "The space conveys warmth, balance, and a premium atmosphere defined by visual harmony, comfort, and discreet refinement."
+        en: "The space conveys warmth, balance, and a premium atmosphere defined by visual harmony, comfort, and discreet refinement.",
+        it: "Lo spazio trasmette calore, equilibrio e un’atmosfera premium, definita da armonia visiva, comfort e raffinata discrezione."
       }
     }
   };
 
+  const langs = ['ro', 'en', 'it'];
   let currentLang = new URLSearchParams(window.location.search).get('lang') || localStorage.getItem('siteLang') || 'ro';
 
   function t(value) {
     return value[currentLang] || '';
+  }
+
+  function setLangButton() {
+    const index = langs.indexOf(currentLang);
+    const nextLang = langs[(index + 1) % langs.length];
+    document.getElementById('lang-toggle').textContent = nextLang.toUpperCase();
   }
 
   function applyLanguage() {
@@ -152,20 +167,25 @@
     document.getElementById('back-link').textContent = t(projectData.ui.back);
     document.getElementById('back-link').href = `../index.html?lang=${currentLang}#portfolio`;
 
-    document.getElementById('lang-toggle').textContent = currentLang === 'ro' ? 'EN' : 'RO';
+    setLangButton();
 
-    document.title = currentLang === 'ro'
-      ? 'Urban Apartment — BielDesign'
-      : 'Urban Apartment — BielDesign';
+    if (currentLang === 'ro') {
+      document.title = 'Urban Apartment — BielDesign';
+    } else if (currentLang === 'en') {
+      document.title = 'Urban Apartment — BielDesign';
+    } else if (currentLang === 'it') {
+      document.title = 'Urban Apartment — BielDesign';
+    }
   }
 
   document.getElementById('lang-toggle').addEventListener('click', () => {
-    currentLang = currentLang === 'ro' ? 'en' : 'ro';
+    const index = langs.indexOf(currentLang);
+    currentLang = langs[(index + 1) % langs.length];
     localStorage.setItem('siteLang', currentLang);
     applyLanguage();
   });
 
-    document.addEventListener('contextmenu', function(e) {
+  document.addEventListener('contextmenu', function(e) {
     if (e.target.closest('.project-gallery')) {
       e.preventDefault();
     }
@@ -174,6 +194,7 @@
   document.querySelectorAll('.project-gallery img').forEach(img => {
     img.setAttribute('draggable', 'false');
   });
+
   applyLanguage();
   document.body.classList.add('page-loaded');
 </script>
