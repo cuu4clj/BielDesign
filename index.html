@@ -54,7 +54,15 @@
         <a href="#about" id="nav-about">Despre</a>
         <a href="#reviews" id="nav-reviews">Recenzii</a>
         <a href="#contact" class="btn btn-gold" id="nav-contact">Contact</a>
-        <button type="button" class="btn btn-ghost" id="lang-toggle">EN</button>
+
+        <div class="lang-switcher">
+          <button type="button" class="btn btn-ghost" id="lang-toggle">RO</button>
+          <div class="lang-menu" id="lang-menu">
+            <button type="button" class="lang-option" data-lang="ro">RO</button>
+            <button type="button" class="lang-option" data-lang="en">EN</button>
+            <button type="button" class="lang-option" data-lang="it">IT</button>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
@@ -227,10 +235,11 @@
     }
 
     function setLangButton() {
-      const btn = document.getElementById('lang-toggle');
-      const index = langs.indexOf(currentLang);
-      const nextLang = langs[(index + 1) % langs.length];
-      btn.textContent = nextLang.toUpperCase();
+      document.getElementById('lang-toggle').textContent = currentLang.toUpperCase();
+
+      document.querySelectorAll('.lang-option').forEach(option => {
+        option.classList.toggle('active', option.dataset.lang === currentLang);
+      });
     }
 
     function applyStaticTexts() {
@@ -304,7 +313,7 @@
         document.title = 'BielDesign — Design Interior Premium';
       } else if (currentLang === 'en') {
         document.title = 'BielDesign — Premium Interior Design';
-      } else {
+      } else if (currentLang === 'it') {
         document.title = 'BielDesign — Interior Design Premium';
       }
     }
@@ -392,11 +401,26 @@
       applyLanguage();
     }
 
-    document.getElementById('lang-toggle').addEventListener('click', () => {
-      const index = langs.indexOf(currentLang);
-      currentLang = langs[(index + 1) % langs.length];
-      localStorage.setItem('siteLang', currentLang);
-      applyLanguage();
+    const langToggle = document.getElementById('lang-toggle');
+    const langMenu = document.getElementById('lang-menu');
+
+    langToggle.addEventListener('click', () => {
+      langMenu.classList.toggle('show');
+    });
+
+    document.querySelectorAll('.lang-option').forEach(option => {
+      option.addEventListener('click', () => {
+        currentLang = option.dataset.lang;
+        localStorage.setItem('siteLang', currentLang);
+        applyLanguage();
+        langMenu.classList.remove('show');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.lang-switcher')) {
+        langMenu.classList.remove('show');
+      }
     });
 
     loadSite().then(() => {
