@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mulțumim — BielDesign</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="assets/logo.jpg" alt="Logo">
+      <span>
+        <strong id="brand-name">BielDesign</strong>
+        <small id="brand-tagline">Interior Design & Premium Fit-Out</small>
+      </span>
+    </a>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container" style="max-width: 860px;">
+    <div class="card" style="text-align:center; padding:48px 28px;">
+      <p class="eyebrow" id="thankyou-eyebrow">Mesaj trimis</p>
+      <h1 id="thankyou-title" style="max-width:none;">Mulțumim pentru mesaj!</h1>
+      <p id="thankyou-text" style="max-width: 640px; margin: 0 auto 28px;">
+        Cererea ta a fost trimisă cu succes. Vom reveni cât mai curând pentru a discuta detaliile proiectului tău.
+      </p>
+
+      <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
+        <a href="index.html" class="btn btn-gold" id="thankyou-home">Înapoi la site</a>
+        <a href="index.html#portfolio" class="btn btn-ghost" id="thankyou-projects">Vezi proiecte</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const thankYouData = {
+    brand: {
+      name: "BielDesign",
+      tagline: {
+        ro: "Interior Design & Premium Fit-Out",
+        en: "Interior Design & Premium Fit-Out",
+        it: "Interior Design & Realizzazioni Premium"
+      }
+    },
+    page: {
+      eyebrow: {
+        ro: "Mesaj trimis",
+        en: "Message sent",
+        it: "Messaggio inviato"
+      },
+      title: {
+        ro: "Mulțumim pentru mesaj!",
+        en: "Thank you for your message!",
+        it: "Grazie per il tuo messaggio!"
+      },
+      text: {
+        ro: "Cererea ta a fost trimisă cu succes. Vom reveni cât mai curând pentru a discuta detaliile proiectului tău.",
+        en: "Your request has been sent successfully. We will get back to you as soon as possible to discuss the details of your project.",
+        it: "La tua richiesta è stata inviata con successo. Ti ricontatteremo al più presto per discutere i dettagli del tuo progetto."
+      },
+      home: {
+        ro: "Înapoi la site",
+        en: "Back to site",
+        it: "Torna al sito"
+      },
+      projects: {
+        ro: "Vezi proiecte",
+        en: "View projects",
+        it: "Vedi progetti"
+      },
+      titleTag: {
+        ro: "Mulțumim — BielDesign",
+        en: "Thank You — BielDesign",
+        it: "Grazie — BielDesign"
+      }
+    }
+  };
+
+  let currentLang = new URLSearchParams(window.location.search).get('lang') || localStorage.getItem('siteLang') || 'ro';
+
+  function t(value) {
+    return value[currentLang] || value.ro || '';
+  }
+
+  function applyLanguage() {
+    document.documentElement.lang = currentLang;
+
+    document.getElementById('brand-name').textContent = thankYouData.brand.name;
+    document.getElementById('brand-tagline').textContent = t(thankYouData.brand.tagline);
+
+    document.getElementById('thankyou-eyebrow').textContent = t(thankYouData.page.eyebrow);
+    document.getElementById('thankyou-title').textContent = t(thankYouData.page.title);
+    document.getElementById('thankyou-text').textContent = t(thankYouData.page.text);
+    document.getElementById('thankyou-home').textContent = t(thankYouData.page.home);
+    document.getElementById('thankyou-projects').textContent = t(thankYouData.page.projects);
+
+    document.getElementById('thankyou-home').href = `index.html?lang=${currentLang}`;
+    document.getElementById('thankyou-projects').href = `index.html?lang=${currentLang}#portfolio`;
+
+    document.title = t(thankYouData.page.titleTag);
+  }
+
+  applyLanguage();
+  document.body.classList.add('page-loaded');
+</script>
+
+</body>
+</html>
