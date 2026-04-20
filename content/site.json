@@ -246,31 +246,7 @@
   ],
   "reviews": [
     {
-      "name": "Client 1",
-      "text": {
-        "ro": "Rezultatul a fost impecabil și foarte premium.",
-        "en": "The final result was impeccable and truly premium."
-      },
-      "stars": "★★★★★"
-    },
-    {
-      "name": "Client 2",
-      "text": {
-        "ro": "Comunicare clară și execuție excelentă.",
-        "en": "Clear communication and excellent execution."
-      },
-      "stars": "★★★★★"
-    },
-    {
-      "name": "Client 3",
-      "text": {
-        "ro": "Spațiul arată exact cum ne-am dorit.",
-        "en": "The space looks exactly the way we wanted."
-      },
-      "stars": "★★★★★"
-    },
-    {
-      "name": "Andrei Popescu",
+      "name": "Andrei Pop",
       "text": {
         "ro": "Serviciu excelent, foarte atenți la detalii și rezultat premium.",
         "en": "Excellent service, great attention to detail, and a premium result."
