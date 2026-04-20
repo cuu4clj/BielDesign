@@ -32,7 +32,7 @@
 
       <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
         <a href="index.html" class="btn btn-gold" id="thankyou-home">Înapoi la site</a>
-        <a href="index.html#portfolio" class="btn btn-ghost" id="thankyou-projects">Vezi proiecte</a>
+        <a href="index.html?target=portfolio" class="btn btn-ghost" id="thankyou-projects">Vezi proiecte</a>
       </div>
     </div>
   </div>
@@ -101,7 +101,7 @@
     document.getElementById('thankyou-projects').textContent = t(thankYouData.page.projects);
 
     document.getElementById('thankyou-home').href = `index.html?lang=${currentLang}`;
-    document.getElementById('thankyou-projects').href = `index.html?lang=${currentLang}#portfolio`;
+    document.getElementById('thankyou-projects').href = `index.html?lang=${currentLang}&target=portfolio`;
 
     document.title = t(thankYouData.page.titleTag);
   }
