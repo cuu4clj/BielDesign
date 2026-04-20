@@ -216,6 +216,7 @@
 
   <script>
     let siteData = null;
+    const langs = ['ro', 'en', 'it'];
     let currentLang = localStorage.getItem('siteLang') || 'ro';
 
     function t(value) {
@@ -227,7 +228,9 @@
 
     function setLangButton() {
       const btn = document.getElementById('lang-toggle');
-      btn.textContent = currentLang === 'ro' ? 'EN' : 'RO';
+      const index = langs.indexOf(currentLang);
+      const nextLang = langs[(index + 1) % langs.length];
+      btn.textContent = nextLang.toUpperCase();
     }
 
     function applyStaticTexts() {
@@ -297,9 +300,13 @@
       document.getElementById('contact-message-input').placeholder = t(siteData.ui.contactForm.messagePlaceholder);
       document.getElementById('contact-button').textContent = t(siteData.ui.contactForm.button);
 
-      document.title = currentLang === 'ro'
-        ? 'BielDesign — Design Interior Premium'
-        : 'BielDesign — Premium Interior Design';
+      if (currentLang === 'ro') {
+        document.title = 'BielDesign — Design Interior Premium';
+      } else if (currentLang === 'en') {
+        document.title = 'BielDesign — Premium Interior Design';
+      } else {
+        document.title = 'BielDesign — Interior Design Premium';
+      }
     }
 
     function renderServices() {
@@ -386,7 +393,8 @@
     }
 
     document.getElementById('lang-toggle').addEventListener('click', () => {
-      currentLang = currentLang === 'ro' ? 'en' : 'ro';
+      const index = langs.indexOf(currentLang);
+      currentLang = langs[(index + 1) % langs.length];
       localStorage.setItem('siteLang', currentLang);
       applyLanguage();
     });
