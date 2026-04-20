@@ -87,47 +87,62 @@
       name: "BielDesign",
       tagline: {
         ro: "Interior Design & Premium Fit-Out",
-        en: "Interior Design & Premium Fit-Out"
+        en: "Interior Design & Premium Fit-Out",
+        it: "Interior Design & Realizzazioni Premium"
       }
     },
     ui: {
       portfolio: {
         ro: "Portofoliu",
-        en: "Portfolio"
+        en: "Portfolio",
+        it: "Portfolio"
       },
       back: {
         ro: "Înapoi",
-        en: "Back"
+        en: "Back",
+        it: "Indietro"
       }
     },
     project: {
       title: {
         ro: "Modern Residence",
-        en: "Modern Residence"
+        en: "Modern Residence",
+        it: "Modern Residence"
       },
       subtitle: {
         ro: "Design Premium în Tonuri Contemporane",
-        en: "Premium Design in Contemporary Tones"
+        en: "Premium Design in Contemporary Tones",
+        it: "Design Premium in Toni Contemporanei"
       },
       text1: {
         ro: "Amenajarea propune un interior cu identitate puternică, în care contrastul dintre tonurile închise, texturile minerale și lumina atent controlată construiește o atmosferă sofisticată și profund contemporană. Suprafețele ample, materialele expresive și compoziția riguroasă conturează un ambient exclusivist, în care fiecare detaliu contribuie la o imagine coerentă, dramatică și rafinată.",
-        en: "The design proposes an interior with a strong identity, where the contrast between dark tones, mineral textures, and carefully controlled light creates a sophisticated and deeply contemporary atmosphere. Expansive surfaces, expressive materials, and a rigorous composition shape an exclusive setting in which every detail contributes to a coherent, dramatic, and refined image."
+        en: "The design proposes an interior with a strong identity, where the contrast between dark tones, mineral textures, and carefully controlled light creates a sophisticated and deeply contemporary atmosphere. Expansive surfaces, expressive materials, and a rigorous composition shape an exclusive setting in which every detail contributes to a coherent, dramatic, and refined image.",
+        it: "Il progetto propone un interno dall’identità forte, in cui il contrasto tra toni scuri, texture minerali e luce attentamente controllata costruisce un’atmosfera sofisticata e profondamente contemporanea. Le superfici ampie, i materiali espressivi e la composizione rigorosa delineano un ambiente esclusivo, in cui ogni dettaglio contribuisce a un’immagine coerente, scenografica e raffinata."
       },
       text2: {
         ro: "Mobilierul cu forme ferme, volume generoase și prezență sculpturală oferă spațiului stabilitate și caracter vizual. Biblioteca iluminată, panourile cu aspect de piatră, corpurile suspendate și zona de dining integrată creează un ansamblu elegant, în care funcționalitatea este susținută de un puternic impact estetic. Relația dintre finisajele mate, reflexiile discrete și accentele decorative transformă amenajarea într-un decor premium, cu ritm, profunzime și o expresivitate contemporană distinctă.",
-        en: "Furniture with firm forms, generous volumes, and a sculptural presence gives the space stability and visual character. The illuminated bookcase, stone-like panels, suspended fixtures, and integrated dining area create an elegant ensemble in which functionality is supported by a strong aesthetic impact. The relationship between matte finishes, discreet reflections, and decorative accents transforms the design into a premium setting with rhythm, depth, and a distinct contemporary expressiveness."
+        en: "Furniture with firm forms, generous volumes, and a sculptural presence gives the space stability and visual character. The illuminated bookcase, stone-like panels, suspended fixtures, and integrated dining area create an elegant ensemble in which functionality is supported by a strong aesthetic impact. The relationship between matte finishes, discreet reflections, and decorative accents transforms the design into a premium setting with rhythm, depth, and a distinct contemporary expressiveness.",
+        it: "Gli arredi dalle forme decise, dai volumi generosi e dalla presenza scultorea conferiscono allo spazio stabilità e carattere visivo. La libreria illuminata, i pannelli effetto pietra, i corpi sospesi e la zona dining integrata creano un insieme elegante, in cui la funzionalità è sostenuta da un forte impatto estetico. Il rapporto tra finiture opache, riflessi discreti e accenti decorativi trasforma il progetto in uno scenario premium, ricco di ritmo, profondità e una distinta espressività contemporanea."
       },
       text3: {
         ro: "Spațiul transmite forță vizuală, echilibru și o atmosferă premium, definită prin contrast, sobrietate și rafinament contemporan.",
-        en: "The space conveys visual strength, balance, and a premium atmosphere defined by contrast, sobriety, and contemporary refinement."
+        en: "The space conveys visual strength, balance, and a premium atmosphere defined by contrast, sobriety, and contemporary refinement.",
+        it: "Lo spazio trasmette forza visiva, equilibrio e un’atmosfera premium, definita da contrasto, sobrietà e raffinatezza contemporanea."
       }
     }
   };
 
+  const langs = ['ro', 'en', 'it'];
   let currentLang = new URLSearchParams(window.location.search).get('lang') || localStorage.getItem('siteLang') || 'ro';
 
   function t(value) {
     return value[currentLang] || '';
+  }
+
+  function setLangButton() {
+    const index = langs.indexOf(currentLang);
+    const nextLang = langs[(index + 1) % langs.length];
+    document.getElementById('lang-toggle').textContent = nextLang.toUpperCase();
   }
 
   function applyLanguage() {
@@ -149,20 +164,25 @@
     document.getElementById('back-link').textContent = t(projectData.ui.back);
     document.getElementById('back-link').href = `../index.html?lang=${currentLang}#portfolio`;
 
-    document.getElementById('lang-toggle').textContent = currentLang === 'ro' ? 'EN' : 'RO';
+    setLangButton();
 
-    document.title = currentLang === 'ro'
-      ? 'Modern Residence — BielDesign'
-      : 'Modern Residence — BielDesign';
+    if (currentLang === 'ro') {
+      document.title = 'Modern Residence — BielDesign';
+    } else if (currentLang === 'en') {
+      document.title = 'Modern Residence — BielDesign';
+    } else if (currentLang === 'it') {
+      document.title = 'Modern Residence — BielDesign';
+    }
   }
 
   document.getElementById('lang-toggle').addEventListener('click', () => {
-    currentLang = currentLang === 'ro' ? 'en' : 'ro';
+    const index = langs.indexOf(currentLang);
+    currentLang = langs[(index + 1) % langs.length];
     localStorage.setItem('siteLang', currentLang);
     applyLanguage();
   });
 
-    document.addEventListener('contextmenu', function(e) {
+  document.addEventListener('contextmenu', function(e) {
     if (e.target.closest('.project-gallery')) {
       e.preventDefault();
     }
@@ -171,6 +191,7 @@
   document.querySelectorAll('.project-gallery img').forEach(img => {
     img.setAttribute('draggable', 'false');
   });
+
   applyLanguage();
   document.body.classList.add('page-loaded');
 </script>
