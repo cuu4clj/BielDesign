@@ -2,38 +2,31 @@
    1. THEME / VARIABILE GLOBALE
    ========================================================= */
 :root {
-  /* Culori principale */
   --bg: #0d0d0d;
   --panel: #151515;
   --text: #111111;
   --muted: #4f4a44;
   --accent: #585d63;
 
-  /* Accente speciale */
   --star-gold: #c9a227;
 
-  /* Borduri și transparențe */
   --line-soft: rgba(212, 175, 55, 0.14);
   --line-card: rgba(212, 175, 55, 0.16);
   --line-input: rgba(212, 175, 55, 0.22);
 
-  /* Forme */
   --radius: 22px;
   --radius-sm: 14px;
   --radius-lg: 20px;
   --radius-pill: 999px;
 
-  /* Fonturi */
   --body-font: Inter;
   --heading-font: Inter;
 
-  /* Dimensiuni text */
   --body-size: 17px;
   --h1-size: 1.8rem;
   --h2-size: clamp(1.3rem, 2.4vw, 2rem);
   --h3-size: 1.2rem;
 
-  /* Umbre */
   --shadow-card: 0 18px 60px rgba(0, 0, 0, 0.22);
 }
 
@@ -263,7 +256,8 @@ p {
 .review-card,
 .about-panel,
 .contact-form,
-.contact-card {
+.contact-card,
+.review-premium-side {
   background: rgba(12, 12, 12, 0.82);
   border: 1px solid var(--line-card);
   border-radius: var(--radius);
@@ -291,7 +285,9 @@ p {
 .about-panel h3,
 .about-panel p,
 .contact-card,
-.contact-form label {
+.contact-form label,
+.review-premium-side h2,
+.review-premium-side p {
   color: #f5f1e8;
 }
 
@@ -383,7 +379,17 @@ p {
    11. RECENZII
    ========================================================= */
 .reviews-grid {
-  margin-bottom: 50px;
+  margin-bottom: 38px;
+}
+
+.review-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.30);
+  border-color: rgba(212, 175, 55, 0.30);
 }
 
 .reviews-spacer {
@@ -397,6 +403,82 @@ p {
 .stars {
   color: var(--star-gold);
   margin-bottom: 10px;
+}
+
+.reviews-heading-premium {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 32px;
+}
+
+.reviews-heading-premium h2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.reviews-heading-premium p:last-child {
+  margin: 0;
+}
+
+.review-premium-wrap {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 22px;
+  align-items: stretch;
+  margin-top: 10px;
+}
+
+.review-premium-side {
+  padding: 34px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.review-premium-side::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.04), rgba(212,175,55,0.06)),
+    radial-gradient(circle at top right, rgba(212,175,55,0.12), transparent 40%);
+  pointer-events: none;
+}
+
+.review-premium-side > * {
+  position: relative;
+  z-index: 1;
+}
+
+.review-premium-side .eyebrow {
+  color: #d8c9a2;
+}
+
+.review-premium-side h2 {
+  color: #f5f1e8;
+  margin-bottom: 14px;
+}
+
+.review-premium-side p {
+  color: #d8d1c5;
+  max-width: 36ch;
+}
+
+.review-premium-form {
+  padding: 26px;
+  align-content: start;
+}
+
+.review-form-top-row {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 14px;
+}
+
+.review-submit-btn {
+  margin-top: 6px;
 }
 
 /* =========================================================
@@ -479,7 +561,9 @@ textarea::placeholder {
   .contact-grid,
   .cards-grid,
   .portfolio-grid,
-  .reviews-grid {
+  .reviews-grid,
+  .review-premium-wrap,
+  .review-form-top-row {
     grid-template-columns: 1fr;
   }
 
@@ -528,6 +612,15 @@ textarea::placeholder {
   .btn-accent,
   .btn-gold {
     padding: 10px 16px;
+  }
+
+  .review-premium-side,
+  .review-premium-form {
+    padding: 22px;
+  }
+
+  .reviews-heading-premium {
+    margin-bottom: 24px;
   }
 }
 
@@ -684,6 +777,20 @@ textarea::placeholder {
 
 /* =========================================================
    24. SCROLL PROGRESS BAR
+   ========================================================= */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: var(--accent);
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
+/* =========================================================
+   25. LANGUAGE SWITCHER
    ========================================================= */
 .lang-switcher {
   position: relative;
