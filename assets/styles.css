@@ -353,6 +353,9 @@ p {
 
 .project-photo {
   margin-bottom: 18px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .project-photo:last-child {
@@ -364,6 +367,16 @@ p {
   height: auto;
   display: block;
   border-radius: var(--radius-lg);
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+.project-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
 }
 
 /* =========================================================
