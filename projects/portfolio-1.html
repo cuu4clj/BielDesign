@@ -18,11 +18,6 @@
         <small id="brand-tagline">Interior Design & Premium Fit-Out</small>
       </span>
     </a>
-
-    <nav class="nav">
-      <a href="../index.html?lang=ro#portfolio" id="back-link" class="btn btn-gold">Back</a>
-      <button type="button" class="btn btn-ghost" id="lang-toggle">EN</button>
-    </nav>
   </div>
 </header>
 
@@ -129,17 +124,10 @@
     }
   };
 
-  const langs = ['ro', 'en', 'it'];
   let currentLang = new URLSearchParams(window.location.search).get('lang') || localStorage.getItem('siteLang') || 'ro';
 
   function t(value) {
     return value[currentLang] || '';
-  }
-
-  function setLangButton() {
-    const index = langs.indexOf(currentLang);
-    const nextLang = langs[(index + 1) % langs.length];
-    document.getElementById('lang-toggle').textContent = nextLang.toUpperCase();
   }
 
   function applyLanguage() {
@@ -158,26 +146,14 @@
     document.getElementById('back-button').textContent = t(projectData.ui.back);
     document.getElementById('back-button').href = `../index.html?lang=${currentLang}#portfolio`;
 
-    document.getElementById('back-link').textContent = t(projectData.ui.back);
-    document.getElementById('back-link').href = `../index.html?lang=${currentLang}#portfolio`;
-
-    setLangButton();
-
     if (currentLang === 'ro') {
       document.title = 'Restaurant Germania — BielDesign';
     } else if (currentLang === 'en') {
       document.title = 'Germania Restaurant — BielDesign';
-    } else {
+    } else if (currentLang === 'it') {
       document.title = 'Ristorante Germania — BielDesign';
     }
   }
-
-  document.getElementById('lang-toggle').addEventListener('click', () => {
-    const index = langs.indexOf(currentLang);
-    currentLang = langs[(index + 1) % langs.length];
-    localStorage.setItem('siteLang', currentLang);
-    applyLanguage();
-  });
 
   document.addEventListener('contextmenu', function(e) {
     if (e.target.closest('.project-gallery')) {
