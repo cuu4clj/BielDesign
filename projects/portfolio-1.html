@@ -84,47 +84,62 @@
       name: "BielDesign",
       tagline: {
         ro: "Interior Design & Premium Fit-Out",
-        en: "Interior Design & Premium Fit-Out"
+        en: "Interior Design & Premium Fit-Out",
+        it: "Interior Design & Realizzazioni Premium"
       }
     },
     ui: {
       portfolio: {
         ro: "Portofoliu",
-        en: "Portfolio"
+        en: "Portfolio",
+        it: "Portfolio"
       },
       back: {
         ro: "Înapoi",
-        en: "Back"
+        en: "Back",
+        it: "Indietro"
       }
     },
     project: {
       title: {
         ro: "Restaurant Germania",
-        en: "Germania Restaurant"
+        en: "Germania Restaurant",
+        it: "Ristorante Germania"
       },
       subtitle: {
         ro: "Rafinament Atemporal și Detalii Statement",
-        en: "Timeless Refinement and Statement Details"
+        en: "Timeless Refinement and Statement Details",
+        it: "Raffinatezza Senza Tempo e Dettagli d’Impatto"
       },
       text1: {
         ro: "Amenajarea propune o interpretare elegantă a luxului modern, unde fiecare element contribuie la o compoziție coerentă și expresivă. Finisajele atent selecționate, volumele echilibrate și detaliile decorative cu personalitate creează un ambient sofisticat, luminos și perfect armonizat.",
-        en: "The design proposes an elegant interpretation of modern luxury, where each element contributes to a coherent and expressive composition. Carefully selected finishes, balanced volumes, and decorative details with personality create a sophisticated, luminous, and perfectly harmonized atmosphere."
+        en: "The design proposes an elegant interpretation of modern luxury, where each element contributes to a coherent and expressive composition. Carefully selected finishes, balanced volumes, and decorative details with personality create a sophisticated, luminous, and perfectly harmonized atmosphere.",
+        it: "Il progetto propone un’interpretazione elegante del lusso contemporaneo, in cui ogni elemento contribuisce a una composizione coerente ed espressiva. Le finiture accuratamente selezionate, i volumi equilibrati e i dettagli decorativi ricchi di personalità creano un ambiente sofisticato, luminoso e perfettamente armonizzato."
       },
       text2: {
         ro: "Mobilierul și elementele de decor sunt gândite ca piese statement, capabile să ofere ritm, dinamism și personalitate întregii amenajări. Liniile echilibrate, formele atent controlate și raportul dintre funcționalitate și expresivitate transformă spațiul într-o experiență vizuală completă, în care frumusețea fiecărui detaliu este pusă în valoare de ansamblu. Iluminatul decorativ completează această compoziție printr-o prezență sculpturală, accentuând zonele-cheie și adăugând profunzime întregului concept.",
-        en: "The furniture and decorative elements are conceived as statement pieces, capable of bringing rhythm, dynamism, and personality to the entire design. Balanced lines, carefully controlled forms, and the relationship between functionality and expressiveness transform the space into a complete visual experience, where the beauty of every detail is elevated by the whole. Decorative lighting completes the composition through a sculptural presence, highlighting key areas and adding depth to the overall concept."
+        en: "The furniture and decorative elements are conceived as statement pieces, capable of bringing rhythm, dynamism, and personality to the entire design. Balanced lines, carefully controlled forms, and the relationship between functionality and expressiveness transform the space into a complete visual experience, where the beauty of every detail is elevated by the whole. Decorative lighting completes the composition through a sculptural presence, highlighting key areas and adding depth to the overall concept.",
+        it: "Gli arredi e gli elementi decorativi sono concepiti come pezzi statement, capaci di conferire ritmo, dinamismo e personalità all’intero progetto. Le linee equilibrate, le forme attentamente controllate e il rapporto tra funzionalità ed espressività trasformano lo spazio in un’esperienza visiva completa, in cui la bellezza di ogni dettaglio viene valorizzata dall’insieme. L’illuminazione decorativa completa la composizione con una presenza scultorea, mettendo in risalto le zone chiave e aggiungendo profondità al concept complessivo."
       },
       text3: {
         ro: "Spațiul transmite o eleganță atemporală, o identitate distinctă și o atmosferă premium, concepută pentru a inspira exclusivitate, bun gust și rafinament autentic.",
-        en: "The space conveys timeless elegance, a distinct identity, and a premium atmosphere designed to inspire exclusivity, good taste, and authentic refinement."
+        en: "The space conveys timeless elegance, a distinct identity, and a premium atmosphere designed to inspire exclusivity, good taste, and authentic refinement.",
+        it: "Lo spazio trasmette un’eleganza senza tempo, un’identità distinta e un’atmosfera premium, pensata per evocare esclusività, gusto raffinato e autenticità."
       }
     }
   };
 
+  const langs = ['ro', 'en', 'it'];
   let currentLang = new URLSearchParams(window.location.search).get('lang') || localStorage.getItem('siteLang') || 'ro';
 
   function t(value) {
     return value[currentLang] || '';
+  }
+
+  function setLangButton() {
+    const index = langs.indexOf(currentLang);
+    const nextLang = langs[(index + 1) % langs.length];
+    document.getElementById('lang-toggle').textContent = nextLang.toUpperCase();
   }
 
   function applyLanguage() {
@@ -146,15 +161,20 @@
     document.getElementById('back-link').textContent = t(projectData.ui.back);
     document.getElementById('back-link').href = `../index.html?lang=${currentLang}#portfolio`;
 
-    document.getElementById('lang-toggle').textContent = currentLang === 'ro' ? 'EN' : 'RO';
+    setLangButton();
 
-    document.title = currentLang === 'ro'
-      ? 'Restaurant Germania — BielDesign'
-      : 'Germania Restaurant — BielDesign';
+    if (currentLang === 'ro') {
+      document.title = 'Restaurant Germania — BielDesign';
+    } else if (currentLang === 'en') {
+      document.title = 'Germania Restaurant — BielDesign';
+    } else {
+      document.title = 'Ristorante Germania — BielDesign';
+    }
   }
 
   document.getElementById('lang-toggle').addEventListener('click', () => {
-    currentLang = currentLang === 'ro' ? 'en' : 'ro';
+    const index = langs.indexOf(currentLang);
+    currentLang = langs[(index + 1) % langs.length];
     localStorage.setItem('siteLang', currentLang);
     applyLanguage();
   });
