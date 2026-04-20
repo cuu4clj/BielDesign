@@ -99,47 +99,62 @@
       name: "BielDesign",
       tagline: {
         ro: "Interior Design & Premium Fit-Out",
-        en: "Interior Design & Premium Fit-Out"
+        en: "Interior Design & Premium Fit-Out",
+        it: "Interior Design & Realizzazioni Premium"
       }
     },
     ui: {
       portfolio: {
         ro: "Portofoliu",
-        en: "Portfolio"
+        en: "Portfolio",
+        it: "Portfolio"
       },
       back: {
         ro: "Înapoi",
-        en: "Back"
+        en: "Back",
+        it: "Indietro"
       }
     },
     project: {
       title: {
         ro: "Penthouse Residence",
-        en: "Penthouse Residence"
+        en: "Penthouse Residence",
+        it: "Penthouse Residence"
       },
       subtitle: {
         ro: "Contrast Elegant și Detalii Statement",
-        en: "Elegant Contrast and Statement Details"
+        en: "Elegant Contrast and Statement Details",
+        it: "Contrasto Elegante e Dettagli d’Impatto"
       },
       text1: {
         ro: "Amenajarea propune un interior sofisticat, în care contrastul dintre tonurile închise, texturile rafinate și accentele luminoase construiește o atmosferă contemporană, coerentă și plină de profunzime vizuală. Materialele atent selecționate, compoziția echilibrată și jocul subtil dintre suprafețele mate și reflexiile elegante definesc un ambient premium, în care fiecare detaliu contribuie la conturarea unei identități puternice și expresive.",
-        en: "The design proposes a sophisticated interior in which the contrast between dark tones, refined textures, and luminous accents creates a contemporary, coherent atmosphere rich in visual depth. Carefully selected materials, a balanced composition, and the subtle play between matte surfaces and elegant reflections define a premium environment in which every detail contributes to shaping a strong and expressive identity."
+        en: "The design proposes a sophisticated interior in which the contrast between dark tones, refined textures, and luminous accents creates a contemporary, coherent atmosphere rich in visual depth. Carefully selected materials, a balanced composition, and the subtle play between matte surfaces and elegant reflections define a premium environment in which every detail contributes to shaping a strong and expressive identity.",
+        it: "Il progetto propone un interno sofisticato, in cui il contrasto tra toni scuri, texture raffinate e accenti luminosi costruisce un’atmosfera contemporanea, coerente e ricca di profondità visiva. I materiali attentamente selezionati, la composizione equilibrata e il sottile dialogo tra superfici opache e riflessi eleganti definiscono un ambiente premium, in cui ogni dettaglio contribuisce a delineare un’identità forte ed espressiva."
       },
       text2: {
         ro: "Mobilierul cu volume generoase, linii bine controlate și prezență sculpturală oferă spațiului stabilitate vizuală și confort sofisticat. Relația dintre piesele statement, corpurile decorative de iluminat și elementele arhitecturale integrate creează un decor armonios, în care funcționalitatea se îmbină firesc cu expresivitatea estetică. Biblioteca iluminată, texturile moi și accentele metalice completează ansamblul prin ritm, eleganță și un caracter contemporan bine definit.",
-        en: "Furniture with generous volumes, controlled lines, and a sculptural presence gives the space visual stability and sophisticated comfort. The relationship between statement pieces, decorative lighting fixtures, and integrated architectural elements creates a harmonious setting in which functionality naturally blends with aesthetic expressiveness. The illuminated bookcase, soft textures, and metallic accents complete the whole through rhythm, elegance, and a well-defined contemporary character."
+        en: "Furniture with generous volumes, controlled lines, and a sculptural presence gives the space visual stability and sophisticated comfort. The relationship between statement pieces, decorative lighting fixtures, and integrated architectural elements creates a harmonious setting in which functionality naturally blends with aesthetic expressiveness. The illuminated bookcase, soft textures, and metallic accents complete the whole through rhythm, elegance, and a well-defined contemporary character.",
+        it: "Gli arredi dai volumi generosi, dalle linee ben controllate e dalla presenza scultorea conferiscono allo spazio stabilità visiva e comfort sofisticato. Il rapporto tra pezzi statement, corpi illuminanti decorativi ed elementi architettonici integrati crea uno scenario armonioso, in cui la funzionalità si unisce naturalmente all’espressività estetica. La libreria illuminata, le texture morbide e gli accenti metallici completano l’insieme con ritmo, eleganza e un carattere contemporaneo ben definito."
       },
       text3: {
         ro: "Spațiul transmite echilibru, intimitate și o atmosferă premium, definită prin contrast, confort și rafinament modern.",
-        en: "The space conveys balance, intimacy, and a premium atmosphere defined by contrast, comfort, and modern refinement."
+        en: "The space conveys balance, intimacy, and a premium atmosphere defined by contrast, comfort, and modern refinement.",
+        it: "Lo spazio trasmette equilibrio, intimità e un’atmosfera premium, definita da contrasto, comfort e raffinata modernità."
       }
     }
   };
 
+  const langs = ['ro', 'en', 'it'];
   let currentLang = new URLSearchParams(window.location.search).get('lang') || localStorage.getItem('siteLang') || 'ro';
 
   function t(value) {
     return value[currentLang] || '';
+  }
+
+  function setLangButton() {
+    const index = langs.indexOf(currentLang);
+    const nextLang = langs[(index + 1) % langs.length];
+    document.getElementById('lang-toggle').textContent = nextLang.toUpperCase();
   }
 
   function applyLanguage() {
@@ -161,20 +176,25 @@
     document.getElementById('back-link').textContent = t(projectData.ui.back);
     document.getElementById('back-link').href = `../index.html?lang=${currentLang}#portfolio`;
 
-    document.getElementById('lang-toggle').textContent = currentLang === 'ro' ? 'EN' : 'RO';
+    setLangButton();
 
-    document.title = currentLang === 'ro'
-      ? 'Penthouse Residence — BielDesign'
-      : 'Penthouse Residence — BielDesign';
+    if (currentLang === 'ro') {
+      document.title = 'Penthouse Residence — BielDesign';
+    } else if (currentLang === 'en') {
+      document.title = 'Penthouse Residence — BielDesign';
+    } else if (currentLang === 'it') {
+      document.title = 'Penthouse Residence — BielDesign';
+    }
   }
 
   document.getElementById('lang-toggle').addEventListener('click', () => {
-    currentLang = currentLang === 'ro' ? 'en' : 'ro';
+    const index = langs.indexOf(currentLang);
+    currentLang = langs[(index + 1) % langs.length];
     localStorage.setItem('siteLang', currentLang);
     applyLanguage();
   });
 
-    document.addEventListener('contextmenu', function(e) {
+  document.addEventListener('contextmenu', function(e) {
     if (e.target.closest('.project-gallery')) {
       e.preventDefault();
     }
@@ -183,6 +203,7 @@
   document.querySelectorAll('.project-gallery img').forEach(img => {
     img.setAttribute('draggable', 'false');
   });
+
   applyLanguage();
   document.body.classList.add('page-loaded');
 </script>
