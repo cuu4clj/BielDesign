@@ -158,6 +158,15 @@
     applyLanguage();
   });
 
+    document.addEventListener('contextmenu', function(e) {
+    if (e.target.closest('.project-gallery')) {
+      e.preventDefault();
+    }
+  });
+
+  document.querySelectorAll('.project-gallery img').forEach(img => {
+    img.setAttribute('draggable', 'false');
+  });
   applyLanguage();
   document.body.classList.add('page-loaded');
 </script>
