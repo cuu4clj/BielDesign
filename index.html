@@ -133,7 +133,7 @@
         <div class="reviews-grid" id="reviews-grid"></div>
         <div class="reviews-spacer"></div>
 
-        <form class="contact-form" name="contact" method="POST" data-netlify="true" action="thank-you.html?type=contact">
+        <form class="contact-form review-form" name="review" method="POST" data-netlify="true" action="thank-you.html?type=review" style="margin-top: 80px;">
           <input type="hidden" name="form-name" value="review">
 
           <label id="review-name-label">Nume
@@ -173,7 +173,7 @@
           </div>
         </div>
 
-        <form class="contact-form" name="contact" method="POST" data-netlify="true" action="thank-you.html">
+        <form class="contact-form" name="contact" method="POST" data-netlify="true" action="thank-you.html?type=contact">
           <input type="hidden" name="form-name" value="contact" />
 
           <label id="contact-name-label">Nume
@@ -376,25 +376,25 @@
     }
 
     function applyLanguage() {
-  applyStaticTexts();
-  renderServices();
-  renderPortfolio();
-  renderReviews();
-  setLangButton();
+      applyStaticTexts();
+      renderServices();
+      renderPortfolio();
+      renderReviews();
+      setLangButton();
 
-  requestAnimationFrame(() => {
-    revealOnScroll();
-    updateScrollProgress();
+      requestAnimationFrame(() => {
+        revealOnScroll();
+        updateScrollProgress();
 
-    const target = new URLSearchParams(window.location.search).get('target');
-    if (target) {
-      const targetEl = document.getElementById(target);
-      if (targetEl) {
-        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+        const target = new URLSearchParams(window.location.search).get('target');
+        if (target) {
+          const targetEl = document.getElementById(target);
+          if (targetEl) {
+            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
     }
-  });
-}
 
     async function loadSite() {
       siteData = await fetch('content/site.json').then(r => r.json());
