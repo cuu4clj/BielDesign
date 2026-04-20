@@ -376,17 +376,25 @@
     }
 
     function applyLanguage() {
-      applyStaticTexts();
-      renderServices();
-      renderPortfolio();
-      renderReviews();
-      setLangButton();
+  applyStaticTexts();
+  renderServices();
+  renderPortfolio();
+  renderReviews();
+  setLangButton();
 
-      requestAnimationFrame(() => {
-        revealOnScroll();
-        updateScrollProgress();
-      });
+  requestAnimationFrame(() => {
+    revealOnScroll();
+    updateScrollProgress();
+
+    const target = new URLSearchParams(window.location.search).get('target');
+    if (target) {
+      const targetEl = document.getElementById(target);
+      if (targetEl) {
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
+  });
+}
 
     async function loadSite() {
       siteData = await fetch('content/site.json').then(r => r.json());
