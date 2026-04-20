@@ -96,47 +96,62 @@
       name: "BielDesign",
       tagline: {
         ro: "Interior Design & Premium Fit-Out",
-        en: "Interior Design & Premium Fit-Out"
+        en: "Interior Design & Premium Fit-Out",
+        it: "Interior Design & Realizzazioni Premium"
       }
     },
     ui: {
       portfolio: {
         ro: "Portofoliu",
-        en: "Portfolio"
+        en: "Portfolio",
+        it: "Portfolio"
       },
       back: {
         ro: "Înapoi",
-        en: "Back"
+        en: "Back",
+        it: "Indietro"
       }
     },
     project: {
       title: {
         ro: "Penthouse Residence No2",
-        en: "Penthouse Residence No2"
+        en: "Penthouse Residence No2",
+        it: "Penthouse Residence No2"
       },
       subtitle: {
         ro: "Eleganță Clasică în Note Contemporane",
-        en: "Classic Elegance with Contemporary Notes"
+        en: "Classic Elegance with Contemporary Notes",
+        it: "Eleganza Classica in Chiave Contemporanea"
       },
       text1: {
         ro: "Amenajarea propune o bucătărie luminoasă și sofisticată, în care detaliile decorative, finisajele elegante și accentele aurii construiesc o estetică rafinată și echilibrată. Suprafețele deschise, marmura cu desen expresiv și proporțiile atent controlate conturează un ambient exclusivist, în care funcționalitatea este pusă în valoare prin claritate vizuală și finețe compozițională.",
-        en: "The design proposes a luminous and sophisticated kitchen, where decorative details, elegant finishes, and golden accents create a refined and balanced aesthetic. Bright surfaces, expressive marble veining, and carefully controlled proportions shape an exclusive atmosphere in which functionality is enhanced through visual clarity and compositional finesse."
+        en: "The design proposes a luminous and sophisticated kitchen, where decorative details, elegant finishes, and golden accents create a refined and balanced aesthetic. Bright surfaces, expressive marble veining, and carefully controlled proportions shape an exclusive atmosphere in which functionality is enhanced through visual clarity and compositional finesse.",
+        it: "Il progetto propone una cucina luminosa e sofisticata, in cui dettagli decorativi, finiture eleganti e accenti dorati costruiscono un’estetica raffinata ed equilibrata. Le superfici chiare, il marmo dalle venature espressive e le proporzioni attentamente controllate delineano un ambiente esclusivo, in cui la funzionalità viene valorizzata attraverso chiarezza visiva e finezza compositiva."
       },
       text2: {
         ro: "Mobilierul cu linii curate, fronturile atent integrate și detaliile metalice discrete oferă spațiului coerență și o prezență elegantă. Relația dintre elementele clasice reinterpretate, materialele premium și iluminatul bine dozat transformă amenajarea într-un decor armonios, în care fiecare detaliu contribuie la o imagine sofisticată și bine definită. Ansamblul păstrează un echilibru natural între expresivitate decorativă și utilitate contemporană.",
-        en: "Furniture with clean lines, carefully integrated fronts, and discreet metallic details gives the space coherence and an elegant presence. The relationship between reinterpreted classical elements, premium materials, and well-balanced lighting transforms the design into a harmonious setting, in which every detail contributes to a sophisticated and clearly defined image. The whole preserves a natural balance between decorative expressiveness and contemporary utility."
+        en: "Furniture with clean lines, carefully integrated fronts, and discreet metallic details gives the space coherence and an elegant presence. The relationship between reinterpreted classical elements, premium materials, and well-balanced lighting transforms the design into a harmonious setting, in which every detail contributes to a sophisticated and clearly defined image. The whole preserves a natural balance between decorative expressiveness and contemporary utility.",
+        it: "Gli arredi dalle linee pulite, i frontali attentamente integrati e i discreti dettagli metallici conferiscono allo spazio coerenza e una presenza elegante. Il rapporto tra elementi classici reinterpretati, materiali premium e illuminazione ben calibrata trasforma il progetto in uno scenario armonioso, in cui ogni dettaglio contribuisce a un’immagine sofisticata e ben definita. L’insieme mantiene un equilibrio naturale tra espressività decorativa e funzionalità contemporanea."
       },
       text3: {
         ro: "Spațiul transmite luminozitate, rafinament și o atmosferă premium, definită prin eleganță, ordine vizuală și confort discret.",
-        en: "The space conveys luminosity, refinement, and a premium atmosphere defined by elegance, visual order, and discreet comfort."
+        en: "The space conveys luminosity, refinement, and a premium atmosphere defined by elegance, visual order, and discreet comfort.",
+        it: "Lo spazio trasmette luminosità, raffinatezza e un’atmosfera premium, definita da eleganza, ordine visivo e comfort discreto."
       }
     }
   };
 
+  const langs = ['ro', 'en', 'it'];
   let currentLang = new URLSearchParams(window.location.search).get('lang') || localStorage.getItem('siteLang') || 'ro';
 
   function t(value) {
     return value[currentLang] || '';
+  }
+
+  function setLangButton() {
+    const index = langs.indexOf(currentLang);
+    const nextLang = langs[(index + 1) % langs.length];
+    document.getElementById('lang-toggle').textContent = nextLang.toUpperCase();
   }
 
   function applyLanguage() {
@@ -158,20 +173,25 @@
     document.getElementById('back-link').textContent = t(projectData.ui.back);
     document.getElementById('back-link').href = `../index.html?lang=${currentLang}#portfolio`;
 
-    document.getElementById('lang-toggle').textContent = currentLang === 'ro' ? 'EN' : 'RO';
+    setLangButton();
 
-    document.title = currentLang === 'ro'
-      ? 'Penthouse Residence No2 — BielDesign'
-      : 'Penthouse Residence No2 — BielDesign';
+    if (currentLang === 'ro') {
+      document.title = 'Penthouse Residence No2 — BielDesign';
+    } else if (currentLang === 'en') {
+      document.title = 'Penthouse Residence No2 — BielDesign';
+    } else if (currentLang === 'it') {
+      document.title = 'Penthouse Residence No2 — BielDesign';
+    }
   }
 
   document.getElementById('lang-toggle').addEventListener('click', () => {
-    currentLang = currentLang === 'ro' ? 'en' : 'ro';
+    const index = langs.indexOf(currentLang);
+    currentLang = langs[(index + 1) % langs.length];
     localStorage.setItem('siteLang', currentLang);
     applyLanguage();
   });
 
-    document.addEventListener('contextmenu', function(e) {
+  document.addEventListener('contextmenu', function(e) {
     if (e.target.closest('.project-gallery')) {
       e.preventDefault();
     }
@@ -180,6 +200,7 @@
   document.querySelectorAll('.project-gallery img').forEach(img => {
     img.setAttribute('draggable', 'false');
   });
+
   applyLanguage();
   document.body.classList.add('page-loaded');
 </script>
