@@ -93,47 +93,62 @@
       name: "BielDesign",
       tagline: {
         ro: "Interior Design & Premium Fit-Out",
-        en: "Interior Design & Premium Fit-Out"
+        en: "Interior Design & Premium Fit-Out",
+        it: "Interior Design & Realizzazioni Premium"
       }
     },
     ui: {
       portfolio: {
         ro: "Portofoliu",
-        en: "Portfolio"
+        en: "Portfolio",
+        it: "Portfolio"
       },
       back: {
         ro: "Înapoi",
-        en: "Back"
+        en: "Back",
+        it: "Indietro"
       }
     },
     project: {
       title: {
         ro: "Penthouse Residence - Columna",
-        en: "Penthouse Residence - Columna"
+        en: "Penthouse Residence - Columna",
+        it: "Penthouse Residence - Columna"
       },
       subtitle: {
         ro: "Echilibru Vizual și Accente Contemporane",
-        en: "Visual Balance and Contemporary Accents"
+        en: "Visual Balance and Contemporary Accents",
+        it: "Equilibrio Visivo e Accenti Contemporanei"
       },
       text1: {
         ro: "Amenajarea propune un interior definit prin claritate compozițională, tonuri neutre și o relație echilibrată între suprafețele luminoase și accentele închise. Liniile verticale, reflexiile subtile și iluminatul integrat construiesc o atmosferă calmă și sofisticată, în care estetica contemporană este susținută de ordine, proporție și finețe vizuală.",
-        en: "The design proposes an interior defined by compositional clarity, neutral tones, and a balanced relationship between luminous surfaces and darker accents. Vertical lines, subtle reflections, and integrated lighting build a calm and sophisticated atmosphere in which contemporary aesthetics are supported by order, proportion, and visual finesse."
+        en: "The design proposes an interior defined by compositional clarity, neutral tones, and a balanced relationship between luminous surfaces and darker accents. Vertical lines, subtle reflections, and integrated lighting build a calm and sophisticated atmosphere in which contemporary aesthetics are supported by order, proportion, and visual finesse.",
+        it: "Il progetto propone un interno definito da chiarezza compositiva, tonalità neutre e un rapporto equilibrato tra superfici luminose e accenti più scuri. Le linee verticali, i riflessi delicati e l’illuminazione integrata costruiscono un’atmosfera calma e sofisticata, in cui l’estetica contemporanea è sostenuta da ordine, proporzione e finezza visiva."
       },
       text2: {
         ro: "Mobilierul cu forme ample, volume joase și detalii discret evidențiate oferă spațiului confort și coerență estetică. Elementele decorative, biblioteca iluminată și compoziția centrală a peretelui media adaugă profunzime și ritm, fără a diminua senzația de aerisire și echilibru. Întregul ansamblu este gândit pentru a pune în valoare contrastul dintre texturi moi, finisaje elegante și accente arhitecturale bine controlate.",
-        en: "Furniture with generous forms, low volumes, and discreetly highlighted details gives the space comfort and aesthetic coherence. Decorative elements, the illuminated bookcase, and the central composition of the media wall add depth and rhythm without diminishing the sense of openness and balance. The entire ensemble is conceived to highlight the contrast between soft textures, elegant finishes, and well-controlled architectural accents."
+        en: "Furniture with generous forms, low volumes, and discreetly highlighted details gives the space comfort and aesthetic coherence. Decorative elements, the illuminated bookcase, and the central composition of the media wall add depth and rhythm without diminishing the sense of openness and balance. The entire ensemble is conceived to highlight the contrast between soft textures, elegant finishes, and well-controlled architectural accents.",
+        it: "Gli arredi dalle forme generose, dai volumi bassi e dai dettagli discretamente evidenziati conferiscono allo spazio comfort e coerenza estetica. Gli elementi decorativi, la libreria illuminata e la composizione centrale della parete media aggiungono profondità e ritmo, senza ridurre la sensazione di apertura ed equilibrio. L’intero insieme è pensato per valorizzare il contrasto tra texture morbide, finiture eleganti e accenti architettonici ben controllati."
       },
       text3: {
         ro: "Spațiul transmite liniște, claritate și o atmosferă premium, definită prin confort, simplitate sofisticată și rafinament contemporan.",
-        en: "The space conveys calm, clarity, and a premium atmosphere defined by comfort, sophisticated simplicity, and contemporary refinement."
+        en: "The space conveys calm, clarity, and a premium atmosphere defined by comfort, sophisticated simplicity, and contemporary refinement.",
+        it: "Lo spazio trasmette calma, chiarezza e un’atmosfera premium, definita da comfort, semplicità sofisticata e raffinatezza contemporanea."
       }
     }
   };
 
+  const langs = ['ro', 'en', 'it'];
   let currentLang = new URLSearchParams(window.location.search).get('lang') || localStorage.getItem('siteLang') || 'ro';
 
   function t(value) {
     return value[currentLang] || '';
+  }
+
+  function setLangButton() {
+    const index = langs.indexOf(currentLang);
+    const nextLang = langs[(index + 1) % langs.length];
+    document.getElementById('lang-toggle').textContent = nextLang.toUpperCase();
   }
 
   function applyLanguage() {
@@ -155,20 +170,25 @@
     document.getElementById('back-link').textContent = t(projectData.ui.back);
     document.getElementById('back-link').href = `../index.html?lang=${currentLang}#portfolio`;
 
-    document.getElementById('lang-toggle').textContent = currentLang === 'ro' ? 'EN' : 'RO';
+    setLangButton();
 
-    document.title = currentLang === 'ro'
-      ? 'Penthouse Residence - Columna — BielDesign'
-      : 'Penthouse Residence - Columna — BielDesign';
+    if (currentLang === 'ro') {
+      document.title = 'Penthouse Residence - Columna — BielDesign';
+    } else if (currentLang === 'en') {
+      document.title = 'Penthouse Residence - Columna — BielDesign';
+    } else if (currentLang === 'it') {
+      document.title = 'Penthouse Residence - Columna — BielDesign';
+    }
   }
 
   document.getElementById('lang-toggle').addEventListener('click', () => {
-    currentLang = currentLang === 'ro' ? 'en' : 'ro';
+    const index = langs.indexOf(currentLang);
+    currentLang = langs[(index + 1) % langs.length];
     localStorage.setItem('siteLang', currentLang);
     applyLanguage();
   });
 
-    document.addEventListener('contextmenu', function(e) {
+  document.addEventListener('contextmenu', function(e) {
     if (e.target.closest('.project-gallery')) {
       e.preventDefault();
     }
@@ -177,6 +197,7 @@
   document.querySelectorAll('.project-gallery img').forEach(img => {
     img.setAttribute('draggable', 'false');
   });
+
   applyLanguage();
   document.body.classList.add('page-loaded');
 </script>
