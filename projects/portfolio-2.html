@@ -110,47 +110,62 @@
       name: "BielDesign",
       tagline: {
         ro: "Interior Design & Premium Fit-Out",
-        en: "Interior Design & Premium Fit-Out"
+        en: "Interior Design & Premium Fit-Out",
+        it: "Interior Design & Realizzazioni Premium"
       }
     },
     ui: {
       portfolio: {
         ro: "Portofoliu",
-        en: "Portfolio"
+        en: "Portfolio",
+        it: "Portfolio"
       },
       back: {
         ro: "Înapoi",
-        en: "Back"
+        en: "Back",
+        it: "Indietro"
       }
     },
     project: {
       title: {
         ro: "Apart-Hotel Germania",
-        en: "Apart-Hotel Germany"
+        en: "Apart-Hotel Germany",
+        it: "Apart-Hotel Germania"
       },
       subtitle: {
         ro: "Echilibru Contemporan cu Accente Rafinate",
-        en: "Contemporary Balance with Refined Accents"
+        en: "Contemporary Balance with Refined Accents",
+        it: "Equilibrio Contemporaneo con Accenti Raffinati"
       },
       text1: {
         ro: "Amenajarea propune o expresie echilibrată a eleganței contemporane, în care fiecare element este integrat cu grijă pentru a susține o atmosferă calmă, luminoasă și rafinată. Finisajele atent selecționate, cromatica neutră și texturile moi contribuie la definirea unui ambient armonios, în care confortul devine parte esențială din experiența estetică.",
-        en: "The design proposes a balanced expression of contemporary elegance, where every element is carefully integrated to support a calm, luminous, and refined atmosphere. Carefully selected finishes, a neutral palette, and soft textures help define a harmonious environment in which comfort becomes an essential part of the aesthetic experience."
+        en: "The design proposes a balanced expression of contemporary elegance, where every element is carefully integrated to support a calm, luminous, and refined atmosphere. Carefully selected finishes, a neutral palette, and soft textures help define a harmonious environment in which comfort becomes an essential part of the aesthetic experience.",
+        it: "Il progetto propone un’espressione equilibrata dell’eleganza contemporanea, in cui ogni elemento è integrato con cura per sostenere un’atmosfera calma, luminosa e raffinata. Le finiture accuratamente selezionate, la palette neutra e le texture morbide contribuiscono a definire un ambiente armonioso, in cui il comfort diventa parte essenziale dell’esperienza estetica."
       },
       text2: {
         ro: "Mobilierul cu linii curate, volumele bine proporționate și detaliile decorative discrete oferă spațiului coerență vizuală și o identitate clar conturată. Relația dintre materialele calde, accentele contemporane și compoziția atent echilibrată transformă amenajarea într-un interior sofisticat, în care funcționalitatea și expresivitatea coexistă firesc. Iluminatul arhitectural completează întregul concept printr-o prezență subtilă, punând în valoare texturile, profunzimea și caracterul intim al spațiului.",
-        en: "Furniture with clean lines, well-proportioned volumes, and discreet decorative details gives the space visual coherence and a clearly defined identity. The relationship between warm materials, contemporary accents, and the carefully balanced composition transforms the design into a sophisticated interior in which functionality and expressiveness coexist naturally. Architectural lighting completes the concept through a subtle presence, highlighting textures, depth, and the intimate character of the space."
+        en: "Furniture with clean lines, well-proportioned volumes, and discreet decorative details gives the space visual coherence and a clearly defined identity. The relationship between warm materials, contemporary accents, and the carefully balanced composition transforms the design into a sophisticated interior in which functionality and expressiveness coexist naturally. Architectural lighting completes the concept through a subtle presence, highlighting textures, depth, and the intimate character of the space.",
+        it: "Gli arredi dalle linee pulite, i volumi ben proporzionati e i dettagli decorativi discreti conferiscono allo spazio coerenza visiva e un’identità chiaramente definita. Il rapporto tra materiali caldi, accenti contemporanei e composizione attentamente bilanciata trasforma il progetto in un interno sofisticato, in cui funzionalità ed espressività convivono in modo naturale. L’illuminazione architettonica completa il concept con una presenza sottile, valorizzando texture, profondità e il carattere intimo dello spazio."
       },
       text3: {
         ro: "Spațiul transmite o stare de calm, confort și echilibru vizual, într-o atmosferă premium definită prin luminozitate, naturalețe și rafinament discret.",
-        en: "The space conveys a sense of calm, comfort, and visual balance, within a premium atmosphere defined by luminosity, naturalness, and discreet refinement."
+        en: "The space conveys a sense of calm, comfort, and visual balance, within a premium atmosphere defined by luminosity, naturalness, and discreet refinement.",
+        it: "Lo spazio trasmette una sensazione di calma, comfort ed equilibrio visivo, in un’atmosfera premium definita da luminosità, naturalezza e raffinata discrezione."
       }
     }
   };
 
+  const langs = ['ro', 'en', 'it'];
   let currentLang = new URLSearchParams(window.location.search).get('lang') || localStorage.getItem('siteLang') || 'ro';
 
   function t(value) {
     return value[currentLang] || '';
+  }
+
+  function setLangButton() {
+    const index = langs.indexOf(currentLang);
+    const nextLang = langs[(index + 1) % langs.length];
+    document.getElementById('lang-toggle').textContent = nextLang.toUpperCase();
   }
 
   function applyLanguage() {
@@ -172,20 +187,25 @@
     document.getElementById('back-link').textContent = t(projectData.ui.back);
     document.getElementById('back-link').href = `../index.html?lang=${currentLang}#portfolio`;
 
-    document.getElementById('lang-toggle').textContent = currentLang === 'ro' ? 'EN' : 'RO';
+    setLangButton();
 
-    document.title = currentLang === 'ro'
-      ? 'Apart-Hotel Germania — BielDesign'
-      : 'Apart-Hotel Germany — BielDesign';
+    if (currentLang === 'ro') {
+      document.title = 'Apart-Hotel Germania — BielDesign';
+    } else if (currentLang === 'en') {
+      document.title = 'Apart-Hotel Germany — BielDesign';
+    } else {
+      document.title = 'Apart-Hotel Germania — BielDesign';
+    }
   }
 
   document.getElementById('lang-toggle').addEventListener('click', () => {
-    currentLang = currentLang === 'ro' ? 'en' : 'ro';
+    const index = langs.indexOf(currentLang);
+    currentLang = langs[(index + 1) % langs.length];
     localStorage.setItem('siteLang', currentLang);
     applyLanguage();
   });
 
-    document.addEventListener('contextmenu', function(e) {
+  document.addEventListener('contextmenu', function(e) {
     if (e.target.closest('.project-gallery')) {
       e.preventDefault();
     }
