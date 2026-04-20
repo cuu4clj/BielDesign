@@ -111,47 +111,62 @@
       name: "BielDesign",
       tagline: {
         ro: "Interior Design & Premium Fit-Out",
-        en: "Interior Design & Premium Fit-Out"
+        en: "Interior Design & Premium Fit-Out",
+        it: "Interior Design & Realizzazioni Premium"
       }
     },
     ui: {
       portfolio: {
         ro: "Portofoliu",
-        en: "Portfolio"
+        en: "Portfolio",
+        it: "Portfolio"
       },
       back: {
         ro: "Înapoi",
-        en: "Back"
+        en: "Back",
+        it: "Indietro"
       }
     },
     project: {
       title: {
         ro: "Urban House",
-        en: "Urban House"
+        en: "Urban House",
+        it: "Urban House"
       },
       subtitle: {
         ro: "Expresie Modernă în Tonuri Închise",
-        en: "Modern Expression in Dark Tones"
+        en: "Modern Expression in Dark Tones",
+        it: "Espressione Moderna in Toni Scuri"
       },
       text1: {
         ro: "Amenajarea propune un interior cu identitate puternică, în care tonurile închise, texturile sofisticate și jocul subtil de lumini construiesc o atmosferă intimă și rafinată. Compoziția atent echilibrată și materialele alese cu grijă definesc un ambient contemporan, în care fiecare element contribuie la conturarea unui spațiu cu personalitate și profunzime vizuală.",
-        en: "The design proposes an interior with a strong identity, where dark tones, sophisticated textures, and a subtle play of light create an intimate and refined atmosphere. The carefully balanced composition and thoughtfully selected materials define a contemporary setting in which every element contributes to shaping a space with personality and visual depth."
+        en: "The design proposes an interior with a strong identity, where dark tones, sophisticated textures, and a subtle play of light create an intimate and refined atmosphere. The carefully balanced composition and thoughtfully selected materials define a contemporary setting in which every element contributes to shaping a space with personality and visual depth.",
+        it: "Il progetto propone un interno dall’identità forte, in cui i toni scuri, le texture sofisticate e il sottile gioco di luci costruiscono un’atmosfera intima e raffinata. La composizione attentamente equilibrata e i materiali scelti con cura definiscono un ambiente contemporaneo, in cui ogni elemento contribuisce a dare forma a uno spazio ricco di personalità e profondità visiva."
       },
       text2: {
         ro: "Mobilierul cu forme ample, linii joase și volume bine proporționate oferă încăperii stabilitate și coerență vizuală. Suprafețele mate, accentele discrete și integrarea iluminatului arhitectural pun în valoare caracterul modern al amenajării, în timp ce relația dintre texturi, contraste și finisaje creează un decor elegant, conceput pentru confort și expresivitate. Ansamblul este completat de detalii atent dozate, care adaugă ritm și întăresc identitatea întregului concept.",
-        en: "Furniture with generous forms, low lines, and well-proportioned volumes brings stability and visual coherence to the space. Matte surfaces, discreet accents, and the integration of architectural lighting enhance the modern character of the design, while the relationship between textures, contrasts, and finishes creates an elegant setting conceived for both comfort and expressiveness. The overall composition is completed by carefully measured details that add rhythm and strengthen the identity of the entire concept."
+        en: "Furniture with generous forms, low lines, and well-proportioned volumes brings stability and visual coherence to the space. Matte surfaces, discreet accents, and the integration of architectural lighting enhance the modern character of the design, while the relationship between textures, contrasts, and finishes creates an elegant setting conceived for both comfort and expressiveness. The overall composition is completed by carefully measured details that add rhythm and strengthen the identity of the entire concept.",
+        it: "Gli arredi dalle forme ampie, dalle linee basse e dai volumi ben proporzionati conferiscono all’ambiente stabilità e coerenza visiva. Le superfici opache, gli accenti discreti e l’integrazione dell’illuminazione architettonica valorizzano il carattere moderno del progetto, mentre il rapporto tra texture, contrasti e finiture crea uno scenario elegante, pensato per comfort ed espressività. L’insieme è completato da dettagli dosati con attenzione, che aggiungono ritmo e rafforzano l’identità dell’intero concept."
       },
       text3: {
         ro: "Spațiul transmite intimitate, echilibru și o atmosferă premium, definită prin contrast, confort și rafinament contemporan.",
-        en: "The space conveys intimacy, balance, and a premium atmosphere defined by contrast, comfort, and contemporary refinement."
+        en: "The space conveys intimacy, balance, and a premium atmosphere defined by contrast, comfort, and contemporary refinement.",
+        it: "Lo spazio trasmette intimità, equilibrio e un’atmosfera premium, definita da contrasto, comfort e raffinatezza contemporanea."
       }
     }
   };
 
+  const langs = ['ro', 'en', 'it'];
   let currentLang = new URLSearchParams(window.location.search).get('lang') || localStorage.getItem('siteLang') || 'ro';
 
   function t(value) {
     return value[currentLang] || '';
+  }
+
+  function setLangButton() {
+    const index = langs.indexOf(currentLang);
+    const nextLang = langs[(index + 1) % langs.length];
+    document.getElementById('lang-toggle').textContent = nextLang.toUpperCase();
   }
 
   function applyLanguage() {
@@ -173,19 +188,25 @@
     document.getElementById('back-link').textContent = t(projectData.ui.back);
     document.getElementById('back-link').href = `../index.html?lang=${currentLang}#portfolio`;
 
-    document.getElementById('lang-toggle').textContent = currentLang === 'ro' ? 'EN' : 'RO';
+    setLangButton();
 
-    document.title = currentLang === 'ro'
-      ? 'Urban House — BielDesign'
-      : 'Urban House — BielDesign';
+    if (currentLang === 'ro') {
+      document.title = 'Urban House — BielDesign';
+    } else if (currentLang === 'en') {
+      document.title = 'Urban House — BielDesign';
+    } else if (currentLang === 'it') {
+      document.title = 'Urban House — BielDesign';
+    }
   }
 
   document.getElementById('lang-toggle').addEventListener('click', () => {
-    currentLang = currentLang === 'ro' ? 'en' : 'ro';
+    const index = langs.indexOf(currentLang);
+    currentLang = langs[(index + 1) % langs.length];
     localStorage.setItem('siteLang', currentLang);
     applyLanguage();
   });
-    document.addEventListener('contextmenu', function(e) {
+
+  document.addEventListener('contextmenu', function(e) {
     if (e.target.closest('.project-gallery')) {
       e.preventDefault();
     }
@@ -194,6 +215,7 @@
   document.querySelectorAll('.project-gallery img').forEach(img => {
     img.setAttribute('draggable', 'false');
   });
+
   applyLanguage();
   document.body.classList.add('page-loaded');
 </script>
