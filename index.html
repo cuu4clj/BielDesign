@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="ro">
 <head>
   <meta charset="UTF-8" />
@@ -125,17 +125,28 @@
     </section>
 
     <section class="section alt-section" id="reviews">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow" id="section-reviews">Recenzii</p>
-        </div>
+  <div class="container">
+    <div class="section-heading reviews-heading-premium">
+      <p class="eyebrow" id="section-reviews">Recenzii</p>
+      <h2 id="reviews-main-title">Ce spun clienții despre noi</h2>
+      <p id="reviews-main-text">Fiecare proiect este o poveste. Iar cei care ne aleg devin parte din ea.</p>
+    </div>
 
-        <div class="reviews-grid" id="reviews-grid"></div>
-        <div class="reviews-spacer"></div>
+    <div class="reviews-grid" id="reviews-grid"></div>
 
-        <form class="contact-form review-form" name="review" method="POST" data-netlify="true" action="thank-you.html?type=review" style="margin-top: 80px;">
-          <input type="hidden" name="form-name" value="review">
+    <div class="review-premium-wrap reveal">
+      <div class="review-premium-side">
+        <p class="eyebrow" id="review-promo-kicker">Lasă o recenzie</p>
+        <h2 id="review-promo-title">Părerea ta contează</h2>
+        <p id="review-promo-text">
+          Ajută-ne să creștem și să oferim experiențe din ce în ce mai bune.
+        </p>
+      </div>
 
+      <form class="contact-form review-form review-premium-form" name="review" method="POST" data-netlify="true" action="thank-you.html?type=review">
+        <input type="hidden" name="form-name" value="review">
+
+        <div class="review-form-top-row">
           <label id="review-name-label">Nume
             <input type="text" name="name" id="review-name-input" placeholder="Numele tău" required>
           </label>
@@ -150,15 +161,17 @@
               <option value="1" id="review-star1">1 stea</option>
             </select>
           </label>
+        </div>
 
-          <label id="review-message-label">Recenzie
-            <textarea name="message" rows="5" id="review-message-input" placeholder="Scrie feedback-ul tău" required></textarea>
-          </label>
+        <label id="review-message-label">Recenzie
+          <textarea name="message" rows="5" id="review-message-input" placeholder="Scrie feedback-ul tău" required></textarea>
+        </label>
 
-          <button type="submit" class="btn btn-gold btn-full" id="review-button">Trimite recenzia</button>
-        </form>
-      </div>
-    </section>
+        <button type="submit" class="btn btn-gold btn-full review-submit-btn" id="review-button">Trimite recenzia</button>
+      </form>
+    </div>
+  </div>
+</section>
 
     <section class="section contact-section">
       <div class="container contact-grid" id="contact">
@@ -227,6 +240,34 @@
     const langs = ['ro', 'en', 'it'];
     let currentLang = localStorage.getItem('siteLang') || 'ro';
 
+    const reviewPromoData = {
+  mainTitle: {
+    ro: "Ce spun clienții despre noi",
+    en: "What our clients say about us",
+    it: "Cosa dicono di noi i nostri clienti"
+  },
+  mainText: {
+    ro: "Fiecare proiect este o poveste. Iar cei care ne aleg devin parte din ea.",
+    en: "Every project is a story. And those who choose us become part of it.",
+    it: "Ogni progetto è una storia. E chi ci sceglie ne diventa parte."
+  },
+  kicker: {
+    ro: "Lasă o recenzie",
+    en: "Leave a review",
+    it: "Lascia una recensione"
+  },
+  title: {
+    ro: "Părerea ta contează",
+    en: "Your opinion matters",
+    it: "La tua opinione conta"
+  },
+  text: {
+    ro: "Ajută-ne să creștem și să oferim experiențe din ce în ce mai bune.",
+    en: "Help us grow and deliver even better experiences.",
+    it: "Aiutaci a crescere e a offrire esperienze sempre migliori."
+  }
+};
+
     function t(value) {
       if (value && typeof value === 'object' && value[currentLang]) {
         return value[currentLang];
@@ -255,6 +296,11 @@
       document.getElementById('section-portfolio').textContent = t(siteData.ui.sections.portfolio);
       document.getElementById('section-about').textContent = t(siteData.ui.sections.about);
       document.getElementById('section-reviews').textContent = t(siteData.ui.sections.reviews);
+      document.getElementById('reviews-main-title').textContent = t(reviewPromoData.mainTitle);
+      document.getElementById('reviews-main-text').textContent = t(reviewPromoData.mainText);
+      document.getElementById('review-promo-kicker').textContent = t(reviewPromoData.kicker);
+      document.getElementById('review-promo-title').textContent = t(reviewPromoData.title);
+      document.getElementById('review-promo-text').textContent = t(reviewPromoData.text);
       document.getElementById('section-contact').textContent = t(siteData.ui.sections.contact);
 
       document.getElementById('brand-name').textContent = siteData.brand.name;
