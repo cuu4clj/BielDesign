@@ -3,7 +3,8 @@
     "name": "BielDesign",
     "tagline": {
       "ro": "Interior Design & Premium Fit-Out",
-      "en": "Interior Design & Premium Fit-Out"
+      "en": "Interior Design & Premium Fit-Out",
+      "it": "Interior Design & Realizzazioni Premium"
     }
   },
   "theme": {
@@ -16,230 +17,502 @@
   },
   "ui": {
     "nav": {
-      "services": { "ro": "Servicii", "en": "Services" },
-      "portfolio": { "ro": "Portofoliu", "en": "Portfolio" },
-      "about": { "ro": "Despre", "en": "About" },
-      "reviews": { "ro": "Recenzii", "en": "Reviews" },
-      "contact": { "ro": "Contact", "en": "Contact" }
+      "services": {
+        "ro": "Servicii",
+        "en": "Services",
+        "it": "Servizi"
+      },
+      "portfolio": {
+        "ro": "Portofoliu",
+        "en": "Portfolio",
+        "it": "Portfolio"
+      },
+      "about": {
+        "ro": "Despre",
+        "en": "About",
+        "it": "Chi siamo"
+      },
+      "reviews": {
+        "ro": "Recenzii",
+        "en": "Reviews",
+        "it": "Recensioni"
+      },
+      "contact": {
+        "ro": "Contact",
+        "en": "Contact",
+        "it": "Contatto"
+      }
     },
     "sections": {
-      "services": { "ro": "Servicii", "en": "Services" },
-      "portfolio": { "ro": "Portofoliu", "en": "Portfolio" },
-      "about": { "ro": "Despre", "en": "About" },
-      "reviews": { "ro": "Recenzii", "en": "Reviews" },
-      "contact": { "ro": "Contact", "en": "Contact" }
+      "services": {
+        "ro": "Servicii",
+        "en": "Services",
+        "it": "Servizi"
+      },
+      "portfolio": {
+        "ro": "Portofoliu",
+        "en": "Portfolio",
+        "it": "Portfolio"
+      },
+      "about": {
+        "ro": "Despre",
+        "en": "About",
+        "it": "Chi siamo"
+      },
+      "reviews": {
+        "ro": "Recenzii",
+        "en": "Reviews",
+        "it": "Recensioni"
+      },
+      "contact": {
+        "ro": "Contact",
+        "en": "Contact",
+        "it": "Contatto"
+      }
     },
     "reviewForm": {
-      "nameLabel": { "ro": "Nume", "en": "Name" },
-      "namePlaceholder": { "ro": "Numele tău", "en": "Your name" },
-      "ratingLabel": { "ro": "Rating", "en": "Rating" },
-      "ratingPlaceholder": { "ro": "Alege rating", "en": "Choose rating" },
-      "star5": { "ro": "5 stele", "en": "5 stars" },
-      "star4": { "ro": "4 stele", "en": "4 stars" },
-      "star3": { "ro": "3 stele", "en": "3 stars" },
-      "star2": { "ro": "2 stele", "en": "2 stars" },
-      "star1": { "ro": "1 stea", "en": "1 star" },
-      "messageLabel": { "ro": "Recenzie", "en": "Review" },
-      "messagePlaceholder": { "ro": "Scrie feedback-ul tău", "en": "Write your feedback" },
-      "button": { "ro": "Trimite recenzia", "en": "Submit review" }
+      "nameLabel": {
+        "ro": "Nume",
+        "en": "Name",
+        "it": "Nome"
+      },
+      "namePlaceholder": {
+        "ro": "Numele tău",
+        "en": "Your name",
+        "it": "Il tuo nome"
+      },
+      "ratingLabel": {
+        "ro": "Rating",
+        "en": "Rating",
+        "it": "Valutazione"
+      },
+      "ratingPlaceholder": {
+        "ro": "Alege rating",
+        "en": "Choose rating",
+        "it": "Scegli valutazione"
+      },
+      "star5": {
+        "ro": "5 stele",
+        "en": "5 stars",
+        "it": "5 stelle"
+      },
+      "star4": {
+        "ro": "4 stele",
+        "en": "4 stars",
+        "it": "4 stelle"
+      },
+      "star3": {
+        "ro": "3 stele",
+        "en": "3 stars",
+        "it": "3 stelle"
+      },
+      "star2": {
+        "ro": "2 stele",
+        "en": "2 stars",
+        "it": "2 stelle"
+      },
+      "star1": {
+        "ro": "1 stea",
+        "en": "1 star",
+        "it": "1 stella"
+      },
+      "messageLabel": {
+        "ro": "Recenzie",
+        "en": "Review",
+        "it": "Recensione"
+      },
+      "messagePlaceholder": {
+        "ro": "Scrie feedback-ul tău",
+        "en": "Write your feedback",
+        "it": "Scrivi il tuo feedback"
+      },
+      "button": {
+        "ro": "Trimite recenzia",
+        "en": "Submit review",
+        "it": "Invia recensione"
+      }
     },
     "contactForm": {
-      "nameLabel": { "ro": "Nume", "en": "Name" },
-      "namePlaceholder": { "ro": "Numele tău", "en": "Your name" },
-      "emailLabel": { "ro": "Email", "en": "Email" },
-      "emailPlaceholder": { "ro": "email@exemplu.ro", "en": "email@example.com" },
-      "phoneLabel": { "ro": "Telefon", "en": "Phone" },
-      "phonePlaceholder": { "ro": "+40 7xx xxx xxx", "en": "+40 7xx xxx xxx" },
-      "messageLabel": { "ro": "Detalii", "en": "Details" },
-      "messagePlaceholder": { "ro": "Spune-ne pe scurt ce ai nevoie", "en": "Briefly tell us what you need" },
-      "button": { "ro": "Trimite cererea", "en": "Send request" }
+      "nameLabel": {
+        "ro": "Nume",
+        "en": "Name",
+        "it": "Nome"
+      },
+      "namePlaceholder": {
+        "ro": "Numele tău",
+        "en": "Your name",
+        "it": "Il tuo nome"
+      },
+      "emailLabel": {
+        "ro": "Email",
+        "en": "Email",
+        "it": "Email"
+      },
+      "emailPlaceholder": {
+        "ro": "email@exemplu.ro",
+        "en": "email@example.com",
+        "it": "email@esempio.it"
+      },
+      "phoneLabel": {
+        "ro": "Telefon",
+        "en": "Phone",
+        "it": "Telefono"
+      },
+      "phonePlaceholder": {
+        "ro": "+40 7xx xxx xxx",
+        "en": "+40 7xx xxx xxx",
+        "it": "+39 xxx xxx xxx"
+      },
+      "messageLabel": {
+        "ro": "Detalii",
+        "en": "Details",
+        "it": "Dettagli"
+      },
+      "messagePlaceholder": {
+        "ro": "Spune-ne pe scurt ce ai nevoie",
+        "en": "Tell us briefly what you need",
+        "it": "Descrivici brevemente di cosa hai bisogno"
+      },
+      "button": {
+        "ro": "Trimite cererea",
+        "en": "Send request",
+        "it": "Invia richiesta"
+      }
     },
     "footer": {
       "legal": {
         "ro": "© 2026 BielDesign · Toate drepturile rezervate.",
-        "en": "© 2026 BielDesign · All rights reserved."
+        "en": "© 2026 BielDesign · All rights reserved.",
+        "it": "© 2026 BielDesign · Tutti i diritti riservati."
       }
     },
     "aboutQuote": {
       "ro": "„Cred în interioare care îmbină rafinamentul, echilibrul și emoția autentică.”",
-      "en": "\"I believe in interiors that blend refinement, balance, and authentic emotion.\""
+      "en": "I believe in interiors that blend refinement, balance, and authentic emotion.",
+      "it": "Credo negli interni che uniscono raffinatezza, equilibrio ed emozione autentica."
     }
   },
   "hero": {
     "kicker": {
       "ro": "Luxury Interior Design",
-      "en": "Luxury Interior Design"
+      "en": "Luxury Interior Design",
+      "it": "Interior Design di Lusso"
     },
     "title": {
       "ro": "Interioare cu personalitate, definite prin rafinament și echilibru.",
-      "en": "Interiors with personality, defined by refinement and balance."
+      "en": "Interiors with personality, defined by refinement and balance.",
+      "it": "Interni con personalità, definiti da raffinatezza ed equilibrio."
     },
     "text": {
       "ro": "Creăm interioare personalizate, atent gândite în fiecare detaliu de la concept la implementare punând accent pe echilibru, estetică și funcționalitate.",
-      "en": "We create bespoke interiors, carefully shaped in every detail from concept to implementation, with a strong focus on balance, aesthetics, and functionality."
+      "en": "We create bespoke interiors, carefully shaped in every detail from concept to implementation, with a strong focus on balance, aesthetics, and functionality.",
+      "it": "Creiamo interni su misura, progettati con cura in ogni dettaglio, dal concept alla realizzazione, con un forte focus su equilibrio, estetica e funzionalità."
     },
     "primaryButton": {
       "ro": "Programează o discuție",
-      "en": "Schedule a consultation"
+      "en": "Schedule a consultation",
+      "it": "Prenota una consulenza"
     },
     "secondaryButton": {
       "ro": "Vezi proiecte",
-      "en": "View projects"
+      "en": "View projects",
+      "it": "Scopri i progetti"
     }
   },
   "services": [
     {
-      "title": { "ro": "Consultanță Inițială", "en": "Initial Consultation" },
+      "title": {
+        "ro": "Consultanță Inițială",
+        "en": "Initial Consultation",
+        "it": "Consulenza Iniziale"
+      },
       "text": {
         "ro": "Stabilim direcția proiectului în funcție de stilul dorit, nevoile spațiului, funcționalitate și nivelul de investiție urmărit.",
-        "en": "We define the project direction based on the desired style, the needs of the space, functionality, and the intended investment level."
+        "en": "We define the project direction based on the desired style, the needs of the space, functionality, and the intended investment level.",
+        "it": "Definiamo la direzione del progetto in base allo stile desiderato, alle esigenze dello spazio, alla funzionalità e al livello di investimento previsto."
       },
-      "title2": { "ro": "Releveu și Analiză Spațiu", "en": "Measured Survey & Space Analysis" },
+      "title2": {
+        "ro": "Releveu și Analiză Spațiu",
+        "en": "Measured Survey & Space Analysis",
+        "it": "Rilievo e Analisi dello Spazio"
+      },
       "text2": {
         "ro": "Realizăm măsurători exacte și evaluăm particularitățile spațiului pentru a construi un proiect coerent, bine proporționat și corect fundamentat.",
-        "en": "We take accurate measurements and assess the space in detail to build a coherent, well-proportioned, and properly grounded project."
+        "en": "We take accurate measurements and assess the space in detail to build a coherent, well-proportioned, and properly grounded project.",
+        "it": "Eseguiamo misurazioni precise e analizziamo le caratteristiche dello spazio per costruire un progetto coerente, ben proporzionato e correttamente impostato."
       }
     },
     {
-      "title": { "ro": "Concept de Design", "en": "Design Concept" },
+      "title": {
+        "ro": "Concept de Design",
+        "en": "Design Concept",
+        "it": "Concept di Design"
+      },
       "text": {
         "ro": "Definim identitatea estetică a proiectului prin stil, paletă cromatică, materiale și atmosfera generală care va ghida întreaga amenajare.",
-        "en": "We define the aesthetic identity of the project through style, color palette, materials, and the overall atmosphere that will guide the entire design."
+        "en": "We define the aesthetic identity of the project through style, color palette, materials, and the overall atmosphere that will guide the entire design.",
+        "it": "Definiamo l’identità estetica del progetto attraverso stile, palette cromatica, materiali e atmosfera generale che guideranno l’intero intervento."
       },
-      "title2": { "ro": "Planificare Funcțională", "en": "Functional Planning" },
+      "title2": {
+        "ro": "Planificare Funcțională",
+        "en": "Functional Planning",
+        "it": "Pianificazione Funzionale"
+      },
       "text2": {
         "ro": "Organizăm spațiul astfel încât fiecare zonă să răspundă eficient nevoilor reale, păstrând echilibrul dintre confort, logică și expresivitate vizuală.",
-        "en": "We organize the space so that each area responds efficiently to real needs, while preserving the balance between comfort, logic, and visual expression."
+        "en": "We organize the space so that each area responds efficiently to real needs, while preserving the balance between comfort, logic, and visual expression.",
+        "it": "Organizziamo lo spazio affinché ogni area risponda in modo efficace alle esigenze reali, mantenendo l’equilibrio tra comfort, logica ed espressività visiva."
       }
     },
     {
-      "title": { "ro": "Randări 3D și Vizualizare", "en": "3D Renderings & Visualization" },
+      "title": {
+        "ro": "Randări 3D și Vizualizare",
+        "en": "3D Renderings & Visualization",
+        "it": "Render 3D e Visualizzazione"
+      },
       "text": {
         "ro": "Transpunem conceptul în imagini fotorealiste pentru a ilustra clar amenajarea finală înainte de etapa de execuție.",
-        "en": "We translate the concept into photorealistic imagery to clearly illustrate the final design before execution begins."
+        "en": "We translate the concept into photorealistic imagery to clearly illustrate the final design before execution begins.",
+        "it": "Trasformiamo il concept in immagini fotorealistiche per illustrare con chiarezza il risultato finale prima della fase di realizzazione."
       },
-      "title2": { "ro": "Selecție de Materiale și Finisaje", "en": "Materials & Finishes Selection" },
+      "title2": {
+        "ro": "Selecție de Materiale și Finisaje",
+        "en": "Materials & Finishes Selection",
+        "it": "Selezione di Materiali e Finiture"
+      },
       "text2": {
         "ro": "Alegem materiale, texturi și finisaje care susțin conceptul estetic și oferă spațiului coerență, durabilitate și rafinament.",
-        "en": "We select materials, textures, and finishes that support the aesthetic concept and bring cohesion, durability, and refinement to the space."
+        "en": "We select materials, textures, and finishes that support the aesthetic concept and bring cohesion, durability, and refinement to the space.",
+        "it": "Selezioniamo materiali, texture e finiture che sostengono il concept estetico e conferiscono allo spazio coerenza, durata e raffinatezza."
       }
     },
     {
-      "title": { "ro": "Selecție de Mobilier și Iluminat", "en": "Furniture & Lighting Selection" },
+      "title": {
+        "ro": "Selecție de Mobilier și Iluminat",
+        "en": "Furniture & Lighting Selection",
+        "it": "Selezione di Arredi e Illuminazione"
+      },
       "text": {
         "ro": "Selectăm piese de mobilier, corpuri de iluminat și elemente decorative care completează armonios funcționalitatea și identitatea vizuală a proiectului.",
-        "en": "We select furniture pieces, lighting fixtures, and decorative elements that harmoniously complete the functionality and visual identity of the project."
+        "en": "We select furniture pieces, lighting fixtures, and decorative elements that harmoniously complete the functionality and visual identity of the project.",
+        "it": "Selezioniamo arredi, corpi illuminanti ed elementi decorativi che completano in modo armonioso la funzionalità e l’identità visiva del progetto."
       },
-      "title2": { "ro": "Documentație Tehnică", "en": "Technical Documentation" },
+      "title2": {
+        "ro": "Documentație Tehnică",
+        "en": "Technical Documentation",
+        "it": "Documentazione Tecnica"
+      },
       "text2": {
         "ro": "Pregătim planurile și detaliile necesare implementării corecte a proiectului, pentru o execuție clară, eficientă și bine coordonată.",
-        "en": "We prepare the plans and technical details required for correct implementation, ensuring a clear, efficient, and well-coordinated execution."
+        "en": "We prepare the plans and technical details required for correct implementation, ensuring a clear, efficient, and well-coordinated execution.",
+        "it": "Prepariamo planimetrie e dettagli tecnici necessari alla corretta realizzazione del progetto, per un’esecuzione chiara, efficiente e ben coordinata."
       }
     },
     {
-      "title": { "ro": "Bugetare și Ofertare", "en": "Budgeting & Cost Proposals" },
+      "title": {
+        "ro": "Bugetare și Ofertare",
+        "en": "Budgeting & Cost Proposals",
+        "it": "Budget e Preventivazione"
+      },
       "text": {
         "ro": "Centralizăm propunerile de cost pentru materiale, mobilier, iluminat și execuții personalizate, astfel încât investiția să fie clară și realistă.",
-        "en": "We centralize cost proposals for materials, furniture, lighting, and custom execution so the investment remains clear and realistic."
+        "en": "We centralize cost proposals for materials, furniture, lighting, and custom execution so the investment remains clear and realistic.",
+        "it": "Raccogliamo le proposte di costo per materiali, arredi, illuminazione e realizzazioni personalizzate, affinché l’investimento sia chiaro e realistico."
       },
-      "title2": { "ro": "Implementare și Coordonare", "en": "Implementation & Coordination" },
+      "title2": {
+        "ro": "Implementare și Coordonare",
+        "en": "Implementation & Coordination",
+        "it": "Realizzazione e Coordinamento"
+      },
       "text2": {
         "ro": "Urmărim aplicarea conceptului în execuție și colaborăm cu echipele implicate pentru a păstra coerența și calitatea rezultatului final.",
-        "en": "We oversee the implementation of the concept and collaborate with the involved teams to preserve the coherence and quality of the final result."
+        "en": "We oversee the implementation of the concept and collaborate with the involved teams to preserve the coherence and quality of the final result.",
+        "it": "Supervisioniamo l’applicazione del concept in fase esecutiva e collaboriamo con i team coinvolti per preservare coerenza e qualità del risultato finale."
       }
     },
     {
-      "title": { "ro": "Styling Final", "en": "Final Styling" },
+      "title": {
+        "ro": "Styling Final",
+        "en": "Final Styling",
+        "it": "Styling Finale"
+      },
       "text": {
         "ro": "Completăm amenajarea cu textile, decor și accente finale care evidențiază atmosfera, personalitatea și rafinamentul proiectului.",
-        "en": "We complete the design with textiles, décor, and final accents that highlight the atmosphere, personality, and refinement of the project."
+        "en": "We complete the design with textiles, décor, and final accents that highlight the atmosphere, personality, and refinement of the project.",
+        "it": "Completiamo il progetto con tessili, décor e dettagli finali che valorizzano atmosfera, personalità e raffinatezza dell’ambiente."
       },
-      "title2": { "ro": "Personalizarea Serviciilor", "en": "Tailored Services" },
+      "title2": {
+        "ro": "Personalizarea Serviciilor",
+        "en": "Tailored Services",
+        "it": "Servizi Personalizzati"
+      },
       "text2": {
         "ro": "Etapele proiectului sunt configurate în funcție de pachetul ales, putând include fie întregul proces de amenajare, fie doar etape punctuale.",
-        "en": "The project stages are configured according to the selected package and may include either the full design process or only specific stages."
+        "en": "The project stages are configured according to the selected package and may include either the full design process or only specific stages.",
+        "it": "Le fasi del progetto vengono configurate in base al pacchetto scelto e possono includere l’intero processo di interior design oppure solo singole fasi specifiche."
       }
     }
   ],
   "portfolio": [
     {
-      "title": { "ro": "Restaurant Germania", "en": "Germania Restaurant" },
-      "meta": { "ro": "Hospitality · Germania", "en": "Hospitality · Germany" },
+      "title": {
+        "ro": "Restaurant Germania",
+        "en": "Germania Restaurant",
+        "it": "Ristorante Germania"
+      },
+      "meta": {
+        "ro": "Hospitality · Germania",
+        "en": "Hospitality · Germany",
+        "it": "Hospitality · Germania"
+      },
       "text": {
         "ro": "Rafinament Atemporal și Detalii Statement.",
-        "en": "Timeless Refinement and Statement Details."
+        "en": "Timeless Refinement and Statement Details.",
+        "it": "Raffinatezza Senza Tempo e Dettagli d’Impatto."
       },
       "link": "portfolio-1.html"
     },
     {
-      "title": { "ro": "Apart-Hotel Germania", "en": "Apart-Hotel Germany" },
-      "meta": { "ro": "Hospitality · Germania", "en": "Hospitality · Germany" },
+      "title": {
+        "ro": "Apart-Hotel Germania",
+        "en": "Apart-Hotel Germany",
+        "it": "Apart-Hotel Germania"
+      },
+      "meta": {
+        "ro": "Hospitality · Germania",
+        "en": "Hospitality · Germany",
+        "it": "Hospitality · Germania"
+      },
       "text": {
         "ro": "Echilibru Contemporan cu Accente Rafinate.",
-        "en": "Contemporary Balance with Refined Accents."
+        "en": "Contemporary Balance with Refined Accents.",
+        "it": "Equilibrio Contemporaneo con Accenti Raffinati."
       },
       "link": "portfolio-2.html"
     },
     {
-      "title": { "ro": "Urban House", "en": "Urban House" },
-      "meta": { "ro": "Residential · Bistrita", "en": "Residential · Bistrita" },
+      "title": {
+        "ro": "Urban House",
+        "en": "Urban House",
+        "it": "Urban House"
+      },
+      "meta": {
+        "ro": "Residential · Bistrita",
+        "en": "Residential · Bistrita",
+        "it": "Residenziale · Bistrița"
+      },
       "text": {
         "ro": "Expresie Modernă în Tonuri Închise.",
-        "en": "Modern Expression in Dark Tones."
+        "en": "Modern Expression in Dark Tones.",
+        "it": "Espressione Moderna in Toni Scuri."
       },
       "link": "portfolio-3.html"
     },
     {
-      "title": { "ro": "Urban Apartment", "en": "Urban Apartment" },
-      "meta": { "ro": "Residential · Cluj-Napoca", "en": "Residential · Cluj-Napoca" },
+      "title": {
+        "ro": "Urban Apartment",
+        "en": "Urban Apartment",
+        "it": "Urban Apartment"
+      },
+      "meta": {
+        "ro": "Residential · Cluj-Napoca",
+        "en": "Residential · Cluj-Napoca",
+        "it": "Residenziale · Cluj-Napoca"
+      },
       "text": {
         "ro": "Armonie Contemporană și Accente Premium.",
-        "en": "Contemporary Harmony with Premium Accents."
+        "en": "Contemporary Harmony with Premium Accents.",
+        "it": "Armonia Contemporanea e Accenti Premium."
       },
       "link": "portfolio-4.html"
     },
     {
-      "title": { "ro": "Contemporary House", "en": "Contemporary House" },
-      "meta": { "ro": "Residential · Cluj-Napoca", "en": "Residential · Cluj-Napoca" },
+      "title": {
+        "ro": "Contemporary House",
+        "en": "Contemporary House",
+        "it": "Contemporary House"
+      },
+      "meta": {
+        "ro": "Residential · Cluj-Napoca",
+        "en": "Residential · Cluj-Napoca",
+        "it": "Residenziale · Cluj-Napoca"
+      },
       "text": {
         "ro": "Eleganță Sculpturală și Accente Premium.",
-        "en": "Sculptural Elegance and Premium Accents."
+        "en": "Sculptural Elegance and Premium Accents.",
+        "it": "Eleganza Scultorea e Accenti Premium."
       },
       "link": "portfolio-5.html"
     },
     {
-      "title": { "ro": "Penthouse Residence", "en": "Penthouse Residence" },
-      "meta": { "ro": "Residential · Bistrita", "en": "Residential · Bistrita" },
+      "title": {
+        "ro": "Penthouse Residence",
+        "en": "Penthouse Residence",
+        "it": "Penthouse Residence"
+      },
+      "meta": {
+        "ro": "Residential · Bistrita",
+        "en": "Residential · Bistrita",
+        "it": "Residenziale · Bistrița"
+      },
       "text": {
         "ro": "Contrast Elegant și Detalii Statement.",
-        "en": "Elegant Contrast and Statement Details."
+        "en": "Elegant Contrast and Statement Details.",
+        "it": "Contrasto Elegante e Dettagli d’Impatto."
       },
       "link": "portfolio-6.html"
     },
     {
-      "title": { "ro": "Penthouse Residence - Columna", "en": "Penthouse Residence - Columna" },
-      "meta": { "ro": "Residential · Cluj-Napoca", "en": "Residential · Cluj-Napoca" },
+      "title": {
+        "ro": "Penthouse Residence - Columna",
+        "en": "Penthouse Residence - Columna",
+        "it": "Penthouse Residence - Columna"
+      },
+      "meta": {
+        "ro": "Residential · Cluj-Napoca",
+        "en": "Residential · Cluj-Napoca",
+        "it": "Residenziale · Cluj-Napoca"
+      },
       "text": {
         "ro": "Echilibru Vizual și Accente Contemporane.",
-        "en": "Visual Balance and Contemporary Accents."
+        "en": "Visual Balance and Contemporary Accents.",
+        "it": "Equilibrio Visivo e Accenti Contemporanei."
       },
       "link": "portfolio-7.html"
     },
     {
-      "title": { "ro": "Penthouse Residence No2", "en": "Penthouse Residence No2" },
-      "meta": { "ro": "Residential · Cluj-Napoca", "en": "Residential · Cluj-Napoca" },
+      "title": {
+        "ro": "Penthouse Residence No2",
+        "en": "Penthouse Residence No2",
+        "it": "Penthouse Residence No2"
+      },
+      "meta": {
+        "ro": "Residential · Cluj-Napoca",
+        "en": "Residential · Cluj-Napoca",
+        "it": "Residenziale · Cluj-Napoca"
+      },
       "text": {
         "ro": "Eleganță Clasică în Note Contemporane.",
-        "en": "Classic Elegance with Contemporary Notes."
+        "en": "Classic Elegance with Contemporary Notes.",
+        "it": "Eleganza Classica in Chiave Contemporanea."
       },
       "link": "portfolio-8.html"
     },
     {
-      "title": { "ro": "Modern Residence", "en": "Modern Residence" },
-      "meta": { "ro": "Residential · Cluj-Napoca", "en": "Residential · Cluj-Napoca" },
+      "title": {
+        "ro": "Modern Residence",
+        "en": "Modern Residence",
+        "it": "Modern Residence"
+      },
+      "meta": {
+        "ro": "Residential · Cluj-Napoca",
+        "en": "Residential · Cluj-Napoca",
+        "it": "Residenziale · Cluj-Napoca"
+      },
       "text": {
         "ro": "Design Premium în Tonuri Contemporane.",
-        "en": "Premium Design in Contemporary Tones."
+        "en": "Premium Design in Contemporary Tones.",
+        "it": "Design Premium in Toni Contemporanei."
       },
       "link": "portfolio-9.html"
     }
@@ -249,7 +522,8 @@
       "name": "Andrei Pop",
       "text": {
         "ro": "Serviciu excelent, foarte atenți la detalii și rezultat premium.",
-        "en": "Excellent service, great attention to detail, and a premium result."
+        "en": "Excellent service, great attention to detail, and a premium result.",
+        "it": "Servizio eccellente, grande attenzione ai dettagli e risultato premium."
       },
       "stars": "★★★★★"
     }
@@ -257,61 +531,74 @@
   "about": {
     "title": {
       "ro": "Povestea din spatele fiecărui spațiu",
-      "en": "The Story Behind Every Space"
+      "en": "The Story Behind Every Space",
+      "it": "La Storia Dietro Ogni Spazio"
     },
     "text1": {
       "ro": "Bună, sunt Adina, fondatoarea bieldesign.studio și designer de interior cu 7 ani de experiență în transformarea spațiilor în locuri care spun o poveste, inspiră și rezistă în timp.",
-      "en": "Hello, I’m Adina, founder of bieldesign.studio and an interior designer with 7 years of experience in transforming spaces into places that tell a story, inspire, and endure over time."
+      "en": "Hello, I’m Adina, founder of bieldesign.studio and an interior designer with 7 years of experience in transforming spaces into places that tell a story, inspire, and endure over time.",
+      "it": "Ciao, sono Adina, fondatrice di bieldesign.studio e interior designer con 7 anni di esperienza nella trasformazione degli spazi in luoghi che raccontano una storia, ispirano e durano nel tempo."
     },
     "text2": {
       "ro": "Viziunea mea este ancorată în estetica neo-clasică, o direcție stilistică ce îmbină armonios eleganța liniilor clasice cu expresivitatea detaliilor contemporane. Rezultatul este un interior echilibrat, sofisticat și atemporal, în care frumusețea nu este niciodată separată de funcționalitate.",
-      "en": "My vision is rooted in neo-classical aesthetics, a stylistic direction that harmoniously blends the elegance of classical lines with the expressiveness of contemporary details. The result is a balanced, sophisticated, and timeless interior where beauty is never separated from functionality."
+      "en": "My vision is rooted in neo-classical aesthetics, a stylistic direction that harmoniously blends the elegance of classical lines with the expressiveness of contemporary details. The result is a balanced, sophisticated, and timeless interior where beauty is never separated from functionality.",
+      "it": "La mia visione affonda le radici nell’estetica neoclassica, una direzione stilistica che unisce in modo armonioso l’eleganza delle linee classiche all’espressività dei dettagli contemporanei. Il risultato è un interno equilibrato, sofisticato e senza tempo, in cui la bellezza non è mai separata dalla funzionalità."
     },
     "text3": {
       "ro": "Pentru mine, designul de interior nu înseamnă doar alegerea unor obiecte frumoase sau crearea unei imagini spectaculoase, ci construirea unei atmosfere autentice, în acord cu stilul de viață, nevoile și personalitatea fiecărui client. Fiecare proiect începe cu o înțelegere profundă a modului în care spațiul va fi locuit, simțit și trăit zi de zi. Cred în interioare care nu urmează trecător tendințele, ci care își păstrează relevanța, frumusețea și emoția în timp.",
-      "en": "For me, interior design is not just about choosing beautiful objects or creating a striking image, but about building an authentic atmosphere aligned with each client’s lifestyle, needs, and personality. Every project begins with a deep understanding of how the space will be lived in, felt, and experienced every day. I believe in interiors that do not merely follow passing trends, but preserve their relevance, beauty, and emotion over time."
+      "en": "For me, interior design is not just about choosing beautiful objects or creating a striking image, but about building an authentic atmosphere aligned with each client’s lifestyle, needs, and personality. Every project begins with a deep understanding of how the space will be lived in, felt, and experienced every day. I believe in interiors that do not merely follow passing trends, but preserve their relevance, beauty, and emotion over time.",
+      "it": "Per me, l’interior design non significa soltanto scegliere oggetti belli o creare un’immagine d’effetto, ma costruire un’atmosfera autentica, in sintonia con lo stile di vita, le esigenze e la personalità di ogni cliente. Ogni progetto inizia con una comprensione profonda di come lo spazio sarà vissuto, percepito e abitato ogni giorno. Credo in interni che non inseguono semplicemente le tendenze del momento, ma che conservano nel tempo rilevanza, bellezza ed emozione."
     },
     "text4": {
       "ro": "Abordarea mea este una atentă, personalizată și profund colaborativă. Fiecare proiect reprezintă o întâlnire între viziunea mea creativă și povestea clientului, iar scopul este întotdeauna acela de a găsi echilibrul ideal între estetică, confort și identitate personală. Îmi place să creez spații care inspiră liniște, claritate și apartenență — locuri în care fiecare detaliu are sens, iar ansamblul transmite coerență și rafinament.",
-      "en": "My approach is thoughtful, tailored, and deeply collaborative. Each project represents a meeting point between my creative vision and the client’s story, with the goal of finding the ideal balance between aesthetics, comfort, and personal identity. I enjoy creating spaces that inspire calm, clarity, and belonging — places where every detail has meaning and the whole conveys coherence and refinement."
+      "en": "My approach is thoughtful, tailored, and deeply collaborative. Each project represents a meeting point between my creative vision and the client’s story, with the goal of finding the ideal balance between aesthetics, comfort, and personal identity. I enjoy creating spaces that inspire calm, clarity, and belonging — places where every detail has meaning and the whole conveys coherence and refinement.",
+      "it": "Il mio approccio è attento, personalizzato e profondamente collaborativo. Ogni progetto rappresenta un incontro tra la mia visione creativa e la storia del cliente, con l’obiettivo di trovare sempre il giusto equilibrio tra estetica, comfort e identità personale. Mi piace creare spazi che trasmettono calma, chiarezza e senso di appartenenza: luoghi in cui ogni dettaglio ha un significato e l’insieme comunica coerenza e raffinatezza."
     },
     "text5": {
       "ro": "În cadrul bieldesign.studio, ofer servicii de design interior gândite să răspundă diferitelor etape și nevoi ale unui proiect. Realizez proiecte complete de design interior, de la conceptul inițial, planuri de amenajare și moodboard-uri, până la selecția finisajelor, pieselor de mobilier, corpurilor de iluminat și stylingul final. Fiecare etapă este construită cu grijă, astfel încât rezultatul final să fie un spațiu armonios, bine proporționat și fidel viziunii stabilite împreună.",
-      "en": "At bieldesign.studio, I offer interior design services tailored to the different stages and needs of a project. I create complete interior design projects, from the initial concept, layout plans, and moodboards to the selection of finishes, furniture pieces, lighting fixtures, and final styling. Each stage is carefully structured so that the final result becomes a harmonious, well-proportioned space faithful to the vision established together."
+      "en": "At bieldesign.studio, I offer interior design services tailored to the different stages and needs of a project. I create complete interior design projects, from the initial concept, layout plans, and moodboards to the selection of finishes, furniture pieces, lighting fixtures, and final styling. Each stage is carefully structured so that the final result becomes a harmonious, well-proportioned space faithful to the vision established together.",
+      "it": "In bieldesign.studio offro servizi di interior design pensati per rispondere alle diverse fasi e necessità di un progetto. Realizzo progetti completi di interior design, dal concept iniziale, ai layout e moodboard, fino alla selezione di finiture, arredi, corpi illuminanti e styling finale. Ogni fase viene costruita con cura, affinché il risultato finale sia uno spazio armonioso, ben proporzionato e fedele alla visione definita insieme."
     },
     "text6": {
       "ro": "Ofer, de asemenea, consultanță de design pentru acele momente în care este nevoie de claritate, direcție și validarea unor alegeri importante. Uneori, câteva decizii bine ghidate pot schimba complet felul în care un spațiu este perceput și utilizat. În plus, mă ocup de reconfigurări și optimizări de spațiu, cu accent pe valorificarea fiecărui metru pătrat într-un mod coerent, elegant și funcțional.",
-      "en": "I also offer design consultancy for those moments when clarity, direction, and validation of important decisions are needed. Sometimes, just a few well-guided decisions can completely change the way a space is perceived and used. In addition, I work on space reconfiguration and optimization, with a focus on making every square meter feel coherent, elegant, and functional."
+      "en": "I also offer design consultancy for those moments when clarity, direction, and validation of important decisions are needed. Sometimes, just a few well-guided decisions can completely change the way a space is perceived and used. In addition, I work on space reconfiguration and optimization, with a focus on making every square meter feel coherent, elegant, and functional.",
+      "it": "Offro anche consulenza di design per quei momenti in cui servono chiarezza, direzione e la conferma di scelte importanti. A volte bastano poche decisioni ben guidate per cambiare completamente il modo in cui uno spazio viene percepito e utilizzato. Inoltre, mi occupo di riconfigurazione e ottimizzazione degli spazi, con attenzione a valorizzare ogni metro quadrato in modo coerente, elegante e funzionale."
     },
     "text7": {
       "ro": "Procesul de lucru începe întotdeauna cu o discuție detaliată despre stilul de viață, dorințele și așteptările tale. Cred că un proiect reușit nu se construiește doar pe criterii estetice, ci și pe încredere, dialog și atenție reală la detalii. Dincolo de concept și implementare, obiectivul meu este să creez un spațiu care să te reprezinte cu adevărat — un loc în care să te regăsești, să te simți bine și să revii, de fiecare dată, cu plăcere.",
-      "en": "The design process always begins with a detailed conversation about your lifestyle, desires, and expectations. I believe that a successful project is not built only on aesthetic criteria, but also on trust, dialogue, and genuine attention to detail. Beyond concept and implementation, my goal is to create a space that truly represents you — a place where you feel at home, feel good, and return to with pleasure every time."
+      "en": "The design process always begins with a detailed conversation about your lifestyle, desires, and expectations. I believe that a successful project is not built only on aesthetic criteria, but also on trust, dialogue, and genuine attention to detail. Beyond concept and implementation, my goal is to create a space that truly represents you — a place where you feel at home, feel good, and return to with pleasure every time.",
+      "it": "Il processo di lavoro inizia sempre con una conversazione approfondita sul tuo stile di vita, sui tuoi desideri e sulle tue aspettative. Credo che un progetto riuscito non si costruisca solo su criteri estetici, ma anche su fiducia, dialogo e vera attenzione ai dettagli. Oltre al concept e alla realizzazione, il mio obiettivo è creare uno spazio che ti rappresenti davvero: un luogo in cui ritrovarti, stare bene e tornare ogni volta con piacere."
     },
     "text8": {
       "ro": "Dacă îți dorești un interior definit de rafinament, echilibru și o estetică atemporală, te invit să descoperim împreună cum poate prinde contur spațiul tău ideal.",
-      "en": "If you want an interior defined by refinement, balance, and timeless aesthetics, I invite you to discover together how your ideal space can take shape."
+      "en": "If you want an interior defined by refinement, balance, and timeless aesthetics, I invite you to discover together how your ideal space can take shape.",
+      "it": "Se desideri un interno definito da raffinatezza, equilibrio ed estetica senza tempo, ti invito a scoprire insieme come può prendere forma il tuo spazio ideale."
     }
   },
   "contact": {
     "title": {
       "ro": "Hai să transformăm spațiul tău într-o semnătură vizuală.",
-      "en": "Let’s transform your space into a visual signature."
+      "en": "Let’s transform your space into a visual signature.",
+      "it": "Trasformiamo il tuo spazio in una firma visiva."
     },
     "text": {
       "ro": "Scrie-ne și stabilim o discuție despre proiectul tău.",
-      "en": "Write to us and let’s schedule a conversation about your project."
+      "en": "Write to us and let’s schedule a conversation about your project.",
+      "it": "Scrivici e fissiamo una conversazione dedicata al tuo progetto."
     },
     "phone": "+40 746380294",
     "email": "contact@bieldesign.studio",
     "location": {
       "ro": "Cluj Napoca, România",
-      "en": "Cluj-Napoca, Romania"
+      "en": "Cluj-Napoca, Romania",
+      "it": "Cluj-Napoca, Romania"
     }
   },
   "footer": {
     "text": {
       "ro": "Design interior premium. Prezență vizuală impecabilă. Execuție clară.",
-      "en": "Premium interior design. Impeccable visual presence. Clear execution."
+      "en": "Premium interior design. Impeccable visual presence. Clear execution.",
+      "it": "Interior design premium. Presenza visiva impeccabile. Realizzazione chiara."
     }
   }
 }
