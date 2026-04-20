@@ -84,47 +84,62 @@
       name: "BielDesign",
       tagline: {
         ro: "Interior Design & Premium Fit-Out",
-        en: "Interior Design & Premium Fit-Out"
+        en: "Interior Design & Premium Fit-Out",
+        it: "Interior Design & Realizzazioni Premium"
       }
     },
     ui: {
       portfolio: {
         ro: "Portofoliu",
-        en: "Portfolio"
+        en: "Portfolio",
+        it: "Portfolio"
       },
       back: {
         ro: "Înapoi",
-        en: "Back"
+        en: "Back",
+        it: "Indietro"
       }
     },
     project: {
       title: {
         ro: "Contemporary House",
-        en: "Contemporary House"
+        en: "Contemporary House",
+        it: "Contemporary House"
       },
       subtitle: {
         ro: "Eleganță Sculpturală și Accente Premium",
-        en: "Sculptural Elegance and Premium Accents"
+        en: "Sculptural Elegance and Premium Accents",
+        it: "Eleganza Scultorea e Accenti Premium"
       },
       text1: {
         ro: "Amenajarea propune un interior rafinat, în care materialele cu personalitate, cromatica caldă și detaliile atent evidențiate construiesc o atmosferă luminoasă și sofisticată. Suprafețele decorative devin puncte de interes vizual, iar echilibrul dintre texturi, proporții și lumină conturează un spațiu contemporan, definit prin coerență și expresivitate.",
-        en: "The design proposes a refined interior, where materials with character, a warm palette, and carefully highlighted details build a luminous and sophisticated atmosphere. Decorative surfaces become focal points of visual interest, while the balance between textures, proportions, and light shapes a contemporary space defined by coherence and expressiveness."
+        en: "The design proposes a refined interior, where materials with character, a warm palette, and carefully highlighted details build a luminous and sophisticated atmosphere. Decorative surfaces become focal points of visual interest, while the balance between textures, proportions, and light shapes a contemporary space defined by coherence and expressiveness.",
+        it: "Il progetto propone un interno raffinato, in cui materiali ricchi di personalità, una palette calda e dettagli attentamente valorizzati costruiscono un’atmosfera luminosa e sofisticata. Le superfici decorative diventano punti di interesse visivo, mentre l’equilibrio tra texture, proporzioni e luce definisce uno spazio contemporaneo, caratterizzato da coerenza ed espressività."
       },
       text2: {
         ro: "Mobilierul cu forme rotunjite, volume echilibrate și prezență discretă completează armonios întregul concept. Relația dintre piesele de decor, accentele metalice și elementele iluminate adaugă profunzime și ritm amenajării, fără a încărca vizual spațiul. Întregul ansamblu este gândit pentru a susține o estetică elegantă, în care confortul și detaliul decorativ coexistă firesc.",
-        en: "Furniture with rounded forms, balanced volumes, and a discreet presence harmoniously completes the entire concept. The relationship between decorative pieces, metallic accents, and illuminated elements adds depth and rhythm to the design without visually overwhelming the space. The whole composition is conceived to support an elegant aesthetic in which comfort and decorative detail coexist naturally."
+        en: "Furniture with rounded forms, balanced volumes, and a discreet presence harmoniously completes the entire concept. The relationship between decorative pieces, metallic accents, and illuminated elements adds depth and rhythm to the design without visually overwhelming the space. The whole composition is conceived to support an elegant aesthetic in which comfort and decorative detail coexist naturally.",
+        it: "Gli arredi dalle forme arrotondate, dai volumi equilibrati e dalla presenza discreta completano armoniosamente l’intero concept. Il rapporto tra pezzi decorativi, accenti metallici ed elementi illuminati aggiunge profondità e ritmo al progetto senza appesantire visivamente lo spazio. L’insieme è pensato per sostenere un’estetica elegante, in cui comfort e dettaglio decorativo convivono in modo naturale."
       },
       text3: {
         ro: "Spațiul transmite căldură, claritate vizuală și o atmosferă premium, definită prin rafinament, luminozitate și echilibru contemporan.",
-        en: "The space conveys warmth, visual clarity, and a premium atmosphere defined by refinement, luminosity, and contemporary balance."
+        en: "The space conveys warmth, visual clarity, and a premium atmosphere defined by refinement, luminosity, and contemporary balance.",
+        it: "Lo spazio trasmette calore, chiarezza visiva e un’atmosfera premium, definita da raffinatezza, luminosità ed equilibrio contemporaneo."
       }
     }
   };
 
+  const langs = ['ro', 'en', 'it'];
   let currentLang = new URLSearchParams(window.location.search).get('lang') || localStorage.getItem('siteLang') || 'ro';
 
   function t(value) {
     return value[currentLang] || '';
+  }
+
+  function setLangButton() {
+    const index = langs.indexOf(currentLang);
+    const nextLang = langs[(index + 1) % langs.length];
+    document.getElementById('lang-toggle').textContent = nextLang.toUpperCase();
   }
 
   function applyLanguage() {
@@ -146,20 +161,25 @@
     document.getElementById('back-link').textContent = t(projectData.ui.back);
     document.getElementById('back-link').href = `../index.html?lang=${currentLang}#portfolio`;
 
-    document.getElementById('lang-toggle').textContent = currentLang === 'ro' ? 'EN' : 'RO';
+    setLangButton();
 
-    document.title = currentLang === 'ro'
-      ? 'Contemporary House — BielDesign'
-      : 'Contemporary House — BielDesign';
+    if (currentLang === 'ro') {
+      document.title = 'Contemporary House — BielDesign';
+    } else if (currentLang === 'en') {
+      document.title = 'Contemporary House — BielDesign';
+    } else if (currentLang === 'it') {
+      document.title = 'Contemporary House — BielDesign';
+    }
   }
 
   document.getElementById('lang-toggle').addEventListener('click', () => {
-    currentLang = currentLang === 'ro' ? 'en' : 'ro';
+    const index = langs.indexOf(currentLang);
+    currentLang = langs[(index + 1) % langs.length];
     localStorage.setItem('siteLang', currentLang);
     applyLanguage();
   });
 
-    document.addEventListener('contextmenu', function(e) {
+  document.addEventListener('contextmenu', function(e) {
     if (e.target.closest('.project-gallery')) {
       e.preventDefault();
     }
@@ -168,6 +188,7 @@
   document.querySelectorAll('.project-gallery img').forEach(img => {
     img.setAttribute('draggable', 'false');
   });
+
   applyLanguage();
   document.body.classList.add('page-loaded');
 </script>
